@@ -3,7 +3,12 @@ import Navbar from "../Navbar/Navbar";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Footer from "../Footer/Footer";
-import Grid from "../Grid/Grid";
+import EventCards from "../Card/EventCard";
+// import React from 'react';
+// import { Card, CardHeader, CardBody, CardFooter } from '@/components/ui/card';
+// import { Button } from '@/components/ui/button';
+// import { MapPin, Calendar } from 'lucide-react'
+// import Grid from "../Grid/Grid";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -103,7 +108,7 @@ export function Home() {
         </div>
 
         {/* Content overlay */}
-        <div className="absolute inset-0 z-10 w-[60%] mt-[12%] ml-[20%]">
+        <div className="absolute inset-0 z-10 w-[60%] mt-[12%] ml-[20%] mb-10">
           <p className="text-center text-xl sm:text-5xl font-bold text-white mb-6">
             Holistic community platform for working professionals
           </p>
@@ -112,7 +117,7 @@ export function Home() {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
 
-          <button className="text-white bg-[#8162ff] rounded-full px-9 py-3 mt-5 ml-[41%] text-sm">
+          <button className="text-white bg-[#8162ff] rounded-sm px-16 py-3 mt-5 ml-[37%] text-sm">
             Join Now
           </button>
 
@@ -221,6 +226,214 @@ export function Home() {
             </div>
           </div>
         </div>
+      </div>
+
+
+      <div className="relative h-auto w-full bg-[#1d1441] flex flex-col items-center justify-center  mt-20" >
+      <h2 className=" text-white text-4xl mt-12" >Key Segments Of Innovators</h2>
+      <div>
+      <div className="flex justify-center space-x-6 mt-6">
+      <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-[500px] p-6 border border-[#372b59]">
+        <div className="mb-6">
+        <div className="relative w-full overflow-hidden rounded-t-3xl bg-indigo-900">
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-100/20 transform skew-x-12 translate-x-20 z-10" />
+      <div className="p-4">
+        <img
+          src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+          alt="Campus meeting"
+          className="w-[80%] ml-8 h-48 object-cover  rounded-lg flex justify-center"
+        />
+      </div>
+    </div>
+          <h2 className="text-indigo-400 text-xl font-semibold mb-2">
+            CAMPUS LEADER
+          </h2>
+          <p className="text-white/80 text-sm leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, 
+            Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, 
+            Lorem ipsum.
+          </p>
+        </div>
+      </div>
+
+      <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-[500px] p-6 border border-[#372b59]">
+        <div className="mb-6">
+        <div className="relative w-full overflow-hidden rounded-t-3xl bg-indigo-900">
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-100/20 transform skew-x-12 translate-x-20 z-10" />
+      <div className="p-4">
+        <img
+          src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+          alt="Campus meeting"
+          className="w-[80%] ml-8 h-48 object-cover  rounded-lg flex justify-center"
+        />
+      </div>
+    </div>
+          <h2 className="text-indigo-400 text-xl font-semibold mb-2">
+            CAMPUS LEADER
+          </h2>
+          <p className="text-white/80 text-sm leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, 
+            Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, 
+            Lorem ipsum.
+          </p>
+        </div>
+      </div>
+    </div>
+
+      </div>
+     
+   
+
+<div>
+<div className="relative w-[100vw] h-auto bg-[#1d1441] overflow-hidden">
+      {/* Dotted pattern container */}
+      <div className="absolute inset-0">
+        {/* Generate a 10x10 grid of dots */}
+        {[...Array(400)].map((_, index) => {
+          const row = Math.floor(index / 20);
+          const col = index % 20;
+          return (
+            <div
+              key={index}
+              className="absolute w-1.5 h-1.5 rounded-full bg-blue-500/20"
+              style={{
+                left: `${(col * 5) + 2.5}%`,
+                top: `${(row * 5) + 2.5}%`,
+              }}
+            />
+          )}
+        )}
+      </div>
+      
+      {/* Content container */}
+      <div className="relative z-10 p-6">
+        {/* Your content goes here */}
+        <div >
+
+        <div className="p-6 space-y-6">
+
+{/* Bottom horizontal section */}
+<div className="flex justify-center">
+  <div className="flex bg-[#1a1528]/95 backdrop-blur-sm rounded-3xl overflow-hidden w-full max-w-[1024px]">
+    {/* Left content */}
+    <div className="flex-1 p-12">
+      <h2 className="text-blue-500 text-lg font-semibold mb-4">
+        STUDENT COMMUNITY
+      </h2>
+      <p className="text-white/80 text-sm leading-relaxed">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet,
+        Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet,
+        Lorem ipsum.
+      </p>
+    </div>
+    
+    {/* Right section with gradient */}
+    <div className="relative w-2/5 bg-purple-900/50">
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 to-purple-600/30" />
+      <div className="p-8 relative z-10">
+        <img
+          src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+          alt="Student community"
+          className="w-full h-64 object-cover rounded-2xl"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+        <div className="p-6 space-y-6">
+
+{/* Bottom horizontal section */}
+<div className="flex justify-center">
+  <div className="flex bg-[#1a1528]/95 backdrop-blur-sm rounded-3xl overflow-hidden w-full max-w-[1024px]">
+    {/* Left content */}
+   
+    
+    {/* Right section with gradient */}
+    <div className="relative w-2/5 bg-purple-900/50">
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 to-purple-600/30" />
+      <div className="p-8 relative z-10">
+        <img
+          src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+          alt="Student community"
+          className="w-full h-64 object-cover rounded-2xl"
+        />
+      </div>
+    </div>
+
+    <div className="flex-1 p-12">
+      <h2 className="text-blue-500 text-lg font-semibold mb-4">
+        STARTUP COMMUNITY
+      </h2>
+      <p className="text-white/80 text-sm leading-relaxed">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet,
+        Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet,
+        Lorem ipsum.
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div>
+      <div className="flex justify-center space-x-6 mt-6">
+      <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-[500px] p-6 border border-[#372b59]">
+        <div className="mb-6">
+        <div className="relative w-full overflow-hidden rounded-t-3xl bg-indigo-900">
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-100/20 transform skew-x-12 translate-x-20 z-10" />
+      <div className="p-4">
+        <img
+          src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+          alt="Campus meeting"
+          className="w-[80%] ml-8 h-48 object-cover  rounded-lg flex justify-center"
+        />
+      </div>
+    </div>
+          <h2 className="text-indigo-400 text-xl font-semibold mb-2">
+            CAMPUS LEADER
+          </h2>
+          <p className="text-white/80 text-sm leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, 
+            Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, 
+            Lorem ipsum.
+          </p>
+        </div>
+      </div>
+
+      <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-[500px] p-6 border border-[#372b59]">
+        <div className="mb-6">
+        <div className="relative w-full overflow-hidden rounded-t-3xl bg-indigo-900">
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-100/20 transform skew-x-12 translate-x-20 z-10" />
+      <div className="p-4">
+        <img
+          src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+          alt="Campus meeting"
+          className="w-[80%] ml-8 h-48 object-cover  rounded-lg flex justify-center"
+        />
+      </div>
+    </div>
+          <h2 className="text-indigo-400 text-xl font-semibold mb-2">
+            CAMPUS LEADER
+          </h2>
+          <p className="text-white/80 text-sm leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, 
+            Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, 
+            Lorem ipsum.
+          </p>
+        </div>
+      </div>
+    </div>
+
+      </div>
+
       </div>
 
       <div className="relative h-[500px] w-full bg-[#1d1441] flex flex-col items-center justify-center z-50">
@@ -349,11 +562,56 @@ export function Home() {
   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl font-extrabold ">
     Who Can Join Innovaters
   </div>
-  
-
-
-  
 </div>
+
+<div className="w-full  p-8 relative h-[250px] bg-[#1d1441] flex flex-col items-center justify-center z-50">
+      <div className="flex justify-center space-x-6">
+        {/* Working Professionals Card */}
+        <div className="relative w-[350px] h-[200px] overflow-hidden rounded-3xl">
+          <img
+            src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+            alt="Working Professionals"
+            className="w-full h-full object-cover"
+          />
+          {/* <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/60 via-black/40 to-transparent backdrop-blur-[2px]" /> */}
+      {/* Text element */}
+      <button className="absolute bottom-6 left-1/2 -translate-x-1/2 px-12 py-2 bg-white/10 backdrop-blur-md rounded-full">
+        <span className="text-white font-medium text-lg whitespace-nowrap">
+          Working Professionals
+        </span>
+      </button>
+      
+        </div>
+
+        {/* Students Card */}
+        <div className="relative w-[350px] h-[200px] overflow-hidden rounded-3xl">
+          <img
+            src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+            alt="Students"
+            className="w-full h-full object-cover"
+          />
+           <button className="absolute bottom-6 left-1/2 -translate-x-1/2 px-20 py-2 bg-white/10 backdrop-blur-md rounded-full">
+        <span className="text-white font-medium text-lg whitespace-nowrap">
+          Students
+        </span>
+      </button>
+        </div>
+
+        {/* Startup Founders Card */}
+        <div className="relative w-[350px] h-[200px] overflow-hidden rounded-3xl">
+          <img
+            src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+            alt="Startup Founders"
+            className="w-full h-full object-cover"
+          />
+         <button className="absolute bottom-6 left-1/2 -translate-x-1/2 px-12 py-2 bg-white/10 backdrop-blur-md rounded-full">
+        <span className="text-white font-medium text-lg whitespace-nowrap">
+          Startup Founders
+        </span>
+      </button>
+        </div>
+      </div>
+    </div>
 
       <div className="relative h-[300px] w-full bg-[#1d1441] flex flex-col items-center justify-center z-50">
   {/* Row 1 */}
@@ -407,10 +665,38 @@ export function Home() {
   {/* Centered Text */}
   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl font-extrabold">
     Top Events
-  </div>
+  </div>  
+</div>
 
+<div>
 
-  
+<div className=" relative h-auto w-50% bg-[#1d1441] flex flex-col items-center justify-center z-50  min-h-screen ">
+      {/* Dotted pattern container */}
+      <div className="absolute inset-0">
+        {/* Generate a 10x10 grid of dots */}
+        {[...Array(300)].map((_, index) => {
+          const row = Math.floor(index / 15);
+          const col = index % 15;
+          return (
+            <div
+              key={index}
+              className="absolute w-1.5 h-1.5 rounded-full bg-blue-500/20"
+              style={{
+                left: `${(col * 8.5) + 2.5}%`,
+                top: `${(row * 7.5) + 2.5}%`,
+              }}
+            />
+          )}
+        )}
+      </div>
+      
+      {/* Content container */}
+      <div className="relative z-10 p-6">
+        {/* Your content goes here */}
+        <EventCards/>
+      </div>
+    </div>
+
 </div>
 
 <div className="relative h-[300px] w-full bg-[#1d1441] flex flex-col items-center justify-center z-50">
@@ -420,7 +706,7 @@ export function Home() {
   </p>
 
   {/* Button Section */}
-  <button className="text-white bg-[#8162ff] rounded-full px-9 py-3 mt-5 text-sm sm:text-base">
+  <button className="text-white bg-[#8162ff] rounded-sm px-14 py-3 mt-5 text-sm sm:text-base">
     Join Now
   </button>
 </div>

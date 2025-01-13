@@ -1,6 +1,14 @@
-import React from 'react';
+// import React from 'react';
+// import { use } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+
+  const navigate = useNavigate()
+
+  const handleLoginClick = () => {
+    navigate('/login');
+  };
   return (
     <nav className="bg-transparent h-16 flex items-center px-8 sticky top-0 z-30 ">
       <div className="flex items-center w-full">
@@ -19,7 +27,7 @@ const Navbar = () => {
         </div>
 
         {/* Login Button */}
-        <button className="ml-auto bg-[#8162ff]  text-white py-2 px-12  rounded-full hover:opacity-80">
+        <button className="ml-auto bg-[#8162ff]  text-white py-2 px-12  rounded-sm hover:opacity-80" onClick={handleLoginClick } >
           Login
         </button>
       </div>

@@ -1,92 +1,82 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import React, { useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
 
-const PixelatedImage = () => {
-  const containerRef = useRef(null);
-  const GRID_SIZE = 8; // Number of segments in each direction
+const PixelateImage = () => {
+  const imageRef = useRef(null);
 
   useEffect(() => {
-    const container = containerRef.current;
-    const cells = [];
+    const image = imageRef.current;
 
-    // Create grid cells
-    for (let i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
-      const cell = document.createElement('div');
-      const x = (i % GRID_SIZE) * (100 / GRID_SIZE);
-      const y = Math.floor(i / GRID_SIZE) * (100 / GRID_SIZE);
-      
-      cell.style.cssText = `
-        position: absolute;
-        width: ${100 / GRID_SIZE}%;
-        height: ${100 / GRID_SIZE}%;
-        left: ${x}%;
-        top: ${y}%;
-        background-image: url('../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg');
-        background-size: ${GRID_SIZE * 100}% ${GRID_SIZE * 100}%;
-        background-position: ${-x}% ${-y}%;
-        transform: scale(1);
-        opacity: 1;
-        transition: all 0.2s ease-out;
-      `;
-      
-      cells.push(cell);
-      container.appendChild(cell);
-    }
+    const createPixelEffect = () => {
+      const existingPixels = image.querySelectorAll('.pixel');
+      existingPixels.forEach(pixel => pixel.remove());
 
-    // Animation setup
-    const handleMouseEnter = () => {
-      gsap.to(cells, {
+      const numPixels = 20;
+      const imageWidth = image.offsetWidth;
+      const imageHeight = image.offsetHeight;
+      const pixelWidth = imageWidth / numPixels;
+      const pixelHeight = imageHeight / numPixels;
+
+      for (let y = 0; y < numPixels; y++) {
+        for (let x = 0; x < numPixels; x++) {
+          const pixel = document.createElement('div');
+          pixel.classList.add('pixel');
+          pixel.style.width = `${pixelWidth}px`;
+          pixel.style.height = `${pixelHeight}px`;
+          pixel.style.position = 'absolute';
+          pixel.style.top = `${y * pixelHeight}px`;
+          pixel.style.left = `${x * pixelWidth}px`;
+          pixel.style.backgroundImage = `url(${image.src})`;
+          pixel.style.backgroundPosition = `-${x * pixelWidth}px -${y * pixelHeight}px`;
+
+          image.appendChild(pixel);
+        }
+      }
+
+      gsap.to(image.querySelectorAll('.pixel'), {
         duration: 0.5,
+        opacity: 0.5,
+        scale: 1.2,
         stagger: {
           amount: 0.3,
-          grid: [GRID_SIZE, GRID_SIZE],
-          from: "center"
-        },
-        z: "random(-100, 100)",
-        rotationX: "random(-60, 60)",
-        rotationY: "random(-60, 60)",
-        opacity: 0.6,
+          grid: [numPixels, numPixels]
+        }
       });
     };
 
-    const handleMouseLeave = () => {
-      gsap.to(cells, {
+    image.addEventListener('mouseenter', createPixelEffect);
+    image.addEventListener('mouseleave', () => {
+      gsap.to(image.querySelectorAll('.pixel'), {
         duration: 0.5,
-        stagger: {
-          amount: 0.2,
-          grid: [GRID_SIZE, GRID_SIZE],
-          from: "center"
-        },
-        z: 0,
-        rotationX: 0,
-        rotationY: 0,
-        opacity: 1,
-        ease: "power2.inOut"
+        opacity: 0,
+        scale: 1,
+        onComplete: () => {
+          const pixels = image.querySelectorAll('.pixel');
+          pixels.forEach(pixel => pixel.remove());
+        }
       });
-    };
+    });
 
-    // Event listeners
-    container.addEventListener('mouseenter', handleMouseEnter);
-    container.addEventListener('mouseleave', handleMouseLeave);
-
-    // Cleanup
     return () => {
-      container.removeEventListener('mouseenter', handleMouseEnter);
-      container.removeEventListener('mouseleave', handleMouseLeave);
-      cells.forEach(cell => cell.remove());
+      image.removeEventListener('mouseenter', createPixelEffect);
+      image.removeEventListener('mouseleave', null); // Clean up both event listeners
     };
   }, []);
 
   return (
-    <div className="w-full max-w-2xl mx-auto p-8">
-      <div 
-        ref={containerRef} 
-        className="relative w-full aspect-video bg-black overflow-hidden rounded-lg"
-      >
-      <img src='../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg'/>
-      </div>
+    
+    <div className="flex justify-center items-center h-screen bg-gray-200">
+      <div className="relative w-72 h-72">
+      <img
+        ref={imageRef}
+        src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg" // Ensure this path is correct
+        alt="Pixelate Effect"
+        className="w-full h-full object-cover"
+      />
+    </div>
     </div>
   );
 };
 
-export default PixelatedImage;
+
+export default PixelateImage

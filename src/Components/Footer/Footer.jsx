@@ -23,13 +23,13 @@ const Footer = () => {
           {/* Subscribe Form */}
           <div className="w-full md:w-auto">
             <h3 className="text-lg mb-4">Subscribe</h3>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col w-[70%] sm:flex-row gap-4">
               <input
                 type="email"
                 placeholder="Enter your email"
                 className="px-4 py-2 bg-transparent border border-white rounded text-white w-full sm:w-80"
               />
-              <button className="bg-[#52487a] text-white px-6 py-2 rounded">
+              <button className="bg-[#8162ff] text-white px-14 py-2 rounded-sm ">
                 Subscribe
               </button>
             </div>
