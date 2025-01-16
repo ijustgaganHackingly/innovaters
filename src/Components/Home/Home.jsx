@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Footer from "../Footer/Footer";
 import EventCards from "../Card/EventCard";
+import SplitTextOnScroll from "../SplitText/SplitTextOnScroll";
 // import React from 'react';
 // import { Card, CardHeader, CardBody, CardFooter } from '@/components/ui/card';
 // import { Button } from '@/components/ui/button';
@@ -16,6 +17,9 @@ export function Home() {
   const rightCardRef = useRef(null);
   const leftCardRef = useRef(null);
   const centerCardRef = useRef(null);
+
+
+  
 
 
   const innovators = [
@@ -53,6 +57,9 @@ export function Home() {
       duration: 1,
       ease: "power1.inOut",
     });
+
+
+    
 
     gsap.to(centerCardRef.current, {
       scrollTrigger: {
@@ -110,11 +117,18 @@ export function Home() {
         {/* Content overlay */}
         <div className="absolute inset-0 z-10 w-[60%] mt-[12%] ml-[20%] mb-10 ">
           <p className="text-center text-xl sm:text-5xl font-bold text-white mb-6">
-            Holistic community platform for working professionals
+          <SplitTextOnScroll
+        text="  Holistic community platform for working professionals"
+        textClassName="text-center text-4xl text-white"
+      />
+          
           </p>
           <p className="text-center text-lg sm:text-2xl text-white">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          <SplitTextOnScroll
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        textClassName="text-center text-4xl text-white"
+      />
+            
           </p>
 
           <button className="text-white bg-[#8162ff] rounded-[6px] px-16 py-3 mt-5 ml-[37%] text-sm">
@@ -230,7 +244,10 @@ export function Home() {
 
 
       <div className="relative h-auto w-full bg-gradient-to-t from-[#1d1441] via-[#2b1d5c] to-[#4e3e905a]  flex flex-col items-center justify-center  pt-24 " >
-      <h2 className=" text-white text-4xl mt-12" >Key Segments Of Innovators</h2>
+      <h2 className=" text-white text-4xl mt-12" > <SplitTextOnScroll
+        text="Key Segments Of Innovaters"
+        textClassName="text-center text-4xl text-white"
+      /></h2>
       <div>
       <div className="flex justify-center space-x-6 mt-16">
       <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-[500px] p-6 border border-[#372b59]">
@@ -490,7 +507,10 @@ export function Home() {
 
     {/* Centered Text */}
     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl font-extrabold pointer-events-none">
-      Why Innovators?
+    <SplitTextOnScroll
+        text="Why Innovaters"
+        textClassName="text-center text-4xl text-white"
+      />
     </div>
   </div>
 
@@ -561,7 +581,10 @@ export function Home() {
 
   {/* Centered Text */}
   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl font-extrabold ">
-    Who Can Join Innovaters
+  <SplitTextOnScroll
+        text="Who Can Join Innovaters"
+        textClassName="text-center text-4xl text-white"
+      />
   </div>
 </div>
 
@@ -665,7 +688,10 @@ export function Home() {
 
   {/* Centered Text */}
   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl font-extrabold">
-    Top Events
+  <SplitTextOnScroll
+        text="Top Events"
+        textClassName="text-center text-4xl text-white"
+      />
   </div>  
 </div>
 
@@ -753,9 +779,14 @@ export function Home() {
 
 
   {/* Text Section */}
-  <p className="text-center text-4xl text-white">
+  {/* <p className="text-center text-4xl text-white">
     Join Innovators and Experience the Power of Our Community
-  </p>
+  </p> */}
+
+  <SplitTextOnScroll
+        text="Join Innovators and Experience the Power of Our Community"
+        textClassName="text-center text-4xl text-white"
+      />
 
   {/* Button Section */}
   <button className="text-white bg-[#8162ff] rounded-[6px] px-14 py-3 mt-5 text-sm sm:text-base">
