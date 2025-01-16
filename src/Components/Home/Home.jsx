@@ -87,15 +87,15 @@ export function Home() {
     <div
       key={index}
       className={`h-full w-full ${
-        specialIndices.includes(index) ? "bg-[#312555]" : "bg-[#1d1441]"
-      } border border-[#372b59]`}
+        specialIndices.includes(index) ? "bg-[#624da0]" : "bg-[#1d1441]"
+      } border border-[#372b59] opacity-20`}
     />
   ));
 
   return (
     <>
       <Navbar />
-      <div className="h-[140vh] w-full relative top-0 overflow-hidden mt-0">
+      <div className="h-[150vh] w-full relative top-0 overflow-hidden mt-0 bg-gradient-to-b from-[#1d1441] via-[#1a1545] to-[#6855b55a] ">
         {/* Grid background */}
         <div
           className="absolute inset-0 grid"
@@ -108,7 +108,7 @@ export function Home() {
         </div>
 
         {/* Content overlay */}
-        <div className="absolute inset-0 z-10 w-[60%] mt-[12%] ml-[20%] mb-10">
+        <div className="absolute inset-0 z-10 w-[60%] mt-[12%] ml-[20%] mb-10 ">
           <p className="text-center text-xl sm:text-5xl font-bold text-white mb-6">
             Holistic community platform for working professionals
           </p>
@@ -117,7 +117,7 @@ export function Home() {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
 
-          <button className="text-white bg-[#8162ff] rounded-sm px-16 py-3 mt-5 ml-[37%] text-sm">
+          <button className="text-white bg-[#8162ff] rounded-[6px] px-16 py-3 mt-5 ml-[37%] text-sm">
             Join Now
           </button>
 
@@ -208,12 +208,12 @@ export function Home() {
             {/* Right Card */}
             <div
               ref={rightCardRef}
-              className="absolute right-0 transform translate-x-24 mt-6 bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-[300px] h-[350px] p-6 border border-[#372b59] pb-6"
+              className="absolute right-0 transform translate-x-24 mt-6 bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-[300px] h-[400px] p-6 border border-[#372b59] pb-2"
             >
               <h2 className="text-white text-lg font-semibold mb-6">
                 Startup Community
               </h2>
-              <div className="space-y-5 h-[250px] overflow-y-scroll scrollbar-hide">
+              <div className="space-y-5 h-[300px] overflow-y-scroll scrollbar-hide">
                 {["Startup-1", "Startup-2", "Startup-3", "Startup-4", "Startup-5", "Startup-6","Startup-7", "Startup-8", "Startup-9", "Startup-10",  ].map(
                   (startup, index) => (
                     <div key={index} className="flex items-center gap-4">
@@ -229,10 +229,10 @@ export function Home() {
       </div>
 
 
-      <div className="relative h-auto w-full bg-[#1d1441] flex flex-col items-center justify-center  mt-20" >
+      <div className="relative h-auto w-full bg-gradient-to-t from-[#1d1441] via-[#2b1d5c] to-[#4e3e905a]  flex flex-col items-center justify-center  pt-24 " >
       <h2 className=" text-white text-4xl mt-12" >Key Segments Of Innovators</h2>
       <div>
-      <div className="flex justify-center space-x-6 mt-6">
+      <div className="flex justify-center space-x-6 mt-16">
       <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-[500px] p-6 border border-[#372b59]">
         <div className="mb-6">
         <div className="relative w-full overflow-hidden rounded-t-3xl bg-indigo-900">
@@ -245,7 +245,7 @@ export function Home() {
         />
       </div>
     </div>
-          <h2 className="text-indigo-400 text-xl font-semibold mb-2">
+          <h2 className="text-indigo-400 text-xl font-semibold mb-2 mt-2">
             CAMPUS LEADER
           </h2>
           <p className="text-white/80 text-sm leading-relaxed">
@@ -268,7 +268,7 @@ export function Home() {
         />
       </div>
     </div>
-          <h2 className="text-indigo-400 text-xl font-semibold mb-2">
+          <h2 className="text-indigo-400 text-xl font-semibold mb-2 mt-2">
             CAMPUS LEADER
           </h2>
           <p className="text-white/80 text-sm leading-relaxed">
@@ -285,7 +285,7 @@ export function Home() {
    
 
 <div>
-<div className="relative w-[100vw] h-auto bg-[#1d1441] overflow-hidden">
+<div className="relative w-[100vw] h-auto  overflow-hidden">
       {/* Dotted pattern container */}
       <div className="absolute inset-0">
         {/* Generate a 10x10 grid of dots */}
@@ -295,7 +295,7 @@ export function Home() {
           return (
             <div
               key={index}
-              className="absolute w-1.5 h-1.5 rounded-full bg-blue-500/20"
+              className="absolute w-1.5 h-1.5 rounded-full bg-blue-700/10"
               style={{
                 left: `${(col * 5) + 2.5}%`,
                 top: `${(row * 5) + 2.5}%`,
@@ -303,6 +303,7 @@ export function Home() {
             />
           )}
         )}
+        
       </div>
       
       {/* Content container */}
@@ -384,7 +385,7 @@ export function Home() {
 </div>
 
 <div>
-      <div className="flex justify-center space-x-6 mt-6">
+      <div className="flex justify-center space-x-6 mt-6 ">
       <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-[500px] p-6 border border-[#372b59]">
         <div className="mb-6">
         <div className="relative w-full overflow-hidden rounded-t-3xl bg-indigo-900">
@@ -397,7 +398,7 @@ export function Home() {
         />
       </div>
     </div>
-          <h2 className="text-indigo-400 text-xl font-semibold mb-2">
+          <h2 className="text-indigo-400 text-xl font-semibold mb-2 mt-2">
             CAMPUS LEADER
           </h2>
           <p className="text-white/80 text-sm leading-relaxed">
@@ -420,7 +421,7 @@ export function Home() {
         />
       </div>
     </div>
-          <h2 className="text-indigo-400 text-xl font-semibold mb-2">
+          <h2 className="text-indigo-400 text-xl font-semibold mb-2 mt-2">
             CAMPUS LEADER
           </h2>
           <p className="text-white/80 text-sm leading-relaxed">
@@ -436,7 +437,7 @@ export function Home() {
 
       </div>
 
-      <div className="relative h-[500px] w-full bg-[#1d1441] flex flex-col items-center justify-center z-50">
+      <div className="relative h-[500px] w-full bg-gradient-to-t  from-[#6855b55a]  via-[#2b1d5c] to-[#1d1441] flex flex-col items-center justify-center z-50">
   {/* Rows with Grids */}
   <div className="relative w-full flex flex-col items-center justify-center">
     {/* Row 1 */}
@@ -450,7 +451,7 @@ export function Home() {
       {Array.from({ length: 17 }, (_, index) => (
         <div
           key={index}
-          className="bg-transparent border border-[#372b59] aspect-square"
+          className="bg-transparent border border-[#372b59]  opacity-30  aspect-square"
         />
       ))}
     </div>
@@ -466,7 +467,7 @@ export function Home() {
       {Array.from({ length: 16 }, (_, index) => (
         <div
           key={index}
-          className="bg-transparent border border-[#372b59] aspect-square"
+          className="bg-transparent border border-[#372b59] opacity-30  aspect-square"
         />
       ))}
     </div>
@@ -482,7 +483,7 @@ export function Home() {
       {Array.from({ length: 14 }, (_, index) => (
         <div
           key={index}
-          className="bg-transparent border border-[#372b59] aspect-square"
+          className="bg-transparent border border-[#372b59]  opacity-30  aspect-square"
         />
       ))}
     </div>
@@ -509,7 +510,7 @@ export function Home() {
 
 
 
-      <div className="relative h-[300px] w-full bg-[#1d1441] flex flex-col items-center justify-center z-50">
+      <div className="relative h-[300px] w-full bg-gradient-to-b  from-[#6855b55a] via-[#2b1d5c] to-[#1d1441] flex flex-col items-center justify-center z-50">
   {/* Row 1 */}
   <div
     className="grid "
@@ -521,7 +522,7 @@ export function Home() {
     {Array.from({ length: 17 }, (_, index) => (
       <div
         key={index}
-        className="bg-transparent border border-[#372b59] aspect-square"
+        className="bg-transparent border border-[#372b59]  opacity-70  aspect-square"
       />
     ))}
   </div>
@@ -537,7 +538,7 @@ export function Home() {
     {Array.from({ length: 16 }, (_, index) => (
       <div
         key={index}
-        className="bg-transparent border border-[#372b59] aspect-square"
+        className="bg-transparent border border-[#372b59]  opacity-30  aspect-square"
       />
     ))}
   </div>
@@ -553,7 +554,7 @@ export function Home() {
     {Array.from({ length: 14 }, (_, index) => (
       <div
         key={index}
-        className="bg-transparent border border-[#372b59] aspect-square"
+        className="bg-transparent border border-[#372b59]  opacity-30  aspect-square"
       />
     ))}
   </div>
@@ -564,7 +565,7 @@ export function Home() {
   </div>
 </div>
 
-<div className="w-full  p-8 relative h-[250px] bg-[#1d1441] flex flex-col items-center justify-center z-50">
+<div className="w-full  p-8 relative h-[250px] bg-gradient-to-b from-[#1d1441] via-[#2b1d5c] to-[#6855b55a] flex flex-col items-center justify-center z-50">
       <div className="flex justify-center space-x-6">
         {/* Working Professionals Card */}
         <div className="relative w-[350px] h-[200px] overflow-hidden rounded-3xl">
@@ -575,7 +576,7 @@ export function Home() {
           />
           {/* <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/60 via-black/40 to-transparent backdrop-blur-[2px]" /> */}
       {/* Text element */}
-      <button className="absolute bottom-6 left-1/2 -translate-x-1/2 px-12 py-2 bg-white/10 backdrop-blur-md rounded-full">
+      <button className="absolute bottom-6 left-1/2 -translate-x-1/2 px-12 py-2 bg-white/40 backdrop-blur-md rounded-full">
         <span className="text-white font-medium text-lg whitespace-nowrap">
           Working Professionals
         </span>
@@ -613,7 +614,7 @@ export function Home() {
       </div>
     </div>
 
-      <div className="relative h-[300px] w-full bg-[#1d1441] flex flex-col items-center justify-center z-50">
+      <div className="relative h-[300px] w-full bg-gradient-to-t from-[#1d1441] via-[#2b1d5c] to-[#6855b55a]  flex flex-col items-center justify-center z-50">
   {/* Row 1 */}
   <div
     className="grid "
@@ -625,7 +626,7 @@ export function Home() {
     {Array.from({ length: 17 }, (_, index) => (
       <div
         key={index}
-        className="bg-transparent border border-[#372b59] aspect-square"
+        className="bg-transparent border border-[#372b59]  opacity-30  aspect-square"
       />
     ))}
   </div>
@@ -641,7 +642,7 @@ export function Home() {
     {Array.from({ length: 16 }, (_, index) => (
       <div
         key={index}
-        className="bg-transparent border border-[#372b59] aspect-square"
+        className="bg-transparent border border-[#372b59]  opacity-30  aspect-square"
       />
     ))}
   </div>
@@ -657,7 +658,7 @@ export function Home() {
     {Array.from({ length: 14 }, (_, index) => (
       <div
         key={index}
-        className="bg-transparent border border-[#372b59] aspect-square"
+        className="bg-transparent border border-[#372b59]  opacity-30  aspect-square"
       />
     ))}
   </div>
@@ -670,7 +671,7 @@ export function Home() {
 
 <div>
 
-<div className=" relative h-auto w-50% bg-[#1d1441] flex flex-col items-center justify-center z-50  min-h-screen ">
+<div className=" relative h-auto w-50% bg-gradient-to-b from-[#1d1441] via-[#2b1d5c] to-[#6855b55a] flex flex-col items-center justify-center z-50  min-h-screen ">
       {/* Dotted pattern container */}
       <div className="absolute inset-0">
         {/* Generate a 10x10 grid of dots */}
@@ -680,7 +681,7 @@ export function Home() {
           return (
             <div
               key={index}
-              className="absolute w-1.5 h-1.5 rounded-full bg-blue-500/20"
+              className="absolute w-1.5 h-1.5 rounded-full bg-blue-600/10"
               style={{
                 left: `${(col * 8.5) + 2.5}%`,
                 top: `${(row * 7.5) + 2.5}%`,
@@ -698,17 +699,117 @@ export function Home() {
     </div>
 
 </div>
+<div className="relative h-[300px] w-full bg-gradient-to-t from-[#1d1441] via-[#2b1d5c] to-[#6855b55a]  flex flex-col items-center justify-center z-50">
+<div
+    className="grid "
+    style={{
+      gridTemplateColumns: "repeat(17, 1fr)",
+      width: "80%",
+    }}
+  >
+    {Array.from({ length: 17 }, (_, index) => (
+      <div
+        key={index}
+        className="bg-transparent border border-[#372b59]  opacity-30  aspect-square"
+      />
+    ))}
+  </div>
 
-<div className="relative h-[300px] w-full bg-[#1d1441] flex flex-col items-center justify-center z-50">
+  {/* Row 2 */}
+  <div
+    className="grid"
+    style={{
+      gridTemplateColumns: "repeat(16, 1fr)",
+      width: "76%",
+    }}
+  >
+    {Array.from({ length: 16 }, (_, index) => (
+      <div
+        key={index}
+        className="bg-transparent border border-[#372b59]  opacity-30  aspect-square"
+      />
+    ))}
+  </div>
+
+  {/* Row 3 */}
+  <div
+    className="grid"
+    style={{
+      gridTemplateColumns: "repeat(14, 1fr)",
+      width: "70%",
+    }}
+  >
+    {Array.from({ length: 14 }, (_, index) => (
+      <div
+        key={index}
+        className="bg-transparent border border-[#372b59]  opacity-30  aspect-square"
+      />
+    ))}
+  </div>
+</div>
+
+
+<div className="relative h-[300px] w-full bg-[#1d1441]  flex flex-col items-center justify-center z-50">
+
+
   {/* Text Section */}
-  <p className="text-center text-lg sm:text-2xl text-white mt-4">
+  <p className="text-center text-4xl text-white">
     Join Innovators and Experience the Power of Our Community
   </p>
 
   {/* Button Section */}
-  <button className="text-white bg-[#8162ff] rounded-sm px-14 py-3 mt-5 text-sm sm:text-base">
+  <button className="text-white bg-[#8162ff] rounded-[6px] px-14 py-3 mt-5 text-sm sm:text-base">
     Join Now
   </button>
+</div>
+
+<div className="relative h-[300px] w-full bg-gradient-to-b from-[#1d1441] via-[#2b1d5c] to-[#6855b55a]  flex flex-col items-center justify-center z-50">
+<div
+    className="grid "
+    style={{
+      gridTemplateColumns: "repeat(14, 1fr)",
+      width: "70%",
+    }}
+  >
+    {Array.from({ length: 14 }, (_, index) => (
+      <div
+        key={index}
+        className="bg-transparent border border-[#372b59]  opacity-30  aspect-square"
+      />
+    ))}
+  </div>
+
+  {/* Row 2 */}
+  <div
+    className="grid"
+    style={{
+      gridTemplateColumns: "repeat(16, 1fr)",
+      width: "76%",
+    }}
+  >
+    {Array.from({ length: 16 }, (_, index) => (
+      <div
+        key={index}
+        className="bg-transparent border border-[#372b59]  opacity-30  aspect-square"
+      />
+    ))}
+  </div>
+
+  {/* Row 3 */}
+  <div
+    className="grid"
+    style={{
+      gridTemplateColumns: "repeat(17, 1fr)",
+      width: "80%",
+    }}
+  >
+    {Array.from({ length: 17 }, (_, index) => (
+      <div
+        key={index}
+        className="bg-transparent border border-[#372b59] opacity-75   aspect-square"
+      />
+    ))}
+  </div>
 </div>
 
 

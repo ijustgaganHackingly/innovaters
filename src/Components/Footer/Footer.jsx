@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1f1646] text-white p-8">
+    <footer className="bg-gradient-to-t from-[#1d1441] via-[#2b1d5c] to-[#6855b55a] text-white p-8">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start mb-16">
@@ -29,7 +29,7 @@ const Footer = () => {
                 placeholder="Enter your email"
                 className="px-4 py-2 bg-transparent border border-white rounded text-white w-full sm:w-80"
               />
-              <button className="bg-[#8162ff] text-white px-14 py-2 rounded-sm ">
+              <button className="bg-[#8162ff] text-white px-14 py-2 rounded-[6px] ">
                 Subscribe
               </button>
             </div>

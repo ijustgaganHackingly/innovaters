@@ -10,7 +10,7 @@ const Navbar = () => {
     navigate('/login');
   };
   return (
-    <nav className="bg-transparent h-16 flex items-center px-8 sticky top-0 z-30 ">
+    <nav className="bg-transparent h-16 flex items-center px-8  ">
       <div className="flex items-center w-full">
         {/* Logo */}
         <div className="text-black bg-white font-bold text-sm py-1 px-3">LOGO</div>
@@ -27,7 +27,7 @@ const Navbar = () => {
         </div>
 
         {/* Login Button */}
-        <button className="ml-auto bg-[#8162ff]  text-white py-2 px-12  rounded-sm hover:opacity-80" onClick={handleLoginClick } >
+        <button className="ml-auto bg-[#8162ff]  text-white py-2 px-12  rounded-[6px] hover:opacity-80" onClick={handleLoginClick } >
           Login
         </button>
       </div>

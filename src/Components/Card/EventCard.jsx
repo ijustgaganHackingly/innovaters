@@ -20,15 +20,15 @@ const EventCards = () => {
     },
     {
       imageUrl: "../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg",
-      title: "Dream Job Decoded- insider secrets to get hired",
-      institution: "Online",
+      title: "Dream Job Decoded- insider secrets to get hired with us ",
+      institution: "Panipat Institute of Engineering & Technology",
       date: "29th Jul-3rd Aug'24",
       price: "249/- Only",
       buttonText: "View Event"
     },
     {
       imageUrl: "../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg",
-      title: "30 DAYS OF DSA",
+      title: "30 DAYS OF DSA Learn and get ready to overcome fear with us",
       institution: "Panipat Institute of Engineering & Technology",
       date: "10-11th May'24",
       price: "249/- Only",
@@ -37,10 +37,10 @@ const EventCards = () => {
   ];
 
   return (
-    <div className=" relative h-auto w-100%  flex flex-col items-center justify-center z-50 mt-0 min-h-screen p-8">
+    <div className=" relative h-auto w-100%   flex flex-col items-center justify-center z-50 mt-0 min-h-screen p-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-[82%]">
         {events.map((event, index) => (
-          <div key={index} className="bg-transparent rounded-lg overflow-hidden border border-[#4f3975]">
+          <div key={index} className="bg-transparent rounded-[6px] overflow-hidden border border-[#4f3975]">
             <div>
               <img 
                 className="w-full h-48 object-cover"
@@ -77,7 +77,7 @@ const EventCards = () => {
                 <p>{event.price}</p>
               </div>
               
-              <button className="w-full text-white bg-[#8162ff] hover:bg-[#6b4ff0] rounded-lg px-4 py-3 mt-5 text-sm transition-colors duration-200">
+              <button className="w-full text-white bg-[#8162ff] hover:bg-[#6b4ff0] rounded-[6px] px-4 py-3 mt-5 text-sm transition-colors duration-200">
                 {event.buttonText}
               </button>
             </div>
