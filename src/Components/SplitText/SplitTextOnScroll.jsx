@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SplitTextOnScroll = ({ text, textClassName = "" }) => {
+const SplitTextOnScroll = ({ text, textClassName  }) => {
   const textRef = useRef(null);
 
   useEffect(() => {
