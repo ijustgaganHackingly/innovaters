@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 
-.scrollbar-hide {
-  scrollbar-width: none; /* For Firefox */
-  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari, and Opera */
+/* For Webkit browsers like Chrome/Safari */
+*::-webkit-scrollbar {
+  display: none;
 }
 
 
@@ -23,6 +24,6 @@
 html, body {
   height: 100%;
   width: 100%;
-  background-color: #21164a; 
+  background-color: #1d1441; 
   overflow-x: hidden;
 }

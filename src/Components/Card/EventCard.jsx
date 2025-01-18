@@ -4,32 +4,32 @@ const EventCards = () => {
   const events = [
     {
       imageUrl: "../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg",
-      title: "36 hours to turn our hardware vision into reality",
-      institution: "Panipat Institute of Engineering & Technology",
-      date: "6-7th Sep'24",
+      title: "36 hours to turn vkpsekgv[kmg[e",
+      institution: "Panipat Institute jgbjesjgnseg",
+      date: "10-11th May'24",
       price: "249/- Only",
       buttonText: "Register Now"
     },
     {
       imageUrl: "../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg",
-      title: "CodeX 24- transforming ideas into solution in 24 hours",
-      institution: "Panipat Institute of Engineering & Technology",
+      title: "CodeX 24- pfksajgjfw ",
+      institution: "Panipat Institute vmsp[jgw[sjvws]] ",
       date: "10-11th May'24",
       price: "249/- Only",
       buttonText: "View Event"
     },
     {
       imageUrl: "../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg",
-      title: "Dream Job Decoded- insider secrets to get hired with us ",
-      institution: "Panipat Institute of Engineering & Technology",
+      title: "Dream Job gvms[dkvs[]] ",
+      institution: "Panipat Institut vjkpsgjsjgwa",
       date: "29th Jul-3rd Aug'24",
       price: "249/- Only",
       buttonText: "View Event"
     },
     {
       imageUrl: "../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg",
-      title: "30 DAYS OF DSA Learn and get ready to overcome fear with us",
-      institution: "Panipat Institute of Engineering & Technology",
+      title: "30 DAYS OF DSA kvs[kv[skvs[kvs[vks]]]] kgjgjghjdkskshjdeidkjkjfhgkdkll",
+      institution: "Panipat Institute jdssjv'spj'psazvja'pgjafj nldbnodnbodbnodnbodsnb",
       date: "10-11th May'24",
       price: "249/- Only",
       buttonText: "View Event"
@@ -43,14 +43,14 @@ const EventCards = () => {
           <div key={index} className="bg-transparent rounded-[6px] overflow-hidden border border-[#4f3975]">
             <div>
               <img 
-                className="w-full h-48 object-cover"
+                className="w-full h-[40vh] object-cover"
                 src={event.imageUrl}
                 alt={event.title}
               />
             </div>
             
-            <div className="p-5">
-              <h5 className="mb-2 text-sm font-bold tracking-tight text-white">
+            <div className="px-2 py-4 ">
+              <h5 className=" h-[10vh] w-full text-sm font-bold tracking-tight text-white">
                 {event.title}
               </h5>
               
@@ -60,13 +60,13 @@ const EventCards = () => {
                   alt="location"
                   className="w-5 h-5"
                 />
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-gray-400 h-[7vh]">
                   {event.institution}
                 </p>
               </div>
               
-              <div className="flex justify-between items-center text-sm text-gray-400">
-                <div className="flex items-center gap-2">
+              <div className="flex justify-between items-center text-sm text-gray-400 h-[6vh]">
+                <div className="flex items-center gap-2 ">
                   <img 
                     src="/api/placeholder/20/20"
                     alt="calendar"
