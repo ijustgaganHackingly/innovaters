@@ -76,8 +76,14 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-8 lg:mb-16">
           {/* Logo and Navigation */}
           <div className="w-full lg:w-auto">
-            <div className="bg-white text-black px-4 py-1 inline-block mb-6">
-              LOGO
+            <div className=" text-black px-4 py-1 inline-block mb-6">
+            <img 
+    src="../../../public/8.png" 
+    alt="Logo" 
+    className=" hidden md:flex  h-14  py-1 px-3" 
+  />
+
+  <img src='../../../public/icon.png' alt="Logo" className="md:hidden h-14 py-1 px-3"/>
             </div>
             <nav className="flex flex-wrap gap-4 sm:gap-6 lg:gap-8">
               <a href="#" className="hover:underline">Link One</a>

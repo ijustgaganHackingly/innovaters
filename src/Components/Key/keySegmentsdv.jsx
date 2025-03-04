@@ -1,11 +1,12 @@
 import React from 'react'
+import SplitTextOnScroll from '../SplitText/SplitTextOnScroll';
 
 const keySegmentsdv = () => {
   return (
     <div className="relative h-auto w-full bg-gradient-to-t from-[#1d1441] via-[#2b1d5c] to-[#44376f]  flex flex-col items-center justify-center   pt-24 " >
-    <h2 className=" text-white text-4xl mt-12 mb-2" > <SplitTextOnScroll
+    <h2 className=" text-white text-4xl mt-12 mb-2 " > <SplitTextOnScroll
       text="Key Segments Of Innovaters"
-      textClassName="text-center text-4xl text-white"
+      textClassName="text-center text-4xl text-white "
     /></h2>
     <div >
     <div className="flex justify-center space-x-6 mt-16">
@@ -58,6 +59,8 @@ const keySegmentsdv = () => {
 
     </div>
    
+ 
+
  
 
 <div>

@@ -1,0 +1,141 @@
+.find_event{
+    background-color: white;
+    padding: 10% 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, #FFFFFF , #F4F1FF, #FFFFFF);
+}
+
+.seach_btn{
+    display: flex;
+    width: 36%;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+.seach_btn button{
+    width: 40%;
+    border: 1px solid red;
+    padding: 10px 0px;
+    border-radius: 5px;
+}
+.search_options{
+    border: 1px solid green;
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    background-color: white;
+}
+.search_options input{
+    width: 100%;
+    padding: 10px 0px;
+}
+.search_option_search{
+    margin-top: 15px;
+}
+
+
+.find_event {
+    background-color: white;
+    padding: 10% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Updated class name */
+.search_btn {
+    display: flex;
+    width: 36%;
+    margin-top: 15px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.search_btn button {
+    width: 40%;
+    border: 1px solid red;
+    padding: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+.search_btn button:hover {
+    background-color: red;
+    color: white;
+}
+
+.search_options {
+    border: 1px solid green;
+    width: 55%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search_options input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.search_option_search {
+    padding: 10px;
+    color: green;
+    cursor: pointer;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+    .find_event h1 {
+        font-size: 35px;
+    }
+    
+    .search_btn {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .find_event {
+        padding: 15% 5%;
+    }
+    
+    .find_event h1 {
+        font-size: 28px;
+    }
+    
+    .search_btn {
+        width: 70%;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .search_btn button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .search_options {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .find_event h1 {
+        font-size: 24px;
+    }
+    
+    .search_btn {
+        width: 90%;
+    }
+}

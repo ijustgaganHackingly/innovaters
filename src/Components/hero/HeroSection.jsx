@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitTextOnScroll from '../SplitText/SplitTextOnScroll';
+import Navbar from "../Navbar/Navbar";
 
 const HeroSection = () => {
   const rightCardRef = useRef(null);
@@ -36,7 +37,7 @@ const HeroSection = () => {
           vars: {
             x: "100vw",
             y: "25vh",
-            rotate: 15,
+            rotate: 50,
             opacity: 0,
           }
         },
@@ -52,7 +53,7 @@ const HeroSection = () => {
           vars: {
             x: "-100vw",
             y: "25vh",
-            rotate: -15,
+            rotate: -50,
             opacity: 0,
           }
         }
@@ -84,9 +85,9 @@ const HeroSection = () => {
     <div 
       ref={sectionRef}
       className="relative overflow-hidden bg-gradient-to-b from-[#1d1441] via-[#1a1545] to-[#52447ec3] 
-        min-h-[260vh] 
-        sm:min-h-[280vh] 
-        md:min-h-[320vh] 
+        min-h-[210vh] 
+        sm:min-h-[230vh] 
+        md:min-h-[270vh] 
         lg:min-h-[160vh] 
         xl:min-h-[180vh]"
     >
@@ -108,6 +109,8 @@ const HeroSection = () => {
         }}
       />
 
+      <Navbar/>
+
       {/* Content overlay */}
       <div className="absolute inset-0 z-10 w-full px-4 md:px-8 lg:w-[80%] xl:w-[60%] mx-auto 
         pt-16 
@@ -127,7 +130,7 @@ const HeroSection = () => {
           >
             <SplitTextOnScroll
               text="Holistic community platform for working professionals"
-              textClassName="text-white"
+              textClassName="text-white py-2"
             />
           </div>
           <div className="text-center 
@@ -197,39 +200,21 @@ const HeroSection = () => {
             </div>
           </div>
 
+          
+
           {/* Center Card */}
           <div
             ref={centerCardRef}
-            className="w-full sm:w-[350px] xl:w-[400px] 
-              bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl 
-              p-3 sm:p-4 md:p-5 lg:p-6
-              border border-[#372b59] z-20"
+            className="w-full sm:w-[350px] xl:w-[400px] bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl p-3 sm:p-4 md:p-5 lg:p-6 border border-[#372b59] z-20"
           >
-            <h2 className="text-white text-sm sm:text-base md:text-lg font-semibold mb-4 md:mb-6">
-              Campus Leaderboard
-            </h2>
-            <div className="space-y-3 sm:space-y-4 md:space-y-5 
-              h-[250px] sm:h-[275px] md:h-[300px] 
-              overflow-y-scroll scrollbar-hide"
-            >
+            <h2 className="text-white text-sm sm:text-base md:text-lg font-semibold mb-4 md:mb-6">Campus Leaderboard</h2>
+            <div className="space-y-3 sm:space-y-4 md:space-y-5 h-[250px] sm:h-[275px] md:h-[300px] overflow-y-scroll scrollbar-hide">
               {[
-                {
-                  name: "Anshuman Jain",
-                  college: "Poornima College of Engineering",
-                  trophy: "🏆",
-                },
-                {
-                  name: "Gaurav Saxena",
-                  college: "Poornima College of Engineering",
-                  trophy: "🥈",
-                },
-                {
-                  name: "Himanshu Singh",
-                  college: "Saint John's University",
-                  trophy: "🥉",
-                },
+                { name: 'Anshuman Jain', college: 'Poornima College of Engineering', trophyImage: '../../../public/medal-1.png' },
+                { name: 'Gaurav Saxena', college: 'Poornima College of Engineering', trophyImage: '../../../public/medal-2.png' },
+                { name: 'Himanshu Singh', college: 'Saint John\'s University', trophyImage: '../../../public/medal-3.png' },
                 { name: "User 4", college: "College 4", trophy: "🎖" },
-                { name: "User 5", college: "College 5", trophy: "🎖" },
+                { name: "Anirudh Jaiswal", college: "Poornima College of Engineering", trophy: "🎖" },
                 { name: "User 6", college: "College 6", trophy: "🎖" },
                 { name: "User 7", college: "College 6", trophy: "🎖" },
                 { name: "User 8", college: "College 6", trophy: "🎖" },
@@ -237,7 +222,11 @@ const HeroSection = () => {
                 { name: "User 10", college: "College 6", trophy: "🎖" },
               ].map((user, index) => (
                 <div key={index} className="flex items-center gap-2 sm:gap-3 md:gap-4">
-                  <span className="text-lg sm:text-xl md:text-2xl">{user.trophy}</span>
+                  <img
+                    src={user.trophyImage}
+                    alt={`${user.name} trophy`}
+                    className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6"
+                  />
                   <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-[#4c3575] flex-shrink-0" />
                   <div>
                     <p className="text-white text-xs md:text-sm font-medium">{user.name}</p>
@@ -249,9 +238,9 @@ const HeroSection = () => {
             <img 
               src="/3d-gold-trophy-books-stack-graduation-cap 2.png"
               alt="Trophy decoration"
-              className="absolute bottom-4 right-4 
-                w-16 sm:w-18 md:w-20 lg:w-24 xl:w-28 
-                h-16 sm:h-18 md:h-20 lg:h-24 xl:h-28 
+              className="absolute bottom-4 right-0 
+                w-32 sm:w-18 md:w-28 lg:w-28 xl:w-32 
+                h-32 sm:h-18 md:h-28 lg:h-28 xl:h-32 
                 opacity-50"
             />
           </div>
