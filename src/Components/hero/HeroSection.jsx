@@ -105,7 +105,7 @@ const HeroSection = () => {
       <div
         className="absolute inset-0 bg-center bg-cover"
         style={{
-          backgroundImage: "url('../../../public/grid layers[1].png')", // Replace with your PNG path
+          backgroundImage: "url('/grid layers[1].png')", // Replace with your PNG path
         }}
       />
 
