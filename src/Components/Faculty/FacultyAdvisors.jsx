@@ -1,6 +1,6 @@
 import React, { useState} from 'react'
 import FooterFaculty from './FooterFaculty'
-import HeadingBanner from './HEadingBanner'
+import HeadingBanner from './HeadingBanner'
 import AboutUs from './AboutUs'
 import CoomonSection from './CoomonSection'
 import Commitment from './Commitment'
