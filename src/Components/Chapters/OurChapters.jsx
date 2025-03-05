@@ -67,7 +67,7 @@ const OurChapters = () => {
 
       <div className='flex flex-col relative items-center justify-center  w-full mb-20'>
 
-        <img src='../../../public/Map of India.svg' className='pl-40 relative'/>
+        <img src='/Map of India.svg' className='pl-40 relative'/>
 
            {/* Chapter Markers (Absolute Positioning) */}
            <ChapterMarker top={21} left={18} label="Manipal University Jaipur, Rajasthan" />

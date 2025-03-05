@@ -188,7 +188,7 @@ export function Home() {
     {/* Working Professionals Card */}
     <div className="relative w-full md:w-[200px] lg:w-[350px] h-[200px] overflow-hidden rounded-3xl">
       <img
-        src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+        src="/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
         alt="Working Professionals"
         className="w-full h-full object-cover"
       />
@@ -202,7 +202,7 @@ export function Home() {
     {/* Students Card */}
     <div className="relative w-full md:w-[200px] lg:w-[350px] h-[200px] overflow-hidden rounded-3xl">
       <img
-        src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+        src="/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
         alt="Students"
         className="w-full h-full object-cover"
       />
@@ -216,7 +216,7 @@ export function Home() {
     {/* Startup Founders Card */}
     <div className="relative w-full md:w-[200px] lg:w-[350px] h-[200px] overflow-hidden rounded-3xl">
       <img
-        src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+        src="/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
         alt="Startup Founders"
         className="w-full h-full object-cover"
       />

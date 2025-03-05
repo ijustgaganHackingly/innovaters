@@ -22,7 +22,7 @@ const WhoCanJoin = () => {
           className="relative w-full h-64 overflow-hidden rounded-3xl"
         >
           <img
-            src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+            src="/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
             alt={category.title}
             className="w-full h-full object-cover"
           />

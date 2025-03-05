@@ -78,12 +78,12 @@ const Footer = () => {
           <div className="w-full lg:w-auto">
             <div className=" text-black px-4 py-1 inline-block mb-6">
             <img 
-    src="../../../public/8.png" 
+    src="/8.png" 
     alt="Logo" 
     className=" hidden md:flex  h-14  py-1 px-3" 
   />
 
-  <img src='../../../public/icon.png' alt="Logo" className="md:hidden h-14 py-1 px-3"/>
+  <img src='/icon.png' alt="Logo" className="md:hidden h-14 py-1 px-3"/>
             </div>
             <nav className="flex flex-wrap gap-4 sm:gap-6 lg:gap-8">
               <a href="#" className="hover:underline">Link One</a>

@@ -15,7 +15,7 @@ const SecondTestimonial = () => {
       <h2 className="text-lg font-semibold mb-2">Get Rewarded</h2>
       <p className="text-sm text-gray-600 mb-6">Earn cash vouchers and exclusive benefits as you make a difference.</p>
       <div className="mt-0 flex  justify-center">
-        <img src="../../../public/rewards.png" alt="Trophy icons" className="h-48" />
+        <img src="/rewards.png" alt="Trophy icons" className="h-48" />
       </div>
     </div>
     
@@ -28,13 +28,13 @@ const SecondTestimonial = () => {
          <h2 className="text-lg font-semibold ">Scholarship Opportunities</h2>
          <p className="text-sm text-gray-600">Stand out and get rewarded<br/> for your hard work.</p>
          </div>
-          <img src="../../../public/scholarship.png" alt="Graduation cap" className="h-20" />
+          <img src="/scholarship.png" alt="Graduation cap" className="h-20" />
         </div>
       </div>
       
       {/* Early Access Card */}
       <div className="bg-gradient-to-t from-[#f4f1ff] to-[#f4f1ff00] rounded-lg p-6 flex items-center justify-between h-1/2">
-        <img src="../../../public/early access.png" alt="Calendar" className="h-24" />
+        <img src="/early access.png" alt="Calendar" className="h-24" />
         <div className="ml-4">
           <h2 className="text-lg font-semibold mb-2">Early Access to events</h2>
           <p className="text-sm text-gray-600">Be the first to know about upcoming opportunities.</p>
@@ -47,7 +47,7 @@ const SecondTestimonial = () => {
       <h2 className="text-lg font-semibold mb-2">Internship Opportunities</h2>
       <p className="text-sm text-gray-600 mb-6">Get to work with top MNCs and open doors to rewarding career paths.</p>
       <div className="mt-0 flex items-end justify-center">
-        <img src="../../../public/intrenship.png" alt="Briefcase" className="h-44" />
+        <img src="/intrenship.png" alt="Briefcase" className="h-44" />
       </div>
     </div>
   </div>

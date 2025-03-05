@@ -9,7 +9,7 @@ const AboutSection = () => {
       <div className='flex items-center justify-between py-6 z-10'>
         <div className='px-16'>
          <Link to='/'>
-         <img src='../../../public/Logo 2.png' alt='Hackingly Logo' className='h-10'/></Link>
+         <img src='/Logo 2.png' alt='Hackingly Logo' className='h-10'/></Link>
         </div>
         <div className='z-10'>
           <nav className='flex gap-8 text-gray-700 px-28'>

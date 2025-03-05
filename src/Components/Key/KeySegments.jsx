@@ -21,7 +21,7 @@ const KeySegments = () => {
           <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-100/20 transform skew-x-12 translate-x-20 z-10" />
           <div className="p-4">
             <img
-              src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+              src="/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
               alt="Campus meeting"
               className="w-[80%] ml-8 h-48 object-cover rounded-lg"
             />
@@ -44,7 +44,7 @@ const KeySegments = () => {
           <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-100/20 transform skew-x-12 translate-x-20 z-10" />
           <div className="p-4">
             <img
-              src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+              src="/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
               alt="Campus meeting"
               className="w-[80%] ml-8 h-48 object-cover rounded-lg"
             />
@@ -105,7 +105,7 @@ const KeySegments = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 to-purple-600/30" />
           <div className="p-4 sm:p-6 relative z-10">
             <img
-              src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+              src="/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
               alt="Student community"
               className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-2xl"
             />
@@ -135,7 +135,7 @@ const KeySegments = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 to-purple-600/30" />
           <div className="p-4 sm:p-6 relative z-10">
             <img
-              src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+              src="/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
               alt="Startup community"
               className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-2xl"
             />
@@ -154,7 +154,7 @@ const KeySegments = () => {
           <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-100/20 transform skew-x-12 translate-x-20 z-10" />
           <div className="p-4">
             <img
-              src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+              src="/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
               alt="Campus meeting"
               className="w-[80%] ml-8 h-48 object-cover rounded-lg"
             />
@@ -177,7 +177,7 @@ const KeySegments = () => {
           <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-100/20 transform skew-x-12 translate-x-20 z-10 " />
           <div className="p-4">
             <img
-              src="../../../public/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+              src="/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
               alt="Campus meeting"
               className="w-[80%] ml-8 h-48 object-cover rounded-lg"
             />
