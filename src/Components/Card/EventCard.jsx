@@ -22,7 +22,7 @@ const EventCards = () => {
   const [error, setError] = useState(null);
   const swiperRef = useRef(null);
   const [isresponsive, setIsResponsive] = useState('vertical');
-  const navigate = useNavigate(); // Initialize useNavigate
+//   const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     const listOpportunitiesAPICall = async () => {
