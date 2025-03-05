@@ -29,12 +29,15 @@ const ImpactSection = () => {
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto py-16 px-4">
+   <>
+     <div className="w-full max-w-6xl mx-auto py-16 px-4">
       <h2 className="text-4xl text-center font-semibold text-slate-700 mb-16">
         How You'll Make an Impact
       </h2>
       
-      <div className='w-full flex justify-center'><div className="grid grid-cols-1 md:grid-cols-3 w-[95%] gap-8">
+      
+    </div>
+    <div className='w-full flex justify-center'><div className="grid grid-cols-1 md:grid-cols-3 w-[87%] gap-8">
         {impactItems.map((item, index) => (
           <div key={index} className="flex items-start p-4">
             <div className="bg-purple-50 rounded-lg p-3 mr-4">
@@ -45,7 +48,7 @@ const ImpactSection = () => {
         ))}
       </div>
       </div>
-    </div>
+   </>
   );
 };
 

@@ -28,6 +28,7 @@ const FacultyAdvisors = () => {
          </div>
          <div className='z-10'>
            <nav className='flex gap-8 text-gray-700 px-28'>
+           <Link to='/' className='hover:text-gray-900'>Home</Link>
              <Link to="/about" className='hover:text-gray-900'>About Us</Link>
              <Link to="/events" className='hover:text-gray-900'>Our Events</Link>
              <Link to="/chapters" className='hover:text-gray-900'>Chapters</Link>

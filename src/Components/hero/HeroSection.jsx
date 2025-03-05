@@ -129,7 +129,7 @@ const HeroSection = () => {
             font-bold text-white"
           >
             <SplitTextOnScroll
-              text="Holistic community platform for working professionals"
+              text="Exclusive Community Platform for Tech Leaders and Visionaries!"
               textClassName="text-white py-2"
             />
           </div>
@@ -142,7 +142,7 @@ const HeroSection = () => {
             text-white"
           >
             <SplitTextOnScroll
-              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              text="An elite community platform uniting tech leaders, founders, investors, and exceptionally talented students, driving collaboration, entrepreneurship, innovation, and leadership.  "
               textClassName="text-white"
             />
           </div>

@@ -7,14 +7,22 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // Import React Icons
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { FaIndianRupeeSign } from 'react-icons/fa6';
 
+import { Card, CardContent, CardMedia, Typography, Button, Grid, Box } from '@mui/material';
+import CalendarIcon from '../../../public/cad icons/calendaricon.png';
+import FeesIcon from '../../../public/cad icons/fees-icon.png';
+import LocationIcon from '../../../public/cad icons/locationicon.png';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const EventCards = () => {
   const [events, setEvents] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const swiperRef = useRef(null); // Ref for Swiper instance
+  const swiperRef = useRef(null);
+  const [isresponsive, setIsResponsive] = useState('vertical');
+  const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     const listOpportunitiesAPICall = async () => {
@@ -53,6 +61,21 @@ const EventCards = () => {
     listOpportunitiesAPICall();
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      const newOrientation =
+        window.innerWidth >= 768 ? 'horizontal' : 'vertical';
+      setIsResponsive(newOrientation);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const safeRenderText = (value, fallback = "N/A") => {
     if (value === null || value === undefined) {
       return fallback;
@@ -75,56 +98,45 @@ const EventCards = () => {
     }
   };
 
-
-  if (isLoading) {
-    return <div>Loading Events...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-
-  const handleRedirect = () => {
-    window.location.href = 'https://www.hackingly.in/event';
+  const handleRedirect = (event) => {
+    const opportunityRef = event?.alias || event?.id;
+    window.location.href = `https://www.hackingly.in/events/${opportunityRef}`;
   };
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col items-center justify-center z-50 p-4 sm:p-6 md:p-8">
-      <div className="flex flex-col items-center justify-center w-full">
-
-
-        {/* Container for Swiper with Padding and Buttons */}
-        <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Flex Container for Arrows and Swiper */}
+    <Box className="relative min-h-screen w-full flex flex-col items-center justify-center z-50 p-4 sm:p-6 md:p-8">
+      <Box className="flex flex-col items-center justify-center w-full">
+       
+        <Box className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+    
           <div className="flex items-center gap-4 w-full">
-            {/* Left Arrow */}
+            
             <button
               className="text-[#8162ff] p-2 rounded-full hover:bg-[#6b4ff0] hover:text-white transition-colors"
-              onClick={() => swiperRef.current?.slidePrev()} // Go to previous slide
+              onClick={() => swiperRef.current?.slidePrev()}
             >
-              <FaArrowLeft className="w-5 h-5" /> {/* Left arrow icon */}
+              <FaArrowLeft className="w-5 h-5" />
             </button>
 
-            {/* Swiper Integration */}
             <Swiper
               modules={[Navigation, Pagination, Scrollbar, A11y]}
-              spaceBetween={10} // Space between cards
-              slidesPerView={1} // Default for mobile
-              navigation={false} // Disable default navigation
+              spaceBetween={10}
+              slidesPerView={1}
+              navigation={false}
               pagination={{ clickable: true }}
               breakpoints={{
                 640: {
-                  slidesPerView: 2, // 2 cards on tablets
+                  slidesPerView: 2,
                 },
                 768: {
-                  slidesPerView: 3, // 3 cards on small desktops
+                  slidesPerView: 3,
                 },
                 1024: {
-                  slidesPerView: 4, // 4 cards on larger screens
+                  slidesPerView: 4,
                 },
               }}
-              className="w-full flex-1 " // Swiper takes remaining space
-              onSwiper={(swiper) => (swiperRef.current = swiper)} // Store Swiper instance
+              className="w-full flex-1"
+              onSwiper={(swiper) => (swiperRef.current = swiper)}
             >
               {events.length > 0 ? (
                 events.map((event, index) => (
@@ -138,14 +150,14 @@ const EventCards = () => {
                         />
                       </div>
 
-                      <div className="px-2 sm:px-3 md:px-4 py-3 sm:py-4 flex flex-col flex-grow">
-                        <h5 className="min-h-[8vh] sm:min-h-[9vh] md:min-h-[10vh] text-sm sm:text-base font-bold tracking-tight text-white mb-2">
+                      <div className="px-2 sm:px-3 md:px-4 py-3 sm:py-2 flex flex-col flex-grow">
+                        <h5 className="min-h-[8vh] sm:min-h-[9vh] md:min-h-[10vh] text-sm sm:text-base font-semibold tracking-tight text-white mb-2">
                           {safeRenderText(event.title || event.name, "Untitled Event")}
                         </h5>
 
-                        <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                        <div className="flex items-center gap-1 mb-1 sm:mb-2">
                           <img
-                            src="/api/placeholder/20/20"
+                            src="../../../public/cad icons/locationicon.png"
                             alt="location"
                             className="w-4 h-4 sm:w-5 sm:h-5"
                           />
@@ -157,7 +169,7 @@ const EventCards = () => {
                         <div className="flex justify-between items-center text-xs sm:text-sm text-gray-400 min-h-[4vh] sm:min-h-[5vh] md:min-h-[6vh] mt-auto">
                           <div className="flex items-center gap-2">
                             <img
-                              src="/api/placeholder/20/20"
+                              src="../../../public/cad icons/calendaricon.png"
                               alt="calendar"
                               className="w-4 h-4 sm:w-5 sm:h-5"
                             />
@@ -165,7 +177,7 @@ const EventCards = () => {
                           </div>
                           <div className="flex items-center gap-2">
                             <img
-                              src="/api/placeholder/20/20"
+                              src="../../../public/cad icons/fees-icon.png"
                               alt="wallet"
                               className="w-4 h-4 sm:w-5 sm:h-5"
                             />
@@ -174,7 +186,7 @@ const EventCards = () => {
                         </div>
 
                         <button
-                          onClick={handleRedirect}
+                          onClick={() => handleRedirect(event)}
                           className="w-full text-white bg-[#8162ff] hover:bg-[#6b4ff0] rounded-[6px] px-3 sm:px-4 py-2 sm:py-3 mt-3 sm:mt-4 md:mt-5 text-xs sm:text-sm transition-colors duration-200"
                         >
                           View Event
@@ -190,22 +202,20 @@ const EventCards = () => {
               )}
             </Swiper>
 
-            {/* Right Arrow */}
             <button
               className="text-[#8162ff] p-2 rounded-full hover:bg-[#6b4ff0] hover:text-white transition-colors"
-              onClick={() => swiperRef.current?.slideNext()} // Go to next slide
+              onClick={() => swiperRef.current?.slideNext()}
             >
-              <FaArrowRight className="w-5 h-5" /> {/* Right arrow icon */}
+              <FaArrowRight className="w-5 h-5" />
             </button>
           </div>
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
 export default EventCards;
-
 
 // import React, { useState, useEffect } from 'react';
 // import axios from 'axios';

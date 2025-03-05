@@ -7,7 +7,8 @@ const SecondTestimonial = () => {
   <h1 className="text-[36px] leading-[44px] text-[#475467] font-semibold text-center mt-16 mb-16">
     Enjoy Exclusive Perks
   </h1>
-  <div className='w-full flex justify-center '>
+</div>
+<div className='w-full flex justify-center '>
   <div className="grid grid-cols-1 md:grid-cols-3 w-[85%]  gap-4">
     {/* Get Rewarded Card */}
     <div className="bg-gradient-to-t from-[#f4f1ff] to-[#f4f1ff00] rounded-lg py-6 px-4 flex flex-col">
@@ -21,12 +22,12 @@ const SecondTestimonial = () => {
     {/* Middle Column with Two Cards */}
     <div className="flex flex-col gap-4">
       {/* Scholarship Card */}
-      <div className="bg-gradient-to-t from-[#f4f1ff] to-[#f4f1ff00] rounded-lg  flex flex-col justify-evenly h-1/2 p-6">
-        <div>
-          <h2 className="text-lg font-semibold ">Scholarship Opportunities</h2>
-          <p className="text-sm text-gray-600">Stand out and get rewarded<br/> for your hard work.</p>
-        </div>
-        <div className="flex justify-end mt-0">
+      <div className="bg-gradient-to-t from-[#f4f1ff] to-[#f4f1ff00] rounded-lg  flex flex-col py-10 px-6">
+        <div className='flex justify-between'>
+         <div>
+         <h2 className="text-lg font-semibold ">Scholarship Opportunities</h2>
+         <p className="text-sm text-gray-600">Stand out and get rewarded<br/> for your hard work.</p>
+         </div>
           <img src="../../../public/scholarship.png" alt="Graduation cap" className="h-20" />
         </div>
       </div>
@@ -51,8 +52,6 @@ const SecondTestimonial = () => {
     </div>
   </div>
   </div>
-  
-</div>
     </div>
   )
 }

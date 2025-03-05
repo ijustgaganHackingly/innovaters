@@ -4,7 +4,7 @@ import ImpactSection from './ImpactSection'
 import SecondTestimonial from './SecondTestimonial'
 import WhoCanJoin from './WhoCanJoin'
 import FindEvent from './FindEvent'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaBars, FaTimes } from 'react-icons/fa'
 
 const CampusLeader = () => {
@@ -13,6 +13,13 @@ const CampusLeader = () => {
       const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
       };
+
+      const navigate = useNavigate()
+
+  const handleForm = () => {
+    console.log('Form Opened');
+    navigate('/campusForm')
+  }
   return (
     <div className=' w-full h-full bg-white' >
     <div className='hidden md:flex items-center justify-between py-6 z-10'>
@@ -61,11 +68,34 @@ const CampusLeader = () => {
                  <Link to="/chapters" className='py-2 text-gray-700 hover:text-gray-900 text-xl' onClick={toggleMobileMenu}>Chapters</Link>
                </nav>
              </div>
-      <div className=' w-full bg-white h-[534px] '>
+      {/* <div className=' w-full bg-white h-[534px] '>
         <div className=' w-full h-full ' >
             <img src='../../../public/banners/1440x605 (1).jpg'   alt='campus leader' className='w-full h-full object-cover' />
         </div>
+      </div> */}
+
+      <div className="w-full bg-gray-100">
+      <div className="relative w-full h-[534px]">
+       
+        <div className="absolute inset-0 w-full h-full">
+        <img src='../../../public/banners/1440x605 (1).jpg' className="w-full object-cover h-full bg-gray-100" />
+        </div>
+        
+        <div className="absolute inset-0 flex flex-col items-center md:items-start justify-center text-center px-4 md:px-20 ">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#fff] ">
+          Be the Voice of  
+          </h1>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#fff] mb-8 ">
+          Our Campus Leader Program!
+          </h1>
+          <button className="bg-[#8b71fe] hover:bg-[#7b59ff] text-white font-medium py-3 px-6 w-[196px] rounded-md transition-colors duration-300" onClick={handleForm}>
+            Join Us Today
+          </button>
+        </div>
       </div>
+    </div>
+
+
 
       <SecondTestimonial/>
 

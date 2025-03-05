@@ -51,8 +51,8 @@ const Navbar = () => {
               ) : (
                 // Circle icon
                 <g fill="white">
-                  <circle cx="50" cy="50" r="40" />
-                  <circle cx="50" cy="50" r="20" fill="#1d1441" />
+                  {/* <circle cx="50" cy="50" r="40" /> */}
+                  <circle cx="50" cy="50" r="20" fill="white" />
                   <rect x="48" y="10" width="4" height="80" fill="white" />
                   <rect x="10" y="48" width="80" height="4" fill="white" />
                 </g>

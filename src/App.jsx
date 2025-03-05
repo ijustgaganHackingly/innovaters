@@ -13,6 +13,7 @@ import ChaptersMain from './Components/Chapters/ChaptersMain'
 import Startup from './Components/StartruoCommunity/Startup'
 import Professionals from './Components/Professional/Professionals'
 import FacultyAdvisors from './Components/Faculty/FacultyAdvisors'
+import CampusLeaderForm from './Components/Forms/CampusLeaderForm'
 // import Chapter from './Components/Chapter_main/Chapter/Chapter'
 // import ImageGallery from './Components/Pixalate/ImageGallery'
 // import SwordAnimation from './Components/Pixalate/SwordAnimation'
@@ -30,6 +31,7 @@ const App = () => {
         <Route path='/professionals' element={<Professionals/>}/>
         <Route path='/faculty' element={<FacultyAdvisors/>}/>
         <Route path='/chapter' element={<ChaptersMain/>}/>
+        <Route path='/campusForm' element={<CampusLeaderForm/>}/>
 
         {/* <Route path='/animation' element={<PinAnimation/>}/> */}
         {/* <Route path='/pixel' element={<PixelatedImage/>}/> */}

@@ -1,6 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const HeadingBanner = () => {
+
+  const navigate = useNavigate()
+
+  const handleForm = () => {
+    console.log('Form Opened');
+    navigate('/campusForm')
+  }
   return (
     <div className="w-full bg-gray-100">
       <div className="relative w-full h-[534px]">
@@ -16,7 +24,7 @@ const HeadingBanner = () => {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#fff] mb-8 ">
           Education have no substitute!
           </h1>
-          <button className="bg-[#8b71fe] hover:bg-[#7b59ff] text-white font-medium py-3 px-6 w-[196px] rounded-md transition-colors duration-300">
+          <button className="bg-[#8b71fe] hover:bg-[#7b59ff] text-white font-medium py-3 px-6 w-[196px] rounded-md transition-colors duration-300" onClick={handleForm} >
             Join Us
           </button>
         </div>
