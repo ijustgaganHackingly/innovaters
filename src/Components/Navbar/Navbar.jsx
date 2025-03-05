@@ -20,6 +20,7 @@ const Navbar = () => {
         <div className="h-full flex items-center justify-center">
         
           <div className="absolute left-2">
+          
           <img 
     src="/8.png" 
     alt="Logo" 
