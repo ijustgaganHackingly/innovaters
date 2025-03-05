@@ -21,12 +21,12 @@ const Nav2 = () => {
         
           <div className="absolute left-2">
           <img 
-    src="../../../public/Logo 2.png" 
+    src="/public/Logo 2.png" 
     alt="Logo" 
     className=" hidden md:flex  h-14  py-1 px-3" 
   />
 
-  <img src='../../../public/icon.png' alt="Logo" className="md:hidden h-14 py-1 px-3"/>
+  <img src='/public/icon.png' alt="Logo" className="md:hidden h-14 py-1 px-3"/>
 
 </div>
 
