@@ -157,7 +157,7 @@ const EventCards = () => {
 
                         <div className="flex items-center gap-1 mb-1 sm:mb-2">
                           <img
-                            src="../../../public/cad icons/locationicon.png"
+                            src="/locationicon.png"
                             alt="location"
                             className="w-4 h-4 sm:w-5 sm:h-5"
                           />
@@ -169,7 +169,7 @@ const EventCards = () => {
                         <div className="flex justify-between items-center text-xs sm:text-sm text-gray-400 min-h-[4vh] sm:min-h-[5vh] md:min-h-[6vh] mt-auto">
                           <div className="flex items-center gap-2">
                             <img
-                              src="../../../public/cad icons/calendaricon.png"
+                              src="/calendaricon.png"
                               alt="calendar"
                               className="w-4 h-4 sm:w-5 sm:h-5"
                             />
@@ -177,7 +177,7 @@ const EventCards = () => {
                           </div>
                           <div className="flex items-center gap-2">
                             <img
-                              src="../../../public/cad icons/fees-icon.png"
+                              src="/fees-icon.png"
                               alt="wallet"
                               className="w-4 h-4 sm:w-5 sm:h-5"
                             />
