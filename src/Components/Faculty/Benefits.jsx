@@ -30,7 +30,7 @@ const Benefits = () => {
           </h1>
           <div className="absolute bottom-0 left-[30%] transform -translate-x-1/4 translate-y-1 w-40">
             <img 
-              src='../../../public/brush stroke.svg' 
+              src='/brush stroke.svg' 
               alt="brush stroke" 
               className="w-full"
             />
@@ -45,7 +45,7 @@ const Benefits = () => {
           {/* Make a Lasting Impact */}
           <div className="flex items-start">
             <div className="flex-shrink-0 mr-4">
-              <img src="../../../public/purple-icon.svg" alt="Impact" className="w-10 h-10" />
+              <img src="/purple-icon.svg" alt="Impact" className="w-10 h-10" />
             </div>
             <div className="text-left">
               <h4 className="text-md font-bold text-[#1d1d3d] uppercase mb-1">MAKE A LASTING IMPACT</h4>
@@ -56,7 +56,7 @@ const Benefits = () => {
           {/* Thought Leadership */}
           <div className="flex items-start">
             <div className="flex-shrink-0 mr-4">
-              <img src="../../../public/purple-icon.svg" alt="Leadership" className="w-10 h-10" />
+              <img src="/purple-icon.svg" alt="Leadership" className="w-10 h-10" />
             </div>
             <div className="text-left">
               <h4 className="text-md font-bold text-[#1d1d3d] uppercase mb-1">THOUGHT LEADERSHIP</h4>
@@ -67,7 +67,7 @@ const Benefits = () => {
             {/* Travel Opportunities */}
             <div className="flex items-start">
             <div className="flex-shrink-0 mr-4">
-              <img src="../../../public/purple-icon.svg" alt="Travel" className="w-10 h-10" />
+              <img src="/purple-icon.svg" alt="Travel" className="w-10 h-10" />
             </div>
             <div className="text-left">
               <h4 className="text-md font-bold text-[#1d1d3d] uppercase mb-1">TRAVEL OPPORTUNITIES</h4>
@@ -78,7 +78,7 @@ const Benefits = () => {
           {/* Exclusive Networking */}
           <div className="flex items-start">
             <div className="flex-shrink-0 mr-4">
-              <img src="../../../public/purple-icon.svg" alt="Networking" className="w-10 h-10" />
+              <img src="/purple-icon.svg" alt="Networking" className="w-10 h-10" />
             </div>
             <div className="text-left">
               <h4 className="text-md font-bold text-[#1d1d3d] uppercase mb-1">EXCLUSIVE NETWORKING</h4>
@@ -89,7 +89,7 @@ const Benefits = () => {
           {/* Recognition */}
           <div className="flex items-start">
             <div className="flex-shrink-0 mr-4">
-              <img src="../../../public/purple-icon.svg" alt="Recognition" className="w-10 h-10" />
+              <img src="/purple-icon.svg" alt="Recognition" className="w-10 h-10" />
             </div>
             <div className="text-left">
               <h4 className="text-md font-bold text-[#1d1d3d] uppercase mb-1">RECOGNITION</h4>
@@ -99,7 +99,7 @@ const Benefits = () => {
           {/* Shape The Future */}
           <div className="flex items-start">
             <div className="flex-shrink-0 mr-4">
-              <img src="../../../public/purple-icon.svg" alt="Future" className="w-10 h-10" />
+              <img src="/purple-icon.svg" alt="Future" className="w-10 h-10" />
             </div>
             <div className="text-left">
               <h4 className="text-md font-bold text-[#1d1d3d] uppercase mb-1">SHAPE THE FUTURE</h4>

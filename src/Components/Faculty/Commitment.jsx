@@ -10,7 +10,7 @@ const Commitment = () => {
           </h1>
           <div className="absolute bottom-0 right-0 transform translate-y-1 w-56">
             <img 
-              src='../../../public/brush stroke.svg' 
+              src='/brush stroke.svg' 
               alt="brush stroke" 
               className="w-full"
             />
