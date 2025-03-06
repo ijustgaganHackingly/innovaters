@@ -26,9 +26,9 @@ const AboutSection = () => {
           <p className="text-gray-600 text-lg mb-8 leading-relaxed">
             Ready to spark excitement at your campus? Establish a college chapter to create a central hub for tech, innovation and community. Get the chance to enhance the student experience, skill development and collaboration opportunities.
           </p>
-          <button className='px-[24px] py-[12px] bg-gradient-to-r from-[#8b41fe] to-[#7b59ff] text-white rounded-[6px] w-[196px] border-[1px]'>
+          <Link to='/chapterForm'><button className='px-[24px] py-[12px] bg-gradient-to-r from-[#8b41fe] to-[#7b59ff] text-white rounded-[6px] w-[196px] border-[1px]'>
             Sign Up
-          </button>
+          </button></Link>
         </div>
       </div>
 

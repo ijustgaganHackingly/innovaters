@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HeadingBanner = () => {
   return (
     <div className="w-full bg-gray-100">
-      <div className="relative w-full h-[534px]">
+      <div className="relative w-full h-[605px]">
        
         <div className="absolute inset-0 w-full h-full">
         <img src='/1440x605 (3).jpg' className="w-full object-cover h-full bg-gray-100" />
@@ -16,9 +17,9 @@ const HeadingBanner = () => {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#fff] mb-8 ">
           today's brightest minds!
           </h1>
-          <button className="bg-[#8b71fe] hover:bg-[#7b59ff] text-white font-medium py-3 px-6 rounded-md transition-colors duration-300">
+         <Link to='/professionalform'> <button className="bg-[#8b71fe] hover:bg-[#7b59ff] text-white font-medium py-3 px-6 rounded-md transition-colors duration-300">
             Become a Member
-          </button>
+          </button></Link>
         </div>
       </div>
     </div>

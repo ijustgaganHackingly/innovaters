@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const JoinNow = () => {
   return (
@@ -10,7 +11,7 @@ const JoinNow = () => {
        <h2 className=' text-4xl flex items-center justify-center'>inspire & guide you on your professional journey</h2>
        </div>
         <div className=' flex  mt-6' >
-            <button className='mr-[24px] rounded-[6px] border-[1px] py-[12px] px-[24px] bg-gradient-to-r from-[#8b71fe] to-[#7b59ff] text-white '>Join Us Today!</button>
+          <Link to='/professionalform'><button className='mr-[24px] rounded-[6px] border-[1px] py-[12px] px-[24px] bg-gradient-to-r from-[#8b71fe] to-[#7b59ff] text-white '>Join Us Today!</button></Link>
         </div>
         </div>
       </div>

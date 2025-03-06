@@ -75,7 +75,7 @@ const CampusLeader = () => {
       </div> */}
 
       <div className="w-full bg-gray-100">
-      <div className="relative w-full h-[534px]">
+      <div className="relative w-full h-[605px]">
        
         <div className="absolute inset-0 w-full h-full">
         <img src='/1440x605 (1).jpg' className="w-full object-cover h-full bg-gray-100" />

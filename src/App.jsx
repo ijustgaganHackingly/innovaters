@@ -14,6 +14,10 @@ import Startup from './Components/StartruoCommunity/Startup'
 import Professionals from './Components/Professional/Professionals'
 import FacultyAdvisors from './Components/Faculty/FacultyAdvisors'
 import CampusLeaderForm from './Components/Forms/CampusLeaderForm'
+import FacultyForm from './Components/Forms/FaciltyForm'
+import ProfessionalForm from './Components/Forms/ProfessionalsForm'
+import StartupForm from './Components/Forms/Startuoform'
+import ChaptersForm from './Components/Forms/ChaptersForm'
 // import Chapter from './Components/Chapter_main/Chapter/Chapter'
 // import ImageGallery from './Components/Pixalate/ImageGallery'
 // import SwordAnimation from './Components/Pixalate/SwordAnimation'
@@ -32,6 +36,10 @@ const App = () => {
         <Route path='/faculty' element={<FacultyAdvisors/>}/>
         <Route path='/chapter' element={<ChaptersMain/>}/>
         <Route path='/campusForm' element={<CampusLeaderForm/>}/>
+        <Route path='/chapterForm' element={<ChaptersForm/>}/>
+        <Route path='/facultyForm' element={<FacultyForm/>}/>
+        <Route path='/professionalform' element={<ProfessionalForm/>}/>
+        <Route path='/startupForm' element={<StartupForm/>}/>
 
         {/* <Route path='/animation' element={<PinAnimation/>}/> */}
         {/* <Route path='/pixel' element={<PixelatedImage/>}/> */}

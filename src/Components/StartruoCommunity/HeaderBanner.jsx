@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const HeaderBanner = () => {
   return (
@@ -18,9 +19,9 @@ const HeaderBanner = () => {
        
         </h6>
         <h6 className="text-2xl md:text-1xl lg:text-2xl  text-[#ffffff] mb-8 "> collaborate and explore exciting networking opportunities.</h6>
-        <button className="bg-[#8b71fe] hover:bg-[#7b59ff] text-white font-medium py-3 px-6 w-[196px] rounded-md transition-colors duration-300">
+       <Link to="/startupForm"> <button className="bg-[#8b71fe] hover:bg-[#7b59ff] text-white font-medium py-3 px-6 w-[196px] rounded-md transition-colors duration-300">
           Join Us
-        </button>
+        </button></Link>
       </div>
     </div>
   </div>
