@@ -21,7 +21,7 @@ const OurStory = () => {
           Creating Opportunities For Networking
         </p>
         
-        <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto">
+        <p className="text-gray-600 leading-relaxed max-w-5xl mx-auto ">
           Our professional community brings together industry experts and top heads of different companies to encourage growth, innovation and collaboration. Our network includes leading executives and specialists who act as juries and mentors at our events, sharing valuable insights and guidance with aspiring professionals and entrepreneurs.
         </p>
       </div>

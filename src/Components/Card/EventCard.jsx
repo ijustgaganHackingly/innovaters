@@ -155,21 +155,21 @@ const EventCards = () => {
                           {safeRenderText(event.title || event.name, "Untitled Event")}
                         </h5>
 
-                        <div className="flex items-center gap-1 mb-1 sm:mb-2">
-                          <img
-                            src="/locationicon.png"
-                            alt="location"
-                            className="w-4 h-4 sm:w-5 sm:h-5"
-                          />
-                          <p className="text-xs sm:text-sm text-gray-400 min-h-[5vh] sm:min-h-[6vh] md:min-h-[7vh] line-clamp-2">
-                            {getLocationText(event)}
-                          </p>
-                        </div>
+                        <div className="flex items-start gap-3 mb-1 sm:mb-2">
+      <img
+        src="/Group.svg"
+        alt="location"
+        className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5" 
+      />
+      <p className="text-xs sm:text-sm text-gray-400 min-h-[5vh] sm:min-h-[6vh] md:min-h-[7vh] line-clamp-2">
+        {getLocationText(event)}
+      </p>
+    </div>
 
                         <div className="flex justify-between items-center text-xs sm:text-sm text-gray-400 min-h-[4vh] sm:min-h-[5vh] md:min-h-[6vh] mt-auto">
                           <div className="flex items-center gap-2">
                             <img
-                              src="/calendaricon.png"
+                              src="../../../public/calendar_747310.svg"
                               alt="calendar"
                               className="w-4 h-4 sm:w-5 sm:h-5"
                             />
@@ -177,7 +177,7 @@ const EventCards = () => {
                           </div>
                           <div className="flex items-center gap-2">
                             <img
-                              src="/fees-icon.png"
+                              src="/wallet_584067.svg"
                               alt="wallet"
                               className="w-4 h-4 sm:w-5 sm:h-5"
                             />

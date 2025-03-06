@@ -28,7 +28,7 @@ const Perks = () => {
             </h1>
             <div className="absolute bottom-0 left-0 transform translate-y-1 w-32">
               <img 
-                src='../../../public/brush stroke.svg' 
+                src='/brush stroke.svg' 
                 alt="brush stroke" 
                 className="w-full"
               />
@@ -41,8 +41,8 @@ const Perks = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-20 mb-6">
           {/* Mentorship Programs */}
           <div className="bg-white p-6 rounded-lg border border-gray-200">
-            <div className="w-12 h-12 mb-4">
-              <img src="/icon1.svg" alt="Mentorship" className="w-full h-full" />
+            <div className="w-10 h-10 mb-4">
+              <img src="/activity.svg" alt="Mentorship" className="w-full h-full " />
             </div>
             <h3 className="text-lg font-bold text-[#1d1d3d] mb-2">MENTORSHIP PROGRAMS</h3>
             <p className="text-gray-600">
@@ -52,8 +52,8 @@ const Perks = () => {
           
           {/* Speaker Sessions */}
           <div className="bg-white p-6 rounded-lg border border-gray-200">
-            <div className="w-12 h-12 mb-4">
-              <img src="/icon1.svg" alt="Speaker" className="w-full h-full" />
+          <div className="w-10 h-10 mb-4">
+              <img src="/activity.svg" alt="Mentorship" className="w-full h-full" />
             </div>
             <h3 className="text-lg font-bold text-[#1d1d3d] mb-2">SPEAKER SESSIONS</h3>
             <p className="text-gray-600">
@@ -63,8 +63,8 @@ const Perks = () => {
           
           {/* Networking Opportunities */}
           <div className="bg-white p-6 rounded-lg border border-gray-200">
-            <div className="w-12 h-12 mb-4">
-              <img src="/icon1.svg" alt="Networking" className="w-full h-full" />
+          <div className="w-10 h-10 mb-4">
+              <img src="/activity.svg" alt="Mentorship" className="w-full h-full" />
             </div>
             <h3 className="text-lg font-bold text-[#1d1d3d] mb-2">NETWORKING OPPORTUNITIES</h3>
             <p className="text-gray-600">
@@ -73,8 +73,8 @@ const Perks = () => {
           </div>
 
           <div className="bg-white p-6 rounded-lg border border-gray-200">
-            <div className="w-12 h-12 mb-4">
-              <img src="/icon1.svg" alt="Resources" className="w-full h-full" />
+          <div className="w-10 h-10 mb-4">
+              <img src="/activity.svg" alt="Mentorship" className="w-full h-full" />
             </div>
             <h3 className="text-lg font-bold text-[#1d1d3d] mb-2">EXCLUSIVE RESOURCES</h3>
             <p className="text-gray-600">
@@ -84,8 +84,8 @@ const Perks = () => {
           
           {/* Community Support */}
           <div className="bg-white p-6 rounded-lg border border-gray-200">
-            <div className="w-12 h-12 mb-4">
-              <img src="/icon1.svg" alt="Community" className="w-full h-full" />
+          <div className="w-10 h-10 mb-4">
+              <img src="/activity.svg" alt="Mentorship" className="w-full h-full" />
             </div>
             <h3 className="text-lg font-bold text-[#1d1d3d] mb-2">COMMUNITY SUPPORT</h3>
             <p className="text-gray-600">
@@ -95,8 +95,8 @@ const Perks = () => {
           
           {/* Access to Industry Insights */}
           <div className="bg-white p-6 rounded-lg border border-gray-200">
-            <div className="w-12 h-12 mb-4">
-              <img src="/icon1.svg" alt="Insights" className="w-full h-full" />
+          <div className="w-10 h-10 mb-4">
+              <img src="/activity.svg" alt="Mentorship" className="w-full h-full" />
             </div>
             <h3 className="text-lg font-bold text-[#1d1d3d] mb-2">ACCESS TO INDUSTRY INSIGHTS</h3>
             <p className="text-gray-600">
