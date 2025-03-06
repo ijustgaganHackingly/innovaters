@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const CampusLeaderApplicationForm = () => {
   return (
-    <div className="min-h-screen bg-[#1d1441] bg-cover bg-center relative" style={{ backgroundImage: "url('../../../public/1440x605 (1).jpg')" }}>
+    <div className="min-h-screen bg-[#1d1441] bg-cover bg-center relative" style={{ backgroundImage: "url('/1440x605 (1).jpg')" }}>
 
          {/* Back Button */}
       <div className="absolute top-0 left-8 text-white flex items-center cursor-pointer">

@@ -28,13 +28,13 @@ const WhoCanJoin = () => {
   const getPlaceholderUrl = (id) => {
     switch (id) {
       case "professionals":
-        return "../../../public/College students.jpg";
+        return "/College students.jpg";
       case "students":
-        return "../../../public/innovative thinkers.jpg";
+        return "/innovative thinkers.jpg";
       case "founders":
-        return "../../../public/sales & marketing enthusiasts.jpg";
+        return "/sales & marketing enthusiasts.jpg";
       case "communicators":
-        return "../../../public/Good communicators.jpg";
+        return "/Good communicators.jpg";
     }
   };
 
