@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const scrollPosition = useRef(0);
 
   const handleLoginClick = () => {
     navigate('/login');
@@ -13,27 +14,49 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      scrollPosition.current = window.pageYOffset;
+      
+      document.body.style.overflow = 'hidden';
+      document.body.style.height = '100%';
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollPosition.current}px`;
+      document.body.style.width = '100%';
+      
+      const handleTouchMove = (e) => {
+        e.preventDefault();
+      };
+      
+      document.addEventListener('touchmove', handleTouchMove, { passive: false });
+      
+      return () => {
+        document.body.style.overflow = '';
+        document.body.style.height = '';
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        
+        window.scrollTo(0, scrollPosition.current);
+        
+        document.removeEventListener('touchmove', handleTouchMove);
+      };
+    }
+  }, [isMenuOpen]);
+
   return (
     <>
-      
-      <nav className="relative  w-full bg-transparent h-16 px-4 sm:px-6 lg:px-8 z-50">
+      <nav className="relative w-full bg-transparent h-16 px-4 sm:px-6 lg:px-8 z-50">
         <div className="h-full flex items-center justify-center">
-        
           <div className="absolute left-2">
+            <img
+              src="/8.png"
+              alt="Logo"
+              className="hidden md:flex h-14 py-1 px-3"
+            />
+            <img src='/icon.png' alt="Logo" className="md:hidden h-14 py-1 px-3"/>
+          </div>
           
-          <img 
-    src="/8.png" 
-    alt="Logo" 
-    className=" hidden md:flex  h-14  py-1 px-3" 
-  />
-
-  <img src='/icon.png' alt="Logo" className="md:hidden h-14 py-1 px-3"/>
-
-</div>
-
-
-
-          {/* Menu Bar */}
           <button
             className="text-white w-12 h-12 flex items-center justify-center z-50"
             onClick={toggleMenu}
@@ -50,9 +73,7 @@ const Navbar = () => {
                   strokeLinecap="round"
                 />
               ) : (
-                // Circle icon
                 <g fill="white">
-                  {/* <circle cx="50" cy="50" r="40" /> */}
                   <circle cx="50" cy="50" r="20" fill="white" />
                   <rect x="48" y="10" width="4" height="80" fill="white" />
                   <rect x="10" y="48" width="80" height="4" fill="white" />
@@ -60,8 +81,7 @@ const Navbar = () => {
               )}
             </svg>
           </button>
-
-          {/* Login Button */}
+          
           <div className="absolute right-2 md:right-4">
             <button
               className="bg-[#8162ff] text-white py-2 px-8 xl:px-12 rounded-[6px] hover:opacity-80 text-sm"
@@ -72,26 +92,22 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-
+      
       {isMenuOpen && (
         <div
-          className="fixed  inset-0 bg-[#1d1441] bg-opacity-95 flex flex-col justify-center   items-center z-40"
-          style={{ width: '100vw', height: '100vh' }}
+          className="fixed inset-0 bg-[#1d1441] bg-opacity-95 flex flex-col justify-center items-center z-40"
+          style={{ width: '100vw', height: '100vh', touchAction: 'none' }}
+          onClick={(e) => e.stopPropagation()}
         >
-          <ul className="space-y-6 p-6 text-white text-5xl font-bold text-center">
-          
+          <ul className="space-y-6 p-6 text-white text-3xl font-bold text-center">
             <li className="hover:text-gray-300 cursor-pointer">
-            <Link to='/campusLeader'>Campus leaders</Link>
+              <Link to='/campusLeader'>Campus leaders</Link>
             </li>
-            <li className="hover:text-gray-300 cursor-pointer"><Link to='/chapter'>Chapters</Link></li>
-            <li className="hover:text-gray-300 cursor-pointer"><Link to='/professionals'>Professionals</Link></li>
-            <li className="hover:text-gray-300 cursor-pointer"><Link to='/startup'>Startup</Link></li>
-            <li className="hover:text-gray-300 cursor-pointer"><Link to='/faculty'>Faculty advisors</Link></li>
-            {/* <li className="hover:text-gray-300 cursor-pointer">Platform</li>
-            <li className="hover:text-gray-300 cursor-pointer">Events page</li>
-            <li className="hover:text-gray-300 cursor-pointer">Contact</li> */}
+            <li className="hover:text-gray-300 cursor-pointer"><Link to='/chapter' >Chapters</Link></li>
+            <li className="hover:text-gray-300 cursor-pointer"><Link to='/professionals' >Professionals</Link></li>
+            <li className="hover:text-gray-300 cursor-pointer"><Link to='/startup' >Startup</Link></li>
+            <li className="hover:text-gray-300 cursor-pointer"><Link to='/faculty' >Faculty advisors</Link></li>
           </ul>
-
         </div>
       )}
     </>

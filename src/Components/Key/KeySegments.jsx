@@ -15,15 +15,16 @@ const KeySegments = () => {
   <div className="flex flex-wrap justify-center space-x-0 sm:space-x-6 mt-16 px-4">
     
 
-    <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-full sm:w-[80%] md:w-[60%] lg:w-[470px] p-6 border border-[#372b59] mb-6 sm:mb-0 md:mt-8 ">
+    <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-full sm:w-[80%] md:w-[60%] lg:w-[500px] p-6 border border-[#372b59] md:mt-8 md:mb-16 ">
+   
       <div className="mb-6">
         <div className="relative w-full overflow-hidden rounded-t-3xl bg-indigo-900">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-100/20 transform skew-x-12 translate-x-20 z-10" />
-          <div className="p-4">
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-100/20 transform skew-x-12 translate-x-20 " />
+          <div className="p-4 z-10">
             <img
-              src="/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+              src="/c 1.png"
               alt="Campus meeting"
-              className="w-[80%] ml-8 h-48 object-cover rounded-lg"
+              className="w-[80%] ml-8 h-48 object-cover rounded-lg z-10"
             />
           </div>
         </div>
@@ -38,13 +39,13 @@ const KeySegments = () => {
       </div>
     </div>
 
-    <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-full sm:w-[80%] md:w-[60%] lg:w-[470px] p-6 border border-[#372b59] md:mt-8 ">
+    <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-full sm:w-[80%] md:w-[60%] lg:w-[500px] p-6 border border-[#372b59] md:mt-8 md:mb-16 ">
       <div className="mb-6">
         <div className="relative w-full overflow-hidden rounded-t-3xl bg-indigo-900">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-100/20 transform skew-x-12 translate-x-20 z-10" />
           <div className="p-4">
             <img
-              src="/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+              src="/c 2.png"
               alt="Campus meeting"
               className="w-[80%] ml-8 h-48 object-cover rounded-lg"
             />
@@ -83,7 +84,7 @@ const KeySegments = () => {
   </div>
 
   {/* Content container */}
-  <div className="relative z-10 p-6 space-y-8">
+  <div className="relative z-10 p-2 space-y-8">
     {/* First Section */}
     <div className="flex flex-wrap justify-center gap-6">
       <div className="flex flex-col md:flex-row bg-[#1a1528]/95 backdrop-blur-sm rounded-3xl overflow-hidden w-full max-w-[1024px]">
@@ -105,7 +106,7 @@ const KeySegments = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 to-purple-600/30" />
           <div className="p-4 sm:p-6 relative z-10">
             <img
-              src="/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+              src="/300-208.png"
               alt="Student community"
               className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-2xl"
             />
@@ -135,7 +136,7 @@ const KeySegments = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 to-purple-600/30" />
           <div className="p-4 sm:p-6 relative z-10">
             <img
-              src="/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+              src="/300-208 2.png"
               alt="Startup community"
               className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-2xl"
             />
@@ -148,13 +149,13 @@ const KeySegments = () => {
   <div className="flex flex-wrap justify-center space-x-0 sm:space-x-6 mt-16 px-4">
     
 
-    <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-full sm:w-[80%] md:w-[60%] lg:w-[470px] p-6 border border-[#372b59] mb-6 sm:mb-0 md:mt-8">
+    <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-full sm:w-[80%] md:w-[60%] lg:w-[500px] p-6 border border-[#372b59] mb-6 sm:mb-0 ">
       <div className="mb-6">
         <div className="relative w-full overflow-hidden rounded-t-3xl bg-indigo-900">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-100/20 transform skew-x-12 translate-x-20 z-10" />
-          <div className="p-4">
+          <div className="p-4 z-50">
             <img
-              src="/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+              src="/C 3.png"
               alt="Campus meeting"
               className="w-[80%] ml-8 h-48 object-cover rounded-lg"
             />
@@ -171,13 +172,13 @@ const KeySegments = () => {
       </div>
     </div>
 
-    <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-full sm:w-[80%] md:w-[60%] lg:w-[470px] p-6 border border-[#372b59] md:mt-8 ">
+    <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-full sm:w-[80%] md:w-[60%] lg:w-[500px] p-6 border border-[#372b59]  ">
       <div className="mb-6">
         <div className="relative w-full overflow-hidden rounded-t-3xl bg-indigo-900">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-100/20 transform skew-x-12 translate-x-20 z-10 " />
           <div className="p-4">
             <img
-              src="/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+              src="/Students.png"
               alt="Campus meeting"
               className="w-[80%] ml-8 h-48 object-cover rounded-lg"
             />

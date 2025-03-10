@@ -8,13 +8,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import { FaIndianRupeeSign } from 'react-icons/fa6';
-
-import { Card, CardContent, CardMedia, Typography, Button, Grid, Box } from '@mui/material';
-import CalendarIcon from '../../../public/cad icons/calendaricon.png';
-import FeesIcon from '../../../public/cad icons/fees-icon.png';
-import LocationIcon from '../../../public/cad icons/locationicon.png';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const EventCards = () => {
   const [events, setEvents] = useState([]);
@@ -22,7 +15,6 @@ const EventCards = () => {
   const [error, setError] = useState(null);
   const swiperRef = useRef(null);
   const [isresponsive, setIsResponsive] = useState('vertical');
-//   const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     const listOpportunitiesAPICall = async () => {
@@ -63,8 +55,7 @@ const EventCards = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      const newOrientation =
-        window.innerWidth >= 768 ? 'horizontal' : 'vertical';
+      const newOrientation = window.innerWidth >= 768 ? 'horizontal' : 'vertical';
       setIsResponsive(newOrientation);
     };
 
@@ -104,13 +95,10 @@ const EventCards = () => {
   };
 
   return (
-    <Box className="relative min-h-screen w-full flex flex-col items-center justify-center z-50 p-4 sm:p-6 md:p-8">
-      <Box className="flex flex-col items-center justify-center w-full">
-       
-        <Box className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-    
+    <div className="relative min-h-screen w-full flex flex-col items-center justify-center z-50 p-4 sm:p-6 md:p-8">
+      <div className="flex flex-col items-center justify-center w-full">
+        <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 w-full">
-            
             <button
               className="text-[#8162ff] p-2 rounded-full hover:bg-[#6b4ff0] hover:text-white transition-colors"
               onClick={() => swiperRef.current?.slidePrev()}
@@ -119,8 +107,8 @@ const EventCards = () => {
             </button>
 
             <Swiper
-              modules={[Navigation, Pagination, Scrollbar, A11y]}
-              spaceBetween={10}
+              modules={[Navigation,Pagination,Scrollbar, A11y]}
+              spaceBetween={24}
               slidesPerView={1}
               navigation={false}
               pagination={{ clickable: true }}
@@ -140,54 +128,54 @@ const EventCards = () => {
             >
               {events.length > 0 ? (
                 events.map((event, index) => (
-                  <SwiperSlide className='py-4' key={event.id || index}>
-                    <div className="bg-transparent rounded-[6px] overflow-hidden border border-[#4f3975] flex flex-col h-full ">
-                      <div className="relative w-full">
+                  <SwiperSlide className="py-10" key={event.id || index}>
+                    <div className="bg-transparent rounded-[8px] overflow-hidden border border-[#4f3975] flex flex-col h-[450px]">
+                      <div className="relative w-full h-[280px]">
                         <img
-                          className="w-full h-[30vh] sm:h-[35vh] md:h-[38vh] lg:h-[40vh] object-cover"
+                          className="w-full h-full object-cover"
                           src={event.opportunity_main_picture || "/api/placeholder/400/300"}
                           alt={safeRenderText(event.title || event.name, "Event image")}
                         />
                       </div>
 
-                      <div className="px-2 sm:px-3 md:px-4 py-3 sm:py-2 flex flex-col flex-grow">
-                        <h5 className="min-h-[8vh] sm:min-h-[9vh] md:min-h-[10vh] text-sm sm:text-base font-semibold tracking-tight text-white mb-2">
+                      <div className="px-4 py-3 flex flex-col flex-grow">
+                        <h5 className="text-sm font-semibold tracking-tight text-white mb-2 h-[40px] line-clamp-2">
                           {safeRenderText(event.title || event.name, "Untitled Event")}
                         </h5>
 
-                        <div className="flex items-start gap-3 mb-1 sm:mb-2">
-      <img
-        src="/Group.svg"
-        alt="location"
-        className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5" 
-      />
-      <p className="text-xs sm:text-sm text-gray-400 min-h-[5vh] sm:min-h-[6vh] md:min-h-[7vh] line-clamp-2">
-        {getLocationText(event)}
-      </p>
-    </div>
+                        <div className="flex items-start gap-3 mb-2">
+                          <img
+                            src="/Group.svg"
+                            alt="location"
+                            className="w-4 h-4 mt-0.5"
+                          />
+                          <p className="text-xs text-gray-400 h-[40px] line-clamp-2">
+                            {getLocationText(event)}
+                          </p>
+                        </div>
 
-                        <div className="flex justify-between items-center text-xs sm:text-sm text-gray-400 min-h-[4vh] sm:min-h-[5vh] md:min-h-[6vh] mt-auto">
+                        <div className="flex justify-between items-center text-xs text-gray-400 mt-auto mb-4">
                           <div className="flex items-center gap-2">
                             <img
-                              src="../../../public/calendar_747310.svg"
+                              src="/calendar_747310.svg"
                               alt="calendar"
-                              className="w-4 h-4 sm:w-5 sm:h-5"
+                              className="w-4 h-4"
                             />
-                            {safeRenderText(event.date || event.end_date, "Date TBD")}
+                            <span>{safeRenderText(event.date || event.end_date, "Date TBD")}</span>
                           </div>
                           <div className="flex items-center gap-2">
                             <img
                               src="/wallet_584067.svg"
                               alt="wallet"
-                              className="w-4 h-4 sm:w-5 sm:h-5"
+                              className="w-4 h-4"
                             />
-                            <p>{safeRenderText(event.fees, "Free")}</p>
+                            <span>{safeRenderText(event.fees, "Free")}</span>
                           </div>
                         </div>
 
                         <button
                           onClick={() => handleRedirect(event)}
-                          className="w-full text-white bg-[#8162ff] hover:bg-[#6b4ff0] rounded-[6px] px-3 sm:px-4 py-2 sm:py-3 mt-3 sm:mt-4 md:mt-5 text-xs sm:text-sm transition-colors duration-200"
+                          className="w-full text-white bg-[#8162ff] hover:bg-[#6b4ff0] rounded-[6px] px-4 py-2 text-sm transition-colors duration-200"
                         >
                           View Event
                         </button>
@@ -209,9 +197,9 @@ const EventCards = () => {
               <FaArrowRight className="w-5 h-5" />
             </button>
           </div>
-        </Box>
-      </Box>
-    </Box>
+        </div>
+      </div>
+    </div>
   );
 };
 

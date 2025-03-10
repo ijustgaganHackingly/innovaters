@@ -13,7 +13,8 @@ const Events = () => {
   const [events, setEvents] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const swiperRef = useRef(null); 
+  const swiperRef = useRef(null);
+  const [isresponsive, setIsResponsive] = useState('vertical');
 
   useEffect(() => {
     const listOpportunitiesAPICall = async () => {
@@ -52,6 +53,20 @@ const Events = () => {
     listOpportunitiesAPICall();
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      const newOrientation = window.innerWidth >= 768 ? 'horizontal' : 'vertical';
+      setIsResponsive(newOrientation);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const safeRenderText = (value, fallback = "N/A") => {
     if (value === null || value === undefined) {
       return fallback;
@@ -64,16 +79,19 @@ const Events = () => {
     return String(value);
   };
 
-  if (isLoading) {
-    return <div>Loading Events...</div>;
-  }
+  const getLocationText = (event) => {
+    if (event.mode === 'Online') {
+      return 'Online';
+    } else if (event.location) {
+      return event.location;
+    } else {
+      return 'N/A';
+    }
+  };
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-
-  const handleRedirect = () => {
-    window.location.href = 'https://www.hackingly.in/event';
+  const handleRedirect = (event) => {
+    const opportunityRef = event?.alias || event?.id;
+    window.location.href = `https://www.hackingly.in/events/${opportunityRef}`;
   };
 
   return (
@@ -84,99 +102,105 @@ const Events = () => {
 
         <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
       
-          <div className="flex items-center gap-4 w-full">
-        
-            <button
-              className="text-[#8162ff] p-2 rounded-full hover:bg-[#6b4ff0] hover:text-white transition-colors"
-              onClick={() => swiperRef.current?.slidePrev()} 
-            >
-              <FaArrowLeft className="w-5 h-5" /> 
-            </button>
-
-            <Swiper
-              modules={[Navigation, Pagination, Scrollbar, A11y]}
-              spaceBetween={10} 
-              slidesPerView={1} 
-              navigation={false}
-              pagination={{ clickable: true }}
-              breakpoints={{
-                640: {
-                  slidesPerView: 2, 
-                },
-                768: {
-                  slidesPerView: 3, 
-                },
-                1024: {
-                  slidesPerView: 4, 
-                },
-              }}
-              className="w-full flex-1" 
-              onSwiper={(swiper) => (swiperRef.current = swiper)}
-            >
-              {events.length > 0 ? (
-                events.map((event, index) => (
-                  <SwiperSlide className='py-4' key={event.id || index}>
-                    <div className="bg-white rounded-[6px] overflow-hidden border border-gray-300 flex flex-col h-full">
-                      <div className="relative w-full">
-                        <img
-                          className="w-full h-[30vh] sm:h-[35vh] md:h-[38vh] lg:h-[40vh] object-cover"
-                          src={event.opportunity_main_picture || "/api/placeholder/400/300"}
-                          alt={safeRenderText(event.title || event.name, "Event image")}
-                        />
-                      </div>
-
-                      <div className="px-2 sm:px-3 md:px-4 py-3 sm:py-4 flex flex-col flex-grow">
-                        <h5 className="min-h-[8vh] sm:min-h-[9vh] md:min-h-[10vh] text-sm sm:text-base font-bold tracking-tight mb-2">
-                          {safeRenderText(event.title || event.name, "Untitled Event")}
-                        </h5>
-
-                        <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                          <img
-                            src="/api/placeholder/20/20"
-                            alt="location"
-                            className="w-4 h-4 sm:w-5 sm:h-5"
-                          />
-                          <p className="text-xs sm:text-sm text-gray-400 min-h-[5vh] sm:min-h-[6vh] md:min-h-[7vh] line-clamp-2">
-                            {safeRenderText(event.institution || event.organization, "N/A")}
-                          </p>
-                        </div>
-
-                        <div className="flex justify-between items-center text-xs sm:text-sm text-gray-400 min-h-[4vh] sm:min-h-[5vh] md:min-h-[6vh] mt-auto">
-                          <div className="flex items-center gap-2">
-                            <img
-                              src="/api/placeholder/20/20"
-                              alt="calendar"
-                              className="w-4 h-4 sm:w-5 sm:h-5"
-                            />
-                            {safeRenderText(event.date || event.start_datetime, "Date TBD")}
+           <div className="flex items-center gap-4 w-full">
+                      <button
+                        className="text-[#8162ff] p-2 rounded-full hover:bg-[#6b4ff0] hover:text-white transition-colors"
+                        onClick={() => swiperRef.current?.slidePrev()}
+                      >
+                        <FaArrowLeft className="w-5 h-5" />
+                      </button>
+          
+                      <Swiper
+                        modules={[Navigation,Pagination,Scrollbar, A11y]}
+                        spaceBetween={24}
+                        slidesPerView={1}
+                        navigation={false}
+                        pagination={{ clickable: true }}
+                        breakpoints={{
+                          640: {
+                            slidesPerView: 2,
+                          },
+                          768: {
+                            slidesPerView: 3,
+                          },
+                          1024: {
+                            slidesPerView: 4,
+                          },
+                        }}
+                        className="w-full flex-1"
+                        onSwiper={(swiper) => (swiperRef.current = swiper)}
+                      >
+                        {events.length > 0 ? (
+                          events.map((event, index) => (
+                            <SwiperSlide className="py-10" key={event.id || index}>
+                              <div className="bg-white rounded-[8px] overflow-hidden border border-gray-400 flex flex-col h-[450px]">
+                                <div className="relative w-full h-[280px]">
+                                  <img
+                                    className="w-full h-full object-cover"
+                                    src={event.opportunity_main_picture || "/api/placeholder/400/300"}
+                                    alt={safeRenderText(event.title || event.name, "Event image")}
+                                  />
+                                </div>
+          
+                                <div className="px-4 py-3 flex flex-col flex-grow">
+                                  <h5 className="text-sm font-semibold tracking-tight text-black mb-2 h-[40px] line-clamp-2">
+                                    {safeRenderText(event.title || event.name, "Untitled Event")}
+                                  </h5>
+          
+                                  <div className="flex items-start gap-3 mb-2">
+                                    <img
+                                      src="/location black.svg"
+                                      alt="location"
+                                      className="w-4 h-4 mt-0.5"
+                                    />
+                                    <p className="text-xs text-black h-[40px] line-clamp-2">
+                                      {getLocationText(event)}
+                                    </p>
+                                  </div>
+          
+                                  <div className="flex justify-between items-center text-xs text-black mt-auto mb-4">
+                                    <div className="flex items-center gap-2">
+                                      <img
+                                        src="/calendar_black.svg"
+                                        alt="calendar"
+                                        className="w-4 h-4"
+                                      />
+                                      <span>{safeRenderText(event.date || event.end_date, "Date TBD")}</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                      <img
+                                        src="/wallet-black.svg"
+                                        alt="wallet"
+                                        className="w-4 h-4"
+                                      />
+                                      <span>{safeRenderText(event.fees, "Free")}</span>
+                                    </div>
+                                  </div>
+          
+                                  <button
+                                    onClick={() => handleRedirect(event)}
+                                    className="w-full text-white bg-[#8162ff] hover:bg-[#6b4ff0] rounded-[6px] px-4 py-2 text-sm transition-colors duration-200"
+                                  >
+                                    View Event
+                                  </button>
+                                </div>
+                              </div>
+                            </SwiperSlide>
+                          ))
+                        ) : (
+                          <div className="col-span-1 sm:col-span-2 lg:col-span-4 text-center text-white">
+                            No events found
                           </div>
-                          <p>{safeRenderText(event.price, "Free")}</p>
-                        </div>
-
-                        <button
-                          onClick={handleRedirect}
-                          className="w-full text-white bg-[#8162ff] hover:bg-[#6b4ff0] rounded-[6px] px-3 sm:px-4 py-2 sm:py-3 mt-3 sm:mt-4 md:mt-5 text-xs sm:text-sm transition-colors duration-200"
-                        >
-                          View Event
-                        </button>
-                      </div>
+                        )}
+                      </Swiper>
+          
+                      <button
+                        className="text-[#8162ff] p-2 rounded-full hover:bg-[#6b4ff0] hover:text-white transition-colors"
+                        onClick={() => swiperRef.current?.slideNext()}
+                      >
+                        <FaArrowRight className="w-5 h-5" />
+                      </button>
                     </div>
-                  </SwiperSlide>
-                ))
-              ) : (
-                <div className="col-span-1 sm:col-span-2 lg:col-span-4 text-center">
-                  No events found
-                </div>
-              )}
-            </Swiper>
-
-            <button
-              className="text-[#8162ff] p-2 rounded-full hover:bg-[#6b4ff0] hover:text-white transition-colors"
-              onClick={() => swiperRef.current?.slideNext()} 
-            >
-              <FaArrowRight className="w-5 h-5" /> 
-            </button>
-          </div>
         </div>
       </div>
     </div>

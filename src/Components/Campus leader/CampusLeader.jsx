@@ -30,7 +30,7 @@ const CampusLeader = () => {
                </div>
                <div className='z-10'>
                  <nav className='flex gap-8 text-gray-700 px-28'>
-                   <Link to="/about" className='hover:text-gray-900'>About Us</Link>
+                   <Link to="#about" className='hover:text-gray-900'>About Us</Link>
                    <Link to="/events" className='hover:text-gray-900'>Our Events</Link>
                    <Link to="/chapters" className='hover:text-gray-900'>Chapters</Link>
                  </nav>
@@ -68,18 +68,17 @@ const CampusLeader = () => {
                  <Link to="/chapters" className='py-2 text-gray-700 hover:text-gray-900 text-xl' onClick={toggleMobileMenu}>Chapters</Link>
                </nav>
              </div>
-      {/* <div className=' w-full bg-white h-[534px] '>
-        <div className=' w-full h-full ' >
-            <img src='../../../public/banners/1440x605 (1).jpg'   alt='campus leader' className='w-full h-full object-cover' />
-        </div>
-      </div> */}
+    
 
-      <div className="w-full bg-gray-100">
-      <div className="relative w-full h-[605px]">
-       
-        <div className="absolute inset-0 w-full h-full">
-        <img src='/1440x605 (1).jpg' className="w-full object-cover h-full bg-gray-100" />
-        </div>
+             <div className="w-full bg-gray-100">
+  <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[605px]">
+    <div className="absolute inset-0 w-full h-full">
+      <img 
+        src='/1440x605 (1).jpg' 
+        className="w-full h-full object-cover bg-gray-100" 
+        alt="Campus Leader Program" 
+      />
+    </div>
         
         <div className="absolute inset-0 flex flex-col items-center md:items-start justify-center text-center px-4 md:px-20 ">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#fff] ">

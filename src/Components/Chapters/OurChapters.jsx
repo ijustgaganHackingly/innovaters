@@ -153,12 +153,12 @@ const OurChapters = () => {
 
   return (
     <div>
-      <div className='flex flex-col items-center justify-center w-full mb-10'>
+      <div className='hidden md:flex flex-col items-center justify-center w-full mb-10 '>
         <h1 className='p-[9px] text-4xl'>Our Chapters</h1>
         <h3 className='text-base'>Unite, Inspire & grow with us.</h3>
       </div>
 
-      <div className='flex flex-col relative items-center justify-center w-full mb-20'>
+      <div className=' hidden md:flex flex-col relative items-center justify-center w-full mb-20'>
         <img src='/Map of India.svg' className='pl-40 relative'/>
 
         {/* Chapter Markers (Absolute Positioning) */}
@@ -171,10 +171,10 @@ const OurChapters = () => {
 
         {/* Connect with lines */}
         <ChapterLine x1={25} y1={21} x2={44} y2={21} dashed={true}/>
-        <ChapterLine x1={25} y1={34} x2={40} y2={34} dashed={true}/>
+        <ChapterLine x1={19} y1={34} x2={40} y2={34} dashed={true}/>
         <ChapterLine x1={25} y1={42} x2={40} y2={42} dashed={true}/>
         <ChapterLine x1={22} y1={55} x2={38} y2={55} dashed={true}/>
-        <ChapterLine x1={70} y1={27} x2={46.5} y2={27} dashed={true} />
+        <ChapterLine x1={60} y1={27} x2={46.5} y2={27} dashed={true} />
         <ChapterLine x1={70} y1={67} x2={50} y2={67} dashed={true} />
 
         <MapPin top={21} left={44} />  
@@ -185,48 +185,56 @@ const OurChapters = () => {
         <MapPin top={67} left={50} /> 
       </div>
 
-      <div className='bg-gradient-to-r from-[#ffffff] via-[#f4f1ff] to-[#ffffff] flex flex-col items-center justify-center h-auto min-h-[40vh] w-full'>
-        <div className='flex flex-col items-center justify-between'>
-          <h2 className='text-5xl'>Find our event in your city!</h2>
-          <div className='flex mt-6 relative'>
-            <button 
-              className='mr-[24px] rounded-[6px] border-[1px] py-[12px] px-[24px] bg-gradient-to-r from-[#8b71fe] to-[#7b59ff] text-white'
-              onClick={handleCheckEvents}
-            >
-              {showEvents ? 'Hide events' : 'Check out all events'}
-            </button>
-            <div className="relative">
-              <input 
-                className='px-5 w-[360px] h-[44px] rounded-[6px] border-[1px]' 
-                type='search' 
-                placeholder='Search for your city or states'
-                value={searchTerm}
-                onChange={handleSearchChange}
-                onClick={() => searchTerm && setShowDropdown(true)}
-              />
-              
-              {showDropdown && filteredEvents.length > 0 && (
-                <div className="absolute w-full bg-white rounded-md shadow-lg mt-1 max-h-[300px] overflow-y-auto z-50">
-                  {filteredEvents.map(event => (
-                    <div key={event.id} className="p-3 hover:bg-gray-100 cursor-pointer border-b">
-                      <div className="font-medium">{event.title}</div>
-                      <div className="text-sm text-gray-600">{event.date} • {event.location}</div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+      <div className='bg-gradient-to-r from-[#ffffff] via-[#f4f1ff] to-[#ffffff] flex flex-col items-center justify-center h-auto min-h-[40vh] w-full px-4 py-6'>
+      <div className='flex flex-col items-center justify-between w-full'>
+        <h2 className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center '>Find our event in your city!</h2>
+        
+        <div className='flex flex-col sm:flex-row mt-6 relative w-full max-w-xl justify-center items-center gap-4'>
+          <button
+            className='mr-0 sm:mr-6 rounded-[6px] border-[1px] py-3 px-6 bg-gradient-to-r from-[#8b71fe] to-[#7b59ff] text-white w-full sm:w-auto'
+            onClick={handleCheckEvents}
+          >
+            {showEvents ? 'Hide events' : 'Check out all events'}
+          </button>
+          
+          <div className="relative w-full sm:w-auto mt-4 sm:mt-0">
+            <input
+              className='px-5 w-full sm:w-[360px] h-[44px] rounded-[6px] border-[1px]'
+              type='search'
+              placeholder='Search for your city or states'
+              value={searchTerm}
+              onChange={handleSearchChange}
+              onClick={() => searchTerm && setShowDropdown(true)}
+            />
+            
+            {showDropdown && filteredEvents.length > 0 && (
+              <div className="absolute w-full bg-white rounded-md shadow-lg mt-1 max-h-[300px] overflow-y-auto z-50">
+                {filteredEvents.map(event => (
+                  <div 
+                    key={event.id} 
+                    className="p-3 hover:bg-gray-100 cursor-pointer border-b"
+                    onClick={() => {
+                      setSearchTerm(event.location);
+                      setShowDropdown(false);
+                    }}
+                  >
+                    <div className="font-medium">{event.title}</div>
+                    <div className="text-sm text-gray-600">{event.date} • {event.location}</div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
         
         {showEvents && (
-          <div className="w-full max-w-4xl mt-10 mb-10">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-2xl mb-4 text-center text-[#5c44b9]">Our Chapters</h3>
+          <div className="w-full max-w-4xl mt-10 mb-10 px-2 sm:px-4">
+            <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+              <h3 className="text-xl sm:text-2xl mb-4 text-center text-[#5c44b9] font-semibold">Our Chapters</h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {chapterData.map(chapter => (
-                  <div key={chapter.id} className="border rounded-md p-4">
+                  <div key={chapter.id} className="border rounded-md p-4 hover:shadow-md transition-shadow">
                     <div className="flex items-center">
                       <RoomIcon style={{ color: '#5c44b9', marginRight: '8px' }} />
                       <h4 className="font-bold text-lg text-[#5c44b9]">{chapter.location}</h4>
@@ -251,6 +259,7 @@ const OurChapters = () => {
           </div>
         )}
       </div>
+    </div>
     </div>
   );
 };

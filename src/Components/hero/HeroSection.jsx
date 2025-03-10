@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitTextOnScroll from '../SplitText/SplitTextOnScroll';
 import Navbar from "../Navbar/Navbar";
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   const rightCardRef = useRef(null);
@@ -147,14 +148,14 @@ const HeroSection = () => {
             />
           </div>
 
-          <button className="text-white bg-[#8162ff] rounded-[6px] mx-auto block
+         <Link to='/contactForm' > <button className="text-white bg-[#8162ff] rounded-[6px] mx-auto block
             text-xs sm:text-sm md:text-base
             px-6 sm:px-8 md:px-12 lg:px-16
             py-2 sm:py-2.5 md:py-3
             mt-4 sm:mt-5 md:mt-6"
           >
             Join Now
-          </button>
+          </button></Link>
         </div>
 
         {/* Cards Section */}
@@ -181,20 +182,17 @@ const HeroSection = () => {
               overflow-y-scroll scrollbar-hide"
             >
               {[
-                "Amity University, Mumbai",
-                "JK Lakshmipat University, Jaipur",
-                "Panipat Institute of Engineering",
-                "Poornima University",
-                "University 5",
-                "University 6",
-                "University 7",
-                "University 8",
-                "University 9",
-                "University 10",
+                {name :"Amity University, Jaipur", img:"/0d06fb8d-8ef3-4c45-a7fa-3e908d1b7bb3.jpg"},
+                {name:"JK Lakshmipat University, Jaipur", img:""},
+                {name:"Panipat Institute of Engineering",img:""},
+               {name: "Amity Universirty, Mumbai",img:""},
+                {name:"Jecrc university",img:""},
+                {name:"Manipal University, Jaipur",img:""},
+               
               ].map((university, index) => (
                 <div key={index} className="flex items-center gap-2 sm:gap-3 md:gap-4">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-white/10 rounded-lg flex-shrink-0" />
-                  <span className="text-white/90 text-xs md:text-sm">{university}</span>
+                  <img src={university.img} className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-white/10 rounded-lg flex-shrink-0" />
+                  <span className="text-white/90 text-xs md:text-sm">{university.name}</span>
                 </div>
               ))}
             </div>
@@ -210,16 +208,16 @@ const HeroSection = () => {
             <h2 className="text-white text-sm sm:text-base md:text-lg font-semibold mb-4 md:mb-6">Campus Leaderboard</h2>
             <div className="space-y-3 sm:space-y-4 md:space-y-5 h-[250px] sm:h-[275px] md:h-[300px] overflow-y-scroll scrollbar-hide">
               {[
-                { name: 'Anshuman Jain', college: 'Poornima College of Engineering', trophyImage: '../../../public/medal-1.png' },
-                { name: 'Gaurav Saxena', college: 'Poornima College of Engineering', trophyImage: '../../../public/medal-2.png' },
-                { name: 'Himanshu Singh', college: 'Saint John\'s University', trophyImage: '../../../public/medal-3.png' },
-                { name: "User 4", college: "College 4", trophy: "🎖" },
-                { name: "Anirudh Jaiswal", college: "Poornima College of Engineering", trophy: "🎖" },
-                { name: "User 6", college: "College 6", trophy: "🎖" },
-                { name: "User 7", college: "College 6", trophy: "🎖" },
-                { name: "User 8", college: "College 6", trophy: "🎖" },
-                { name: "User 9", college: "College 6", trophy: "🎖" },
-                { name: "User 10", college: "College 6", trophy: "🎖" },
+                { name: 'Aryan Khandelwal', college: 'Maharishi arvind institute of science and management ', trophyImage: '/medal-1.png' },
+                { name: 'Animesh Kumar Singh', college: 'Ambedkar DSEU Shakarpur Campus-1', trophyImage: '/medal-2.png' },
+                { name: 'Arshad Khan', college: 'Lakshmi Narain College of Technology Excellence (LNCTE) bhopal ', trophyImage: '/medal-3.png' },
+                { name: "Nitesh Kumar", college: "Aligarh College of Engineering ", trophyImage: "/trophy 3.svg" },
+                { name: "Aniket Agarwal", college: "Lnct Bhopal", trophyImage: "/trophy 3.svg" },
+                { name: "Umanshi Gupta", college: "Lakshami Narain College", trophyImage: "/trophy 3.svg" },
+                { name: "Yaman Sain", college: "Poornima College of Engineering", trophyImage: "/trophy 3.svg" },
+                { name: "Kavan Bhavsar", college: "Government Polytechnic Ahmedabad", trophyImage: "/trophy 3.svg" },
+                { name: "Ujjwal Agarwal ", college: "Maharaja Surajmal Institute, GGSIPU New Delhi ", trophyImage: "/trophy 3.svg" },
+                { name: "Pranav Beniwal ", college: "Parul university ", trophyImage: "/trophy 3.svg" },
               ].map((user, index) => (
                 <div key={index} className="flex items-center gap-2 sm:gap-3 md:gap-4">
                   <img
@@ -227,7 +225,7 @@ const HeroSection = () => {
                     alt={`${user.name} trophy`}
                     className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6"
                   />
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-[#4c3575] flex-shrink-0" />
+                  {/* <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-[#4c3575] flex-shrink-0" /> */}
                   <div>
                     <p className="text-white text-xs md:text-sm font-medium">{user.name}</p>
                     <p className="text-white/60 text-xs">{user.college}</p>
@@ -261,11 +259,11 @@ const HeroSection = () => {
               h-[250px] sm:h-[275px] md:h-[300px] 
               overflow-y-scroll scrollbar-hide"
             >
-              {["Startup-1", "Startup-2", "Startup-3", "Startup-4", "Startup-5", "Startup-6", "Startup-7", "Startup-8", "Startup-9", "Startup-10"].map(
+              {[{name: "Ambixous", img:"/ambixios.jpg"}, {name: "World we desire",img:"/Worldwedesire.jpg"} ].map(
                 (startup, index) => (
                   <div key={index} className="flex items-center gap-2 sm:gap-3 md:gap-4">
-                    <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-white/10 rounded-lg flex-shrink-0" />
-                    <span className="text-white/90 text-xs md:text-sm">{startup}</span>
+                    <img src={startup.img} className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-white/10 rounded-lg flex-shrink-0" />
+                    <span className="text-white/90 text-xs md:text-sm">{startup.name}</span>
                   </div>
                 )
               )}

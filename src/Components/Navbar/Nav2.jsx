@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Nav2 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const scrollPosition = useRef(0);
 
   const handleLoginClick = () => {
     navigate('/login');
@@ -13,24 +14,56 @@ const Nav2 = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Effect to handle body scroll locking when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      // Store current scroll position
+      scrollPosition.current = window.pageYOffset;
+      
+      // Apply multiple techniques to prevent scrolling
+      document.body.style.overflow = 'hidden';
+      document.body.style.height = '100%';
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollPosition.current}px`;
+      document.body.style.width = '100%';
+      
+      // Prevent touchmove events
+      const handleTouchMove = (e) => {
+        e.preventDefault();
+      };
+      
+      document.addEventListener('touchmove', handleTouchMove, { passive: false });
+      
+      return () => {
+        // Cleanup all scroll locks
+        document.body.style.overflow = '';
+        document.body.style.height = '';
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        
+        // Restore scroll position
+        window.scrollTo(0, scrollPosition.current);
+        
+        // Remove touchmove handler
+        document.removeEventListener('touchmove', handleTouchMove);
+      };
+    }
+  }, [isMenuOpen]);
+
   return (
     <>
-      
-      <nav className="relative  w-full bg-transparent h-16 px-4 sm:px-6 lg:px-8 z-50">
+      <nav className="relative w-full bg-transparent h-16 px-4 sm:px-6 lg:px-8 z-50">
         <div className="h-full flex items-center justify-center">
-        
           <div className="absolute left-2">
-          <img 
-    src="/public/Logo 2.png" 
-    alt="Logo" 
-    className=" hidden md:flex  h-14  py-1 px-3" 
-  />
-
-  <img src='/public/icon.png' alt="Logo" className="md:hidden h-14 py-1 px-3"/>
-
-</div>
-
-
+            <img
+              src="/public/Logo 2.png"
+              alt="Logo"
+              className="hidden md:flex h-14 py-1 px-3"
+            />
+            <img src='/public/icon.png' alt="Logo" className="md:hidden h-14 py-1 px-3"/>
+          </div>
+          
           <button
             className="text-white w-12 h-12 flex items-center justify-center z-50"
             onClick={toggleMenu}
@@ -55,7 +88,7 @@ const Nav2 = () => {
               )}
             </svg>
           </button>
-
+          
           {/* Login Button */}
           <div className="absolute right-2 md:right-4">
             <button
@@ -67,26 +100,25 @@ const Nav2 = () => {
           </div>
         </div>
       </nav>
-
+      
       {isMenuOpen && (
         <div
-          className="fixed  inset-0 bg-white bg-opacity-95 flex flex-col justify-center   items-center z-40"
-          style={{ width: '100vw', height: '100vh' }}
+          className="fixed inset-0 bg-white bg-opacity-95 flex flex-col justify-center items-center z-40"
+          style={{ width: '100vw', height: '100vh', touchAction: 'none' }}
+          onClick={(e) => e.stopPropagation()}
         >
           <ul className="space-y-6 p-6 text-black text-5xl font-bold text-center">
-          
             <li className="hover:text-gray-300 cursor-pointer">
-            <Link to='/campusLeader'>Campus leaders</Link>
+              <Link to='/campusLeader' onClick={toggleMenu}>Campus leaders</Link>
             </li>
             <li className="hover:text-gray-300 cursor-pointer"><Link to='/chapter'>Chapters</Link></li>
-            <li className="hover:text-gray-300 cursor-pointer"><Link to='/professionals'>Professionals</Link></li>
-            <li className="hover:text-gray-300 cursor-pointer"><Link to='/startup'>Startup</Link></li>
-            <li className="hover:text-gray-300 cursor-pointer"><Link to='/faculty'>Faculty advisors</Link></li>
+            <li className="hover:text-gray-300 cursor-pointer"><Link to='/professionals' onClick={toggleMenu}>Professionals</Link></li>
+            <li className="hover:text-gray-300 cursor-pointer"><Link to='/startup' onClick={toggleMenu}>Startup</Link></li>
+            <li className="hover:text-gray-300 cursor-pointer"><Link to='/faculty' onClick={toggleMenu}>Faculty advisors</Link></li>
             {/* <li className="hover:text-gray-300 cursor-pointer">Platform</li>
             <li className="hover:text-gray-300 cursor-pointer">Events page</li>
             <li className="hover:text-gray-300 cursor-pointer">Contact</li> */}
           </ul>
-
         </div>
       )}
     </>
