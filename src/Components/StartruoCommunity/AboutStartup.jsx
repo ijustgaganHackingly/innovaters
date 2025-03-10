@@ -2,23 +2,23 @@ import React from 'react'
 
 const AboutStartup = () => {
   return (
-    <div className='bg-white py-10 px-4 max-w-screen-xl mx-auto h-screen'>
-        <div className='flex flex-col items-center'>
-            <h2 className='font-semibold text-4xl'>Who Are We?</h2>
-            <h3 className='text-gray-500 pt-2 font-medium'>One startup can lead to a world of possibilities</h3>
+    <div className='bg-white py-10 px-4 max-w-screen-xl mx-auto '>
+    <div className='flex flex-col items-center'>
+        <h2 className='font-semibold text-4xl'>Who Are We?</h2>
+        <h3 className='text-gray-500 pt-2 font-medium text-center'>One startup can lead to a world of possibilities</h3>
+    </div>
+    <div className='flex flex-col pt-12 w-full items-center lg:flex-row lg:max-w-screen-xl mx-auto justify-between overflow-hidden'>
+        <div className='py-6 w-full lg:w-[48%] flex justify-center item-center '>
+            <div className='h-48 w-[300px] relative bg-gray-400 sm:h-96 sm:w-[500px]'>
+                <div className='h-48 w-[300px] absolute top-[-15px] right-[-15px] bg-gray-300 sm:h-96 sm:w-[500px]'></div>
+            </div>
         </div>
-        <div className='flex flex-col pt-12 w-full items-center md:flex-row justify-between'>
-            <div className='py-6  w-1/2 flex justify-center '>
-                <div className='h-96 w-[500px] relative bg-gray-400 '>
-                    <div className=' h-96 w-[500px] absolute top-[-15px] right-[-15px] bg-gray-300 '></div>
-                </div>
-            </div>
-            <div className='text-lg text-center  w-1/2 md:text-left text-gray-500'>
-                <p>With our startup community, we offer a platform where both large-scale and early stage startups can connect, collaborate and explore exciting networking opportunities.</p><br/>
-                <p>Whether you are seasoned player or just starting, get your place to network, share ideas, and unlock new possibilities for growth!</p>
-            </div>
+        <div className='sm:pb-10 text-lg text-center  xl:w-[48%] md:text-left text-gray-500 lg:w-2/5 lg:text-left'>
+            <p>With our startup community, we offer a platform where both large-scale and early stage startups can connect, collaborate and explore exciting networking opportunities.</p><br/>
+            <p>Whether you are seasoned player or just starting, get your place to network, share ideas, and unlock new possibilities for growth!</p>
         </div>
     </div>
+</div>
   )
 }
 

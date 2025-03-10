@@ -1,9 +1,40 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axiosInstance from '../helper/axiosinstace';
+import { BASE_URL } from '../../../constants';
 
 const StartupForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    number: '',
+    profession: '',
+    company: '',
+    address: '',
+  });
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+
+    try {
+      const response = await axiosInstance.post(`${BASE_URL}/startup`, formData);
+      console.log('Application submitted:', response.data);
+      navigate('/startup');
+    } catch (err) {
+      console.error('Error submitting application:', err.response?.data?.error || err.message);
+      setError(err.response?.data?.error || 'An error occurred while submitting the application.');
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-[#1d1441] bg-cover bg-center relative" style={{ backgroundImage: "url('../../../public/Stratups.jpg')" }}>
+    <div className="min-h-screen bg-[#1d1441] bg-cover bg-center relative" style={{ backgroundImage: "url('/Stratups.jpg')" }}>
 
          {/* Back Button */}
       <div className="absolute top-8 left-8 text-white flex items-center cursor-pointer">
@@ -18,53 +49,78 @@ const StartupForm = () => {
           <div className="w-full max-w-md mx-auto bg-[#170b25]/90 p-8 rounded-lg">
             <h2 className="text-white text-2xl font-bold mb-6 text-center">Apply to join now!</h2>
             
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              {error && <div className="text-red-500">{error}</div>}
               <div>
                 <input 
-                  type="text" 
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded bg-white text-gray-800 focus:outline-none" 
                   placeholder="Enter your Name" 
+                  required
                 />
               </div>
               
               <div>
                 <input 
-                  type="email" 
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded bg-white text-gray-800 focus:outline-none" 
                   placeholder="Enter your email ID" 
+                  required
                 />
               </div>
               
               <div>
                 <input 
-                  type="tel" 
+                  type="tel"
+                  name="number"
+                  value={formData.number}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded bg-white text-gray-800 focus:outline-none" 
                   placeholder="Enter your Mobile No." 
+                  required
                 />
               </div>
 
               <div>
                 <input 
-                  type="text" 
+                  type="text"
+                  name="profession"
+                  value={formData.profession}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded bg-white text-gray-800 focus:outline-none" 
                   placeholder="Enter your Profession" 
+                  required
                 />
               </div>
               
               <div>
                 <input 
-                  type="text" 
+                  type="text"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded bg-white text-gray-800 focus:outline-none" 
                   placeholder="Enter your Company" 
+                  required
                 />
               </div>
               
               
               <div>
                 <input 
-                  type="text" 
+                  type="text"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded bg-white text-gray-800 focus:outline-none" 
                   placeholder="Enter your Area" 
+                  required
                 />
               </div>
               
@@ -81,7 +137,6 @@ const StartupForm = () => {
           </div>
         </div>
         
-        {/* Right side is empty to show the background image */}
         <div className="w-1/2 hidden md:block"></div>
       </div>
     </div>

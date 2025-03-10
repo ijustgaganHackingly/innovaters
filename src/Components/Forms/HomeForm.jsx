@@ -1,55 +1,132 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import axiosInstance from '../helper/axiosinstace';
+import { BASE_URL } from '../../../constants';
 
 const HomeForm = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    mobile: '',
-    position: ''
+    number: '', // Changed from mobile to number as per schema
+    position: '',
+    college: '',
+    state: '',
+    city: ''
   });
-
+  
+  const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [generalError, setGeneralError] = useState('');
+  
+  const validateForm = () => {
+    const newErrors = {};
+    let isValid = true;
+    
+    // Name validation
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+      isValid = false;
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+      isValid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+      isValid = false;
+    }
+    
+    if (!formData.number.trim()) {
+      newErrors.number = 'Phone number is required';
+      isValid = false;
+    } else if (!/^[0-9]{10}$/.test(formData.number)) {
+      newErrors.number = 'Please enter a valid 10-digit phone number';
+      isValid = false;
+    }
+    
+    if (!formData.position) {
+      newErrors.position = 'Position is required';
+      isValid = false;
+    }
+    
+    if (!formData.state) {
+      newErrors.state = 'State is required';
+      isValid = false;
+    }
+    
+    if (!formData.city) {
+      newErrors.city = 'City is required';
+      isValid = false;
+    }
+    
+    setErrors(newErrors);
+    return isValid;
+  };
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData(prevState => ({
+      ...prevState,
       [name]: value
-    });
+    }));
+    
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setGeneralError('');
     
-    // Here you could add code to send the form data to your backend
-    console.log('Form submitted:', formData);
+    if (!validateForm()) {
+      return;
+    }
     
-    // Reset form fields
-    setFormData({
-      name: '',
-      email: '',
-      mobile: '',
-      position: ''
-    });
+    setLoading(true);
     
-    navigate('/');
+    try {
+      const response = await axiosInstance.post(`${BASE_URL}/home`, formData);
+      alert('Application submitted successfully!');
+      navigate('/campusLeader');
+    } catch (err) {
+      console.error('Error submitting form:', err);
+      
+      if (err.response?.status === 40) {
+        setGeneralError('You have already submitted an application. We will get back to you soon.');
+      } else if (err.response?.data?.message) {
+        setGeneralError(err.response.data.message);
+      } else {
+        setGeneralError('Failed to submit application. Please try again later.');
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="min-h-screen bg-[#1d1441] bg-cover bg-center relative" style={{ backgroundImage: "url('/1440x605 (1).jpg')" }}>
-   
-      <div className="absolute top-0 left-8 text-white flex items-center cursor-pointer">
+      <div className="absolute top-0 left-8 text-white flex items-center cursor-pointer pt-4">
         <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
         </svg>
         <Link to='/campusLeader'><span className="text-sm">Back to website</span></Link>
       </div>
       
-      <div className="flex absolute top-6 w-full min-h-[80%]">
- 
+      <div className="flex absolute top-0 w-full min-h-screen pt-16">
         <div className="w-full md:w-1/2 p-2 flex items-center">
           <div className="w-full max-w-md mx-auto bg-[#170b25]/90 p-8 rounded-lg">
             <h2 className="text-white text-2xl font-bold mb-6 text-center">Apply to join now!</h2>
+            
+            {generalError && (
+              <div className="mb-4 p-3 bg-red-500/80 text-white rounded text-center">
+                {generalError}
+              </div>
+            )}
             
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
@@ -58,10 +135,10 @@ const HomeForm = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded bg-white text-gray-800 focus:outline-none"
-                  placeholder="Enter your Name"
-                  required
+                  className={`w-full px-4 py-3 rounded bg-white text-gray-800 focus:outline-none ${errors.name ? 'border-2 border-red-500' : ''}`}
+                  placeholder="Enter your Name *"
                 />
+                {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
               </div>
               
               <div>
@@ -70,22 +147,57 @@ const HomeForm = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded bg-white text-gray-800 focus:outline-none"
-                  placeholder="Enter your email ID"
-                  required
+                  className={`w-full px-4 py-3 rounded bg-white text-gray-800 focus:outline-none ${errors.email ? 'border-2 border-red-500' : ''}`}
+                  placeholder="Enter your email ID *"
                 />
+                {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
               </div>
               
               <div>
                 <input
                   type="tel"
-                  name="mobile"
-                  value={formData.mobile}
+                  name="number"
+                  value={formData.number}
+                  onChange={handleChange}
+                  className={`w-full px-4 py-3 rounded bg-white text-gray-800 focus:outline-none ${errors.number ? 'border-2 border-red-500' : ''}`}
+                  placeholder="Enter your Mobile No. (10 digits) *"
+                />
+                {errors.number && <p className="text-red-400 text-xs mt-1">{errors.number}</p>}
+              </div>
+              
+              <div>
+                <input
+                  type="text"
+                  name="college"
+                  value={formData.college}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded bg-white text-gray-800 focus:outline-none"
-                  placeholder="Enter your Mobile No."
-                  required
+                  placeholder="Enter your College/University Name"
                 />
+              </div>
+              
+              <div>
+                <input
+                  type="text"
+                  name="state"
+                  value={formData.state}
+                  onChange={handleChange}
+                  className={`w-full px-4 py-3 rounded bg-white text-gray-800 focus:outline-none ${errors.state ? 'border-2 border-red-500' : ''}`}
+                  placeholder="Enter your State *"
+                />
+                {errors.state && <p className="text-red-400 text-xs mt-1">{errors.state}</p>}
+              </div>
+              
+              <div>
+                <input
+                  type="text"
+                  name="city"
+                  value={formData.city}
+                  onChange={handleChange}
+                  className={`w-full px-4 py-3 rounded bg-white text-gray-800 focus:outline-none ${errors.city ? 'border-2 border-red-500' : ''}`}
+                  placeholder="Enter your City *"
+                />
+                {errors.city && <p className="text-red-400 text-xs mt-1">{errors.city}</p>}
               </div>
               
               <div className="relative">
@@ -93,11 +205,10 @@ const HomeForm = () => {
                   name="position"
                   value={formData.position}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded bg-white text-gray-800 appearance-none focus:outline-none"
-                  required
+                  className={`w-full px-4 py-3 rounded bg-white text-gray-800 appearance-none focus:outline-none ${errors.position ? 'border-2 border-red-500' : ''}`}
                 >
-                  <option value="" disabled>Select your position</option>
-                  <option value="campus-leader">Campus Leader</option>
+                  <option value="" disabled>Select your position *</option>
+                  <option value="campusleader">Campus Leader</option>
                   <option value="chapter">Chapter</option>
                   <option value="professional">Professional</option>
                   <option value="faculty">Faculty</option>
@@ -108,16 +219,32 @@ const HomeForm = () => {
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
                   </svg>
                 </div>
+                {errors.position && <p className="text-red-400 text-xs mt-1">{errors.position}</p>}
               </div>
               
-              <div>
+              <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-4 rounded transition duration-300"
+                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-4 rounded transition duration-300 disabled:bg-indigo-400"
+                  disabled={loading}
                 >
-                  Submit Application
+                  {loading ? (
+                    <span className="flex items-center justify-center">
+                      <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Submitting...
+                    </span>
+                  ) : (
+                    'Submit Application'
+                  )}
                 </button>
               </div>
+              
+              <p className="text-white text-xs text-center mt-4">
+                Fields marked with * are required
+              </p>
             </form>
           </div>
         </div>

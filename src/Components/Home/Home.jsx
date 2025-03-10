@@ -7,6 +7,7 @@ import EventCards from "../Card/EventCard";
 import SplitTextOnScroll from "../SplitText/SplitTextOnScroll";
 import KeySegments from "../Key/KeySegments";
 import HeroSection from "../hero/HeroSection";
+import { Link } from "react-router-dom";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -374,9 +375,9 @@ export function Home() {
     text="Join Innovators and Experience the Boundless Opportunities Ahead! "
     textClassName="text-center text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold text-white pb-4 px-4"
   />
-  <button className="text-white bg-[#8162ff] rounded-[6px] px-12 sm:px-16 md:px-20 lg:px-24 hover:opacity-80 py-2 sm:py-3 mt-4 sm:mt-5 text-sm sm:text-base">
+  <Link to='/contactForm'><button className="text-white bg-[#8162ff] rounded-[6px] px-12 sm:px-16 md:px-20 lg:px-24 hover:opacity-80 py-2 sm:py-3 mt-4 sm:mt-5 text-sm sm:text-base">
     Join Now
-  </button>
+  </button></Link>
 </div>
 
 <div className="relative h-[200px] sm:h-[250px] md:h-[280px] lg:h-[300px] w-full bg-gradient-to-b from-[#1d1441] via-[#2b1d5c] to-[#52447ec3] flex flex-col items-center justify-center z-50">

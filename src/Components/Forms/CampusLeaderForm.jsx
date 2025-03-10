@@ -52,7 +52,7 @@ const CampusLeaderApplicationForm = () => {
   };
 
   return (
-    <div className="min-h-[100vh] overflow-hidden bg-[#1d1441] bg-cover bg-center relative" style={{ backgroundImage: "url('../../../public/WhatsApp Image 2025-03-07 at 16.06.16_ec431544.jpg')" }}>
+    <div className="min-h-[100vh] overflow-hidden bg-[#1d1441] bg-cover bg-center relative" style={{ backgroundImage: "url('/WhatsApp Image 2025-03-07 at 16.06.16_ec431544.jpg')" }}>
   
       <div className="absolute top-0 left-8 text-white flex items-center cursor-pointer">
         <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -179,7 +179,6 @@ const CampusLeaderApplicationForm = () => {
           </div>
         </div>
         
-        {/* Right side is empty to show the background image */}
         <div className="w-1/2 hidden md:block"></div>
       </div>
     </div>
