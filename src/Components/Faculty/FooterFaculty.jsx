@@ -8,7 +8,7 @@ const FooterFaculty = () => {
         {/* Logo */}
         <div className="mb-6">
           <img
-            src="/Logo 2.png" // Corrected path: Assuming the 'public' folder is the root
+            src="/Logo 2.png"
             alt="Hackingly Logo"
             className="h-10"
           />

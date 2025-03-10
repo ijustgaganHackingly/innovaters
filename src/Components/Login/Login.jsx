@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import ForgotPasswordModal from './ForgetPasswordModal';
-import axios from 'axios';
+// import axios from 'axios';
 import axiosInstance from '../helper/axiosinstace';
+import { BASE_URL } from '../../../constants';
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -25,7 +26,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axiosInstance.post('/auth/register', { //Backend API URL
+      const response = await axiosInstance.post(`${BASE_URL}/auth/register`, { //Backend API URL
         name,
         email,
         password,
@@ -45,7 +46,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axiosInstance.post('/auth/login', {
+      const response = await axiosInstance.post(`${BASE_URL}/auth/login`, {
         email,
         password,
         role,

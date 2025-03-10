@@ -14,12 +14,13 @@ import ProfessionalForm from './Components/Forms/ProfessionalsForm'
 import StartupForm from './Components/Forms/Startuoform'
 import ChaptersForm from './Components/Forms/ChaptersForm'
 import HomeForm from './Components/Forms/HomeForm'
+import NotFound from './Components/NotFound/NotFound'
 
 const App = () => {
   return (
     <Router>
       <Routes>
-      <Route path="*" element={<h1>Not Found</h1>} />
+      <Route path="*" element={<NotFound/>} />
         <Route path="/" element={<Home/>} />
         <Route path='/login' element={<Login/>}/>
         <Route path='/signUp' element={<Signup/>}/>
