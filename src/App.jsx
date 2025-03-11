@@ -15,8 +15,14 @@ import StartupForm from './Components/Forms/Startuoform'
 import ChaptersForm from './Components/Forms/ChaptersForm'
 import HomeForm from './Components/Forms/HomeForm'
 import NotFound from './Components/NotFound/NotFound'
+import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute'
+import AdminDashboard from './Components/Dashboards/AdminDashboard'
+import SuperAdmin from './Components/Dashboards/SuperAdmin'
+import CampusLeaderDash from './Components/Dashboards/CampusLeaderDash'
 
 const App = () => {
+
+
   return (
     <Router>
       <Routes>
@@ -35,6 +41,10 @@ const App = () => {
         <Route path='/professionalform' element={<ProfessionalForm/>}/>
         <Route path='/startupForm' element={<StartupForm/>}/>
         <Route path='/contactForm' element={<HomeForm/>}/>
+
+        <Route path="/admin/dashboard" element={<ProtectedRoute requiredRole="admin"><AdminDashboard /></ProtectedRoute>} />
+        <Route path="/superadmin/dashboard" element={<ProtectedRoute requiredRole="superadmin"><SuperAdmin /></ProtectedRoute>} />
+        <Route path="/campus-leader-dashboard" element={<ProtectedRoute requiredRole="campusleader"><CampusLeaderDash /></ProtectedRoute>} />
 
       </Routes>
     </Router>

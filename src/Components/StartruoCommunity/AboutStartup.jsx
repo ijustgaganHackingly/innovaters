@@ -10,7 +10,7 @@ const AboutStartup = () => {
     <div className='flex flex-col pt-12 w-full items-center lg:flex-row lg:max-w-screen-xl mx-auto justify-between overflow-hidden'>
         <div className='py-6 w-full lg:w-[48%] flex justify-center item-center '>
             <div className='h-48 w-[300px] relative bg-gray-400 sm:h-96 sm:w-[500px]'>
-                <div className='h-48 w-[300px] absolute top-[-15px] right-[-15px] bg-gray-300 sm:h-96 sm:w-[500px]'></div>
+                <img src='/640-500.png' className='h-48 w-[300px] absolute top-[-15px] right-[-15px] bg-gray-300 sm:h-96 sm:w-[500px]'/>
             </div>
         </div>
         <div className='sm:pb-10 text-lg text-center  xl:w-[48%] md:text-left text-gray-500 lg:w-2/5 lg:text-left'>

@@ -51,7 +51,7 @@ const Perks = () => {
         </div> */}
         <div className='py-10 w-full lg:w-1/2 flex justify-center item-center'>
             <div className='h-48 w-[300px] relative bg-gray-400 sm:h-96 sm:w-[500px]'>
-                <div className='h-48 w-[300px] absolute top-[-15px] left-[-15px] bg-gray-300 sm:h-96 sm:w-[500px]'></div>
+                <img src='/640-500 1.png' className='h-48 w-[300px] absolute top-[-15px] left-[-15px] bg-gray-300 sm:h-96 sm:w-[500px]'/>
             </div>
         </div>
     </div>

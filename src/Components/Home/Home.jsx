@@ -203,7 +203,7 @@ export function Home() {
     {/* Students Card */}
     <div className="relative w-full md:w-[200px] lg:w-[350px] h-[200px] overflow-hidden rounded-3xl">
       <img
-        src="/daniil-silantev-sN4u56baSB0-unsplash - Copy - Copy.jpg"
+        src="/Cb.png"
         alt="Students"
         className="w-full h-full object-cover"
       />
