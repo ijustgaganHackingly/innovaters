@@ -26,7 +26,6 @@ const Login = () => {
     setIsOtpSent(false);
   };
 
-  // Handle User Registration
   const handleRegistration = async (e) => {
     e.preventDefault();
 
@@ -38,16 +37,15 @@ const Login = () => {
         role,
       });
 
-      setSuccessMessage(response.data.message); // "OTP sent to email. Verify to complete registration."
+      setSuccessMessage(response.data.message);
       setErrorMessage('');
-      setIsOtpSent(true); // Show OTP input field
+      setIsOtpSent(true);
     } catch (error) {
       setErrorMessage(error.response?.data?.error || 'Registration failed');
       setSuccessMessage('');
     }
   };
 
-  // Verify OTP for Registration
   const verifyRegistrationOtp = async (e) => {
     e.preventDefault();
 
@@ -57,16 +55,15 @@ const Login = () => {
         otp,
       });
 
-      setSuccessMessage(response.data.message); // "User verified successfully. You can now log in."
+      setSuccessMessage(response.data.message); 
       setErrorMessage('');
-      setIsLogin(true); // Switch to login form
+      setIsLogin(true); 
     } catch (error) {
       setErrorMessage(error.response?.data?.error || 'OTP verification failed');
       setSuccessMessage('');
     }
   };
 
-  // Handle User Login
   const handleLogin = async (e) => {
     e.preventDefault();
   
@@ -83,13 +80,11 @@ const Login = () => {
         throw new Error('Token is missing in the response');
       }
   
-      // Decode the token to extract userId and role
       const decodedToken = jwtDecode(token);
 
       console.log("decoded " , decodedToken)
       const { userId, role: userRole } = decodedToken;
   
-      // Store token, userId, and role in localStorage
       localStorage.setItem('token', token);
       localStorage.setItem('userId', userId);
       localStorage.setItem('role', userRole);
@@ -122,7 +117,6 @@ const Login = () => {
     }
   };
 
-  // Verify OTP for Password Reset
   const verifyResetOtp = async (email, otp, newPassword) => {
     try {
       const response = await axiosInstance.post(`${BASE_URL}/auth/reset-password`, {
@@ -131,16 +125,15 @@ const Login = () => {
         newPassword,
       });
 
-      setSuccessMessage(response.data.message); // "Password reset successfully"
+      setSuccessMessage(response.data.message);
       setErrorMessage('');
-      setIsOtpSent(false); // Hide OTP input field
+      setIsOtpSent(false); 
     } catch (error) {
       setErrorMessage(error.response?.data?.error || 'Failed to reset password');
       setSuccessMessage('');
     }
   };
 
-  // Fetch User Profile
   const fetchProfile = async () => {
     try {
       const token = localStorage.getItem('token');
@@ -159,17 +152,14 @@ const Login = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-[#1d1441]">
       <div className="flex w-full max-w-3xl overflow-hidden rounded-lg shadow-lg">
-        {/* Left side - white box */}
         <div className="w-1/2 p-8 bg-white">
           <h2 className="mb-6 text-2xl font-bold text-center">
             {isLogin ? "Sign In" : "Create Account"}
           </h2>
 
-          {/* Display messages */}
           {errorMessage && <div className="mb-4 text-red-500">{errorMessage}</div>}
           {successMessage && <div className="mb-4 text-green-500">{successMessage}</div>}
 
-          {/* Registration/Login Form */}
           <form className="space-y-4" onSubmit={isLogin ? handleLogin : isOtpSent ? verifyRegistrationOtp : handleRegistration}>
             {!isLogin && !isOtpSent && (
               <div>
@@ -274,7 +264,6 @@ const Login = () => {
           </form>
         </div>
 
-        {/* Right side - purple box */}
         <div className="flex flex-col items-center justify-center w-1/2 p-8 text-white bg-[#8162ff]">
           <h2 className="mb-6 text-3xl font-bold">
             {isLogin ? "Hello, Friend!" : "Welcome Back!"}
