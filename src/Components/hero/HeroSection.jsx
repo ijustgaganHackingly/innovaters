@@ -184,16 +184,15 @@ const HeroSection = () => {
               overflow-y-scroll scrollbar-hide"
             >
               {[
-                {name :"Amity University, Jaipur", img:"/0d06fb8d-8ef3-4c45-a7fa-3e908d1b7bb3.jpg"},
-                {name:"JK Lakshmipat University, Jaipur", img:""},
-                {name:"Panipat Institute of Engineering",img:""},
-               {name: "Amity Universirty, Mumbai",img:""},
-                {name:"Jecrc university",img:""},
-                {name:"Manipal University, Jaipur",img:""},
+                {name :"Amity University, Jaipur", img:"/text_bg.png"},
+                {name:"JK Lakshmipat University, Jaipur", img:"/jklu.webp"},
+                {name:"Panipat Institute of Engineering",img:"l.png"},
+               {name: "Amity Universirty, Mumbai",img:"/Mai.png"},
+                {name:"Jecrc university",img:"/JU-Logo.png"},
                
               ].map((university, index) => (
                 <div key={index} className="flex items-center gap-2 sm:gap-3 md:gap-4">
-                  <img src={university.img} className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-white/10 rounded-lg flex-shrink-0" />
+                  <img src={university.img} className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 object-contain rounded-lg flex-shrink-0" />
                   <span className="text-white/90 text-xs md:text-sm">{university.name}</span>
                 </div>
               ))}
@@ -261,10 +260,11 @@ const HeroSection = () => {
               h-[250px] sm:h-[275px] md:h-[300px] 
               overflow-y-scroll scrollbar-hide"
             >
-              {[{name: "Ambixous", img:"/ambixios.jpg"}, {name: "World we desire",img:"/Worldwedesire.jpg"} ].map(
+              {[{name: "Ambixous", img:"/ambixios.jpg"}, {name: "World we desire",img:"/Worldwedesire.jpg"}, { name:"ECH UoR",img:"/Ic.jpg" }, { name:"Incubation center",img:"/Ic1.jpg" }, { name:"Amity Mumbai",img:"amity4.jpg" } ].map(
                 (startup, index) => (
                   <div key={index} className="flex items-center gap-2 sm:gap-3 md:gap-4">
-                    <img src={startup.img} className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-white/10 rounded-lg flex-shrink-0" />
+                    <img src={startup.img} className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 object-cover bg-white/10  md:h-10 rounded-lg flex-shrink-0" />
+                    {/* bg of img  bg-white/10 */}
                     <span className="text-white/90 text-xs md:text-sm">{startup.name}</span>
                   </div>
                 )
