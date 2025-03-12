@@ -1,20 +1,3 @@
-// import React from 'react'
-
-// const Perks = () => {
-//   return (
-//     <div>
-//       <div>
-//         <h1>Perks of Joining us</h1>
-//         <img src='../../../public/brush stroke.svg'/>
-//       </div>
-//       <div>
-
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default Perks
 import React from 'react';
 
 const Perks = () => {
