@@ -5,8 +5,8 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
 import { useState } from 'react';
-import axios from 'axios'; // Import axios
-
+import axiosInstance from '../helper/axiosinstace';
+import { BASE_URL } from '../../../constants';
 
 const style = {
   position: 'absolute',
@@ -31,15 +31,36 @@ export default function ForgotPasswordModal() {
   const [confirmNewPassword, setConfirmNewPassword] = useState('');
   const [resetSuccess, setResetSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSendOtp = async () => {
     try {
-      const response = await axios.post('/api/auth/verify-user', { email });  // Use the correct endpoint
-      setOtpSent(true);
+      setIsLoading(true);
       setErrorMessage('');
-      console.log(response.data.message);
+      
+      console.log("Sending OTP to email:", email);
+      console.log("API endpoint:", `${BASE_URL}/auth/forgot-password`);
+      
+      const response = await axiosInstance.post(`${BASE_URL}/auth/forgot-password`, { email });
+      
+      console.log("OTP response:", response.data);
+      setOtpSent(true);
     } catch (error) {
-      setErrorMessage(error.response?.data?.error || 'Failed to send OTP. Please try again.');
+      console.error("OTP error:", error);
+      
+      if (error.response) {
+        console.error("Error response data:", error.response.data);
+        console.error("Error status:", error.response.status);
+        setErrorMessage(error.response.data.error || 'Failed to send OTP. Please try again.');
+      } else if (error.request) {
+        console.error("No response received:", error.request);
+        setErrorMessage('No response received from server. Please check your connection.');
+      } else {
+        console.error("Error message:", error.message);
+        setErrorMessage('An error occurred. Please try again later.');
+      }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -50,24 +71,42 @@ export default function ForgotPasswordModal() {
     }
 
     try {
-      const response = await axios.post('/api/auth/reset-password', {
+      setIsLoading(true);
+      setErrorMessage('');
+      
+      console.log("Resetting password for email:", email);
+      console.log("API endpoint:", `${BASE_URL}/auth/reset-password`);
+      
+      const response = await axiosInstance.put(`${BASE_URL}/auth/reset-password`, {
         email,
         otp,
         newPassword,
       });
+      
+      console.log("Reset password response:", response.data);
       setResetSuccess(true);
-      setErrorMessage('');
-      console.log(response.data.message); // Password reset successfully
     } catch (error) {
-      setErrorMessage(error.response?.data?.error || 'Failed to reset password. Please try again.');
+      console.error("Reset password error:", error);
+      
+      if (error.response) {
+        console.error("Error response data:", error.response.data);
+        console.error("Error status:", error.response.status);
+        setErrorMessage(error.response.data.error || 'Failed to reset password. Please try again.');
+      } else if (error.request) {
+        console.error("No response received:", error.request);
+        setErrorMessage('No response received from server. Please check your connection.');
+      } else {
+        console.error("Error message:", error.message);
+        setErrorMessage('An error occurred. Please try again later.');
+      }
+    } finally {
+      setIsLoading(false);
     }
   };
 
-
-
   return (
     <div>
-      <Button onClick={handleOpen}  >
+      <Button onClick={handleOpen}>
         <h1 className='text-purple-500'>Forgot Password?</h1>
       </Button>
       <Modal
@@ -81,7 +120,7 @@ export default function ForgotPasswordModal() {
             Reset Password
           </Typography>
           {errorMessage && (
-            <Typography color="error">{errorMessage}</Typography>
+            <Typography color="error" sx={{ mb: 2 }}>{errorMessage}</Typography>
           )}
 
           {!otpSent && !resetSuccess && (
@@ -92,13 +131,14 @@ export default function ForgotPasswordModal() {
                 margin="normal"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                disabled={isLoading}
               />
               <button
                 className='bg-[#8162ff] py-2 px-4 text-white rounded-lg hover:bg-[#6a51cf] focus:outline-none focus:ring-2 focus:ring-[#4e3c96] focus:ring-opacity-50'
                 onClick={handleSendOtp}
-                disabled={!email}
+                disabled={!email || isLoading}
               >
-                Send OTP
+                {isLoading ? 'Sending...' : 'Send OTP'}
               </button>
             </div>
           )}
@@ -112,6 +152,7 @@ export default function ForgotPasswordModal() {
                 margin="normal"
                 value={otp}
                 onChange={(e) => setOtp(e.target.value)}
+                disabled={isLoading}
               />
               <TextField
                 fullWidth
@@ -121,6 +162,7 @@ export default function ForgotPasswordModal() {
                 margin="normal"
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
+                disabled={isLoading}
               />
               <TextField
                 fullWidth
@@ -130,24 +172,33 @@ export default function ForgotPasswordModal() {
                 margin="normal"
                 value={confirmNewPassword}
                 onChange={(e) => setConfirmNewPassword(e.target.value)}
+                disabled={isLoading}
               />
               <button
                 onClick={handleResetPassword}
                 className='bg-[#8162ff] py-2 px-4 text-white rounded-lg hover:bg-[#6a51cf] focus:outline-none focus:ring-2 focus:ring-[#4e3c96] focus:ring-opacity-50'
-                disabled={!otp || !newPassword || !confirmNewPassword}>Reset Password</button>
+                disabled={!otp || !newPassword || !confirmNewPassword || isLoading}
+              >
+                {isLoading ? 'Resetting...' : 'Reset Password'}
+              </button>
             </div>
           )}
 
           {resetSuccess && (
             <Typography color="success">Password reset successfully!</Typography>
           )}
-          <button onClick={handleClose}><h1 className='text-purple-700 py-2 px-4'>Close</h1></button>
+          <button 
+            onClick={handleClose}
+            className="mt-4"
+            disabled={isLoading}
+          >
+            <h1 className='text-purple-700 py-2 px-4'>Close</h1>
+          </button>
         </Box>
       </Modal>
     </div>
   );
 }
-
 // import * as React from 'react';
 // import Box from '@mui/material/Box';
 // import Button from '@mui/material/Button';
