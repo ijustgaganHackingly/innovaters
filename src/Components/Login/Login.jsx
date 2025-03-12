@@ -223,6 +223,7 @@ const Login = () => {
               </div>
             )}
 
+           { isLogin &&(
             <div>
               <label htmlFor="role" className="block mb-1 text-sm font-medium text-gray-700">
                 Role
@@ -238,6 +239,7 @@ const Login = () => {
                 <option value="superadmin">Super Admin</option>
               </select>
             </div>
+           )}
 
             {isLogin && (
               <div className="flex items-center justify-between">
