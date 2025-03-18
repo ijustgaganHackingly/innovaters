@@ -5,7 +5,7 @@ import SplitTextOnScroll from '../SplitText/SplitTextOnScroll';
 const KeySegments = () => {
     return (
         <div className="relative h-auto w-full bg-gradient-to-t from-[#1d1441] via-[#2b1d5c] to-[#44376f] flex flex-col items-center justify-center pt-24">
-  <h2 className="text-white text-4xl mt-12 mb-2 text-center">
+  <h2 className="text-white font-[500] text-4xl mt-12 mb-2 text-center">
     <SplitTextOnScroll
       text="Key Segments Of Innovators"
       textClassName="text-center pb-4 text-4xl text-white"
@@ -15,7 +15,7 @@ const KeySegments = () => {
   <div className="flex flex-wrap justify-center space-x-0 sm:space-x-6 mt-16 px-4">
     
 
-    <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-full sm:w-[80%] md:w-[60%] lg:w-[500px] p-6 border border-[#372b59] md:mt-8 md:mb-16 ">
+    <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-full sm:w-[80%] md:w-[60%] lg:w-[500px] p-6 border border-[#372b59] md:mt-8 md:mb-6 ">
    
       <div className="mb-6">
         <div className="relative w-full overflow-hidden rounded-t-3xl bg-indigo-900">
@@ -28,7 +28,7 @@ const KeySegments = () => {
             />
           </div>
         </div>
-        <h2 className="text-indigo-400 text-xl font-semibold mb-2 mt-2">
+        <h2 className="text-[#565ADD] text-xl font-semibold mb-2 mt-2">
           CAMPUS LEADER
         </h2>
         <p className="text-white/80 text-sm leading-relaxed">
@@ -39,7 +39,7 @@ const KeySegments = () => {
       </div>
     </div>
 
-    <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-full sm:w-[80%] md:w-[60%] lg:w-[500px] p-6 border border-[#372b59] md:mt-8 md:mb-16 ">
+    <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-full sm:w-[80%] md:w-[60%] lg:w-[500px] p-6 border border-[#372b59] md:mt-8 md:mb-6 ">
       <div className="mb-6">
         <div className="relative w-full overflow-hidden rounded-t-3xl bg-indigo-900">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-100/20 transform skew-x-12 translate-x-20 z-10" />
@@ -51,7 +51,7 @@ const KeySegments = () => {
             />
           </div>
         </div>
-        <h2 className="text-indigo-400 text-xl font-semibold mb-2 mt-2">
+        <h2 className="text-[#565ADD] text-xl font-semibold mb-2 mt-2">
           CAMPUS LEADER
         </h2>
         <p className="text-white/80 text-sm leading-relaxed">
@@ -90,7 +90,7 @@ const KeySegments = () => {
       <div className="flex flex-col md:flex-row bg-[#1a1528]/95 backdrop-blur-sm rounded-3xl overflow-hidden w-full max-w-[1024px]">
         {/* Left content */}
         <div className="flex-1 p-4 sm:p-6 md:p-12">
-          <h2 className="text-blue-500 text-lg font-semibold mb-4">
+          <h2 className="text-[#565ADD] text-lg font-semibold mb-4">
             STUDENT COMMUNITY
           </h2>
           <p className="text-white/80 text-sm leading-relaxed">
@@ -120,7 +120,7 @@ const KeySegments = () => {
       <div className="flex flex-col md:flex-row-reverse bg-[#1a1528]/95 backdrop-blur-sm rounded-3xl overflow-hidden w-full max-w-[1024px]">
         {/* Right content */}
         <div className="flex-1 p-4 sm:p-6 md:p-12">
-          <h2 className="text-blue-500 text-lg font-semibold mb-4">
+          <h2 className="text-[#565ADD] text-lg font-semibold mb-4">
             STARTUP COMMUNITY
           </h2>
           <p className="text-white/80 text-sm leading-relaxed">
@@ -146,7 +146,7 @@ const KeySegments = () => {
     </div>
   </div>
 
-  <div className="flex flex-wrap justify-center space-x-0 sm:space-x-6 mt-16 px-4">
+  <div className="flex flex-wrap justify-center space-x-0 sm:space-x-6 mt-6 px-4">
     
 
     <div className="bg-[#1a1528]/95 backdrop-blur-sm rounded-2xl w-full sm:w-[80%] md:w-[60%] lg:w-[500px] p-6 border border-[#372b59] mb-6 sm:mb-0 ">
@@ -161,7 +161,7 @@ const KeySegments = () => {
             />
           </div>
         </div>
-        <h2 className="text-indigo-400 text-xl font-semibold mb-2 mt-2">
+        <h2 className="text-[#565ADD] text-xl font-semibold mb-2 mt-2">
           CAMPUS LEADER
         </h2>
         <p className="text-white/80 text-sm leading-relaxed">
@@ -184,7 +184,7 @@ const KeySegments = () => {
             />
           </div>
         </div>
-        <h2 className="text-indigo-400 text-xl font-semibold mb-2 mt-2">
+        <h2 className="text-[#565ADD] text-xl font-semibold mb-2 mt-2">
           CAMPUS LEADER
         </h2>
         <p className="text-white/80 text-sm leading-relaxed">

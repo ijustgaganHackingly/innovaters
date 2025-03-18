@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import AboutSection from './AboutSection'
-import { Navbar } from 'react-bootstrap'
+import  { useState } from 'react'
+// import AboutSection from './AboutSection'
+// import { Navbar } from 'react-bootstrap'
 import Events from './Events'
 import OurChapters from './OurChapters'
 import FooterChapters from './FooterChapters'
@@ -13,6 +13,14 @@ const ChaptersMain = () => {
     const toggleMobileMenu = () => {
       setIsMobileMenuOpen(!isMobileMenuOpen);
     };
+
+    const scrollToSection = (sectionId) => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+        setIsMobileMenuOpen(false);
+      }
+    };
   return (
     <div className='bg-white'>
      {/* <AboutSection/> */}
@@ -24,9 +32,28 @@ const ChaptersMain = () => {
                      </div>
                      <div className='z-10'>
                        <nav className='flex gap-8 text-gray-700 px-28'>
-                         <Link to="#about" className='hover:text-gray-900'>About Us</Link>
-                         <Link to="/events" className='hover:text-gray-900'>Our Events</Link>
-                         <Link to="/chapters" className='hover:text-gray-900'>Chapters</Link>
+                       <a 
+              href='#about' 
+              className='hover:text-gray-900 cursor-pointer'
+              onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
+            >
+              About Us
+            </a>
+            <a 
+              href='#events' 
+              className='hover:text-gray-900 cursor-pointer'
+              onClick={(e) => { e.preventDefault(); scrollToSection('events'); }}
+            >
+              Events
+            </a>
+            <a 
+              href='#Chapter' 
+              className='hover:text-gray-900 cursor-pointer'
+              onClick={(e) => { e.preventDefault(); scrollToSection('Chapter'); }}
+            >
+              Our Chapters
+            </a>
+          
                        </nav>
                      </div>
                    </div>
@@ -57,9 +84,28 @@ const ChaptersMain = () => {
                      </div>
              
                      <nav className='flex flex-col items-center mt-16'>
-                       <Link to="/about" className='py-2 text-gray-700 hover:text-gray-900 text-xl' onClick={toggleMobileMenu}>About Us</Link>
-                       <Link to="/events" className='py-2 text-gray-700 hover:text-gray-900 text-xl' onClick={toggleMobileMenu}>Our Events</Link>
-                       <Link to="/chapters" className='py-2 text-gray-700 hover:text-gray-900 text-xl' onClick={toggleMobileMenu}>Chapters</Link>
+                     <a 
+              href='#about' 
+              className='py-2 text-gray-700 hover:text-gray-900 text-xl'
+              onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
+            >
+              About Us
+            </a>
+            <a 
+              href='#events' 
+              className='py-2 text-gray-700 hover:text-gray-900 text-xl'
+              onClick={(e) => { e.preventDefault(); scrollToSection('events'); }}
+            >
+              Events
+            </a>
+            <a 
+              href='#Chapter' 
+              className='py-2 text-gray-700 hover:text-gray-900 text-xl'
+              onClick={(e) => { e.preventDefault(); scrollToSection('Chapter'); }}
+            >
+              Our Chapters
+            </a>
+          
                      </nav>
                    </div>
 
@@ -93,9 +139,15 @@ const ChaptersMain = () => {
         <div className=' w-[1440px] h-[1440px] shadow-[#7151FF1A] absolute rounded-full -top-[696px] left-[504px] bg-[#f4f1ff] opacity-[45%]'/>
       </div>
 
-      <Events/>
-      <OurChapters/>
-    <FooterChapters/>  
+     <div id='events'>
+     <Events/>
+     </div>
+   <div id='Chapter'>
+   <OurChapters/>
+   </div>
+   <div id='footer'>
+   <FooterChapters/>  
+   </div>
     </div>
   )
 }

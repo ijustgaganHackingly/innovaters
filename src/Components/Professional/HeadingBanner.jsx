@@ -2,6 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const HeadingBanner = () => {
+
+  
+ 
+  
+ 
   return (
     <div className="w-full bg-gray-100">
       <div className="relative w-full h-[605px]">

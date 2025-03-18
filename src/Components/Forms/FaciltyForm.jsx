@@ -51,7 +51,7 @@ const FacultyForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#1d1441] bg-cover bg-center relative" style={{ backgroundImage: "url('/1440x605 (4).jpg')" }}>
+    <div className="min-h-screen bg-[#1d1441] bg-cover bg-center relative" style={{ backgroundImage: "url('/Faculty Advisors.png')" }}>
 
       <div className="absolute top-8 left-8 text-white flex items-center cursor-pointer">
         <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

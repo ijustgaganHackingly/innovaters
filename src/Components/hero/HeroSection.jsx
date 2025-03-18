@@ -129,7 +129,7 @@ const HeroSection = () => {
             md:text-3xl 
             lg:text-4xl 
             xl:text-5xl 
-            font-bold text-white"
+            font-[500] text-white"
           >
             <SplitTextOnScroll
               text="Exclusive Community Platform for Tech Leaders and Visionaries!"
@@ -260,7 +260,7 @@ const HeroSection = () => {
               h-[250px] sm:h-[275px] md:h-[300px] 
               overflow-y-scroll scrollbar-hide"
             >
-              {[{name: "Ambixous", img:"/ambixios.jpg"}, {name: "World we desire",img:"/Worldwedesire.jpg"}, { name:"ECH UoR",img:"/Ic.jpg" }, { name:"Incubation center",img:"/Ic1.jpg" }, { name:"Amity Mumbai",img:"amity4.jpg" } ].map(
+              {[{name: "Ambixous", img:"/Ambixous.png"}, {name: "World we desire",img:"/world we desire.png"}, { name:"ECH UoR",img:"/ECH.png" }, { name:"Incubation center",img:"/Incubation.png" }, { name:"Amity Mumbai",img:"/Amity IC.png" } ].map(
                 (startup, index) => (
                   <div key={index} className="flex items-center gap-2 sm:gap-3 md:gap-4">
                     <img src={startup.img} className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 object-cover bg-white/10  md:h-10 rounded-lg flex-shrink-0" />
