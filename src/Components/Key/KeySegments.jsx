@@ -159,7 +159,7 @@ const KeySegments = () => {
       <div className="mb-6">
         <div className="relative w-full overflow-hidden rounded-t-3xl bg-indigo-900">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-100/20 transform skew-x-12 translate-x-20 z-10 " />
-          <div className="p-4">
+          <div className="p-4"> 
             <img
               src="/Students.png"
               alt="Campus meeting"
