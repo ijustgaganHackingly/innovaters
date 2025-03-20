@@ -22,10 +22,10 @@ const Benefits = () => {
         </h3>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-          {/* Make a Lasting Impact */}
+        
           <div className="flex items-start p-3 sm:p-4">
             <div className="flex-shrink-0 mr-3 sm:mr-4">
-              <img src="/megaphone.svg" alt="Impact" className="w-8 h-8 sm:w-10 sm:h-10" />
+              <img src="/Make a Lasting Impact.svg" alt="Impact" className="w-8 h-8 sm:w-10 sm:h-10" />
             </div>
             <div className="text-left">
               <h4 className="text-sm sm:text-md font-bold text-[#1d1d3d] uppercase mb-1">MAKE A LASTING IMPACT</h4>
@@ -33,10 +33,9 @@ const Benefits = () => {
             </div>
           </div>
           
-          {/* Thought Leadership */}
           <div className="flex items-start p-3 sm:p-4">
             <div className="flex-shrink-0 mr-3 sm:mr-4">
-              <img src="/megaphone.svg" alt="Leadership" className="w-8 h-8 sm:w-10 sm:h-10" />
+              <img src="/thought-leadership.svg" alt="Leadership" className="w-8 h-8 sm:w-10 sm:h-10" />
             </div>
             <div className="text-left">
               <h4 className="text-sm sm:text-md font-bold text-[#1d1d3d] uppercase mb-1">THOUGHT LEADERSHIP</h4>
@@ -44,10 +43,9 @@ const Benefits = () => {
             </div>
           </div>
           
-          {/* Travel Opportunities */}
           <div className="flex items-start p-3 sm:p-4">
             <div className="flex-shrink-0 mr-3 sm:mr-4">
-              <img src="/megaphone.svg" alt="Travel" className="w-8 h-8 sm:w-10 sm:h-10" />
+              <img src="/Travel Opportunities.svg" alt="Travel" className="w-8 h-8 sm:w-10 sm:h-10" />
             </div>
             <div className="text-left">
               <h4 className="text-sm sm:text-md font-bold text-[#1d1d3d] uppercase mb-1">TRAVEL OPPORTUNITIES</h4>
@@ -55,10 +53,9 @@ const Benefits = () => {
             </div>
           </div>
           
-          {/* Exclusive Networking */}
           <div className="flex items-start p-3 sm:p-4">
             <div className="flex-shrink-0 mr-3 sm:mr-4">
-              <img src="/megaphone.svg" alt="Networking" className="w-8 h-8 sm:w-10 sm:h-10" />
+              <img src="/Exclusive Networking.svg" alt="Networking" className="w-8 h-8 sm:w-10 sm:h-10" />
             </div>
             <div className="text-left">
               <h4 className="text-sm sm:text-md font-bold text-[#1d1d3d] uppercase mb-1">EXCLUSIVE NETWORKING</h4>
@@ -66,10 +63,9 @@ const Benefits = () => {
             </div>
           </div>
           
-          {/* Recognition */}
           <div className="flex items-start p-3 sm:p-4">
             <div className="flex-shrink-0 mr-3 sm:mr-4">
-              <img src="/megaphone.svg" alt="Recognition" className="w-8 h-8 sm:w-10 sm:h-10" />
+              <img src="/recognition.svg" alt="Recognition" className="w-8 h-8 sm:w-10 sm:h-10" />
             </div>
             <div className="text-left">
               <h4 className="text-sm sm:text-md font-bold text-[#1d1d3d] uppercase mb-1">RECOGNITION</h4>
@@ -77,10 +73,9 @@ const Benefits = () => {
             </div>
           </div>
           
-          {/* Shape The Future */}
           <div className="flex items-start p-3 sm:p-4">
             <div className="flex-shrink-0 mr-3 sm:mr-4">
-              <img src="/megaphone.svg" alt="Future" className="w-8 h-8 sm:w-10 sm:h-10" />
+              <img src="/Shape the Future.svg" alt="Future" className="w-8 h-8 sm:w-10 sm:h-10" />
             </div>
             <div className="text-left">
               <h4 className="text-sm sm:text-md font-bold text-[#1d1d3d] uppercase mb-1">SHAPE THE FUTURE</h4>
@@ -94,24 +89,3 @@ const Benefits = () => {
 };
 
 export default Benefits;
-
-// import React from 'react'
-
-// const Benefits = () => {
-//   return (
-//     <div>
-//       <div>
-//         <h1>Exclusive Benefits For Faculty Advisors</h1>
-//         <img src='../../../public/brush stroke.svg' />
-//       </div>
-//       <div>
-//         <h3>Unlock Unique benefits & opportunities as a Faculty Advisor</h3>
-//       </div>
-//       <div>
-
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default Benefits

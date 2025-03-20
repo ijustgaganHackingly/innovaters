@@ -6,7 +6,7 @@ const Perks = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <div className="relative inline-block">
-            <h1 className="text-3xl md:text-5xl font-bold text-[#1d1d3d] mb-2">
+            <h1 className="text-2xl md:text-3xl font-[500] text-[#1d1d3d] mb-2">
               Perks of Joining Us
             </h1>
             <div className="absolute bottom-0 left-0 transform translate-y-1 w-32">
@@ -21,13 +21,13 @@ const Perks = () => {
         
        
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-20 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-y-8 gap-x-16 mb-6">
           {/* Mentorship Programs */}
           <div className="bg-white p-6 rounded-lg border border-gray-200">
             <div className="w-10 h-10 mb-4">
-              <img src="/activity.svg" alt="Mentorship" className="w-full h-full " />
+              <img src="/Mentorship programe.svg" alt="Mentorship" className="w-full h-full " />
             </div>
-            <h3 className="text-lg font-bold text-[#1d1d3d] mb-2">MENTORSHIP PROGRAMS</h3>
+            <h3 className="text-lg font-[400] text-[#1d1d3d] mb-2">MENTORSHIP PROGRAMS</h3>
             <p className="text-gray-600">
               Connect with experienced professionals for personalized guidance and career support.
             </p>
@@ -36,9 +36,9 @@ const Perks = () => {
           {/* Speaker Sessions */}
           <div className="bg-white p-6 rounded-lg border border-gray-200">
           <div className="w-10 h-10 mb-4">
-              <img src="/activity.svg" alt="Mentorship" className="w-full h-full" />
+              <img src="/Speaker Sessions.svg" alt="Mentorship" className="w-full h-full" />
             </div>
-            <h3 className="text-lg font-bold text-[#1d1d3d] mb-2">SPEAKER SESSIONS</h3>
+            <h3 className="text-lg font-[400] text-[#1d1d3d] mb-2">SPEAKER SESSIONS</h3>
             <p className="text-gray-600">
               Learn from industry leaders through engaging talks & inspiring success stories.
             </p>
@@ -47,9 +47,9 @@ const Perks = () => {
           {/* Networking Opportunities */}
           <div className="bg-white p-6 rounded-lg border border-gray-200">
           <div className="w-10 h-10 mb-4">
-              <img src="/activity.svg" alt="Mentorship" className="w-full h-full" />
+              <img src="/Networking Opportunities.svg" alt="Mentorship" className="w-full h-full" />
             </div>
-            <h3 className="text-lg font-bold text-[#1d1d3d] mb-2">NETWORKING OPPORTUNITIES</h3>
+            <h3 className="text-lg font-[400] text-[#1d1d3d] mb-2">NETWORKING OPPORTUNITIES</h3>
             <p className="text-gray-600">
               Build meaningful relationships with like minded professionals and industry experts at events.
             </p>
@@ -57,9 +57,9 @@ const Perks = () => {
 
           <div className="bg-white p-6 rounded-lg border border-gray-200">
           <div className="w-10 h-10 mb-4">
-              <img src="/activity.svg" alt="Mentorship" className="w-full h-full" />
+              <img src="/exclusive resources.svg" alt="Mentorship" className="w-full h-full" />
             </div>
-            <h3 className="text-lg font-bold text-[#1d1d3d] mb-2">EXCLUSIVE RESOURCES</h3>
+            <h3 className="text-lg font-[400] text-[#1d1d3d] mb-2">EXCLUSIVE RESOURCES</h3>
             <p className="text-gray-600">
               Access valuable articles, webinars and toolkits designed for your professional growth.
             </p>
@@ -68,9 +68,9 @@ const Perks = () => {
           {/* Community Support */}
           <div className="bg-white p-6 rounded-lg border border-gray-200">
           <div className="w-10 h-10 mb-4">
-              <img src="/activity.svg" alt="Mentorship" className="w-full h-full" />
+              <img src="/community support.svg" alt="Mentorship" className="w-full h-full" />
             </div>
-            <h3 className="text-lg font-bold text-[#1d1d3d] mb-2">COMMUNITY SUPPORT</h3>
+            <h3 className="text-lg font-[400] text-[#1d1d3d] mb-2">COMMUNITY SUPPORT</h3>
             <p className="text-gray-600">
               Join a supportive network that encourages collaboration & share experiences and advice.
             </p>
@@ -79,9 +79,9 @@ const Perks = () => {
           {/* Access to Industry Insights */}
           <div className="bg-white p-6 rounded-lg border border-gray-200">
           <div className="w-10 h-10 mb-4">
-              <img src="/activity.svg" alt="Mentorship" className="w-full h-full" />
+              <img src="/acess to industry insight.svg" alt="Mentorship" className="w-full h-full" />
             </div>
-            <h3 className="text-lg font-bold text-[#1d1d3d] mb-2">ACCESS TO INDUSTRY INSIGHTS</h3>
+            <h3 className="text-lg font-[400] text-[#1d1d3d] mb-2">ACCESS TO INDUSTRY INSIGHTS</h3>
             <p className="text-gray-600">
               Stay updated on trends and best practices from leading experts in your field.
             </p>

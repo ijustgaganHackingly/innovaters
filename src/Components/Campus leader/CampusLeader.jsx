@@ -72,9 +72,9 @@ const CampusLeader = () => {
 
       <div className='md:hidden flex items-center justify-between py-6  bg-white z-10 px-4 shadow-sm'>
         <div>
-          <a href='#home' onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>
+          <Link to='/' >
             <img src='/Logo 2.png' alt='Hackingly Logo' className='h-10' />
-          </a>
+          </Link>
         </div>
         <button onClick={toggleMobileMenu} className="text-gray-700 hover:text-gray-900 focus:outline-none">
           {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -129,23 +129,28 @@ const CampusLeader = () => {
     
 
              <div className="w-full bg-gray-100">
-  <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[605px]">
+  <div className="relative w-full h-[605px] sm:h-[605px] md:h-[605px] lg:h-[605px]">
     <div className="absolute inset-0 w-full h-full">
       <img 
-        src='/1440x605 (1).jpg' 
-        className="w-full h-full object-cover bg-gray-100" 
+        src='/Campus Leaders.jpg' 
+        className="hidden md:block w-full h-full object-cover bg-gray-100" 
+        alt="Campus Leader Program" 
+      />
+      <img 
+        src='/Campus Leaders Mobile banner.jpg' 
+        className=" block md:hidden w-full h-full object-cover bg-gray-100" 
         alt="Campus Leader Program" 
       />
     </div>
         
-        <div className="absolute inset-0 flex flex-col items-center md:items-start justify-center text-center px-4 md:px-20 ">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#fff] ">
+        <div className="absolute inset-0 flex flex-col pt-28 md:pt-0 items-center md:items-start md:justify-center text-center md:text-left px-4 sm:px-8 md:px-12 lg:px-20 ">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-[500] text-[#fff] ">
           Be the Voice of  
           </h1>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#fff] mb-8 ">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-[500] text-[#fff] mb-8 ">
           Our Campus Leader Program!
           </h1>
-          <button className="bg-[#8b71fe] hover:bg-[#7b59ff] text-white font-medium py-3 px-6 w-[196px] rounded-md transition-colors duration-300" onClick={handleForm}>
+          <button className="bg-[#8b71fe] transition-colors duration-300 whitespace-nowrap shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all hover:bg-[#7b59ff] text-white font-medium py-3 px-6 w-[196px] rounded-md" onClick={handleForm}>
             Join Us Today
           </button>
         </div>

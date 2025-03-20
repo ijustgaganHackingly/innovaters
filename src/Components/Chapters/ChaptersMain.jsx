@@ -23,7 +23,6 @@ const ChaptersMain = () => {
     };
   return (
     <div className='bg-white'>
-     {/* <AboutSection/> */}
      <div className='hidden md:flex items-center justify-between py-6 z-10'>
                      <div className='px-16'>
                        <Link to='/'>
@@ -61,7 +60,7 @@ const ChaptersMain = () => {
                    <div className='md:hidden flex items-center justify-between py-6 z-10 px-4'>
                      <div>
                        <Link to='/'>
-                         <img src='/Logo 2.png' alt='Hackingly Logo' className='h-10' onClick={toggleMobileMenu}/>
+                         <img src='/Logo 2.png' alt='Hackingly Logo' className='h-10'/>
                        </Link>
                      </div>
                      <button onClick={toggleMobileMenu} className="text-gray-700 hover:text-gray-900 focus:outline-none">
@@ -111,11 +110,11 @@ const ChaptersMain = () => {
 
       <div className="relative py-24 z-10" id='about'>
         <div className='flex flex-col items-center justify-center text-center max-w-3xl mx-auto px-4'>
-          <h1 className="text-5xl font-normal text-gray-900 mb-6">Bring Tech Innovation to Your Campus!</h1>
-          <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+          <h1 className="text-3xl font-[500] text-gray-900 mb-6">Bring Tech Innovation to Your Campus!</h1>
+          <p className="text-gray-600 text-base mb-8 leading-normal">
             Ready to spark excitement at your campus? Establish a college chapter to create a central hub for tech, innovation and community. Get the chance to enhance the student experience, skill development and collaboration opportunities.
           </p>
-          <Link to='/chapterForm'><button className='px-[24px] py-[12px] bg-gradient-to-r from-[#8b41fe] to-[#7b59ff] text-white rounded-[6px] w-[196px] border-[1px]'>
+          <Link to='/chapterForm'><button className=' transition-colors duration-300 whitespace-nowrap shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all px-[24px] py-[12px] bg-gradient-to-r from-[#8b41fe] to-[#7b59ff] text-white rounded-[6px] w-[196px] border-[1px]'>
             Sign Up
           </button></Link>
         </div>
@@ -123,11 +122,11 @@ const ChaptersMain = () => {
 
       <div className="py-6 z-10" id='about'>
         <div className='flex flex-col items-center justify-center text-center max-w-4xl mx-auto px-4 mb-16 z-10'>
-          <h2 className="text-4xl font-normal text-gray-900 mb-4 z-10">Who are We?</h2>
-          <p className="text-gray-600 text-lg mb-6 z-10">
+          <h2 className="text-3xl font-[500] text-gray-900 mb-4 z-10">Who are We?</h2>
+          <p className="text-gray-600 text-base mb-6 z-10">
             Kickstart your journey in tech with a strong community
           </p>
-          <p className="text-gray-700 leading-relaxed z-10">
+          <p className="text-gray-700 text-base leading-normal z-10">
             The Hackingly College Chapter is dedicated to technology and innovation, providing a platform for students to learn and collaborate. When you establish a Hackingly chapter, you open the door to a world of opportunities for tech enthusiasts. With access to masterclasses, mentorship, and exclusive events, you'll gain essential skills to kickstart your career in technology.
           </p>
         </div>

@@ -17,7 +17,6 @@ const ChapterMarker = ({ top, left, label }) => {
   );
 };
 
-// New component for map pins
 const MapPin = ({ top, left }) => {
   return (
     <div style={{
@@ -60,7 +59,6 @@ const OurChapters = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
   
-  // Sample chapter data with events
   const chapterData = [
     {
       id: 1,
@@ -122,7 +120,6 @@ const OurChapters = () => {
     }
   ];
 
-  // Filter events based on search term
   const filteredEvents = chapterData
     .filter(chapter => 
       chapter.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -154,14 +151,13 @@ const OurChapters = () => {
   return (
     <div>
       <div className='hidden md:flex flex-col items-center justify-center w-full mb-10 '>
-        <h1 className='p-[9px] text-4xl'>Our Chapters</h1>
+        <h1 className='p-[9px] font-[500] text-3xl'>Our Chapters</h1>
         <h3 className='text-base'>Unite, Inspire & grow with us.</h3>
       </div>
 
       <div className=' hidden md:flex flex-col relative items-center justify-center w-full mb-20'>
         <img src='/Map of India.svg' className='pl-40 relative'/>
 
-        {/* Chapter Markers (Absolute Positioning) */}
         <ChapterMarker top={21} left={18} label="Manipal University Jaipur, Rajasthan" />
         <ChapterMarker top={34} left={18} label="BITS Pilani, Rajasthan" />
         <ChapterMarker top={42} left={18} label="IIT Delhi, New Delhi" />
@@ -169,7 +165,6 @@ const OurChapters = () => {
         <ChapterMarker top={26} left={63} label="IIT Guwahati, Assam" />
         <ChapterMarker top={66.5} left={69} label="Anna University, Chennai" />
 
-        {/* Connect with lines */}
         <ChapterLine x1={25} y1={21} x2={44} y2={21} dashed={true}/>
         <ChapterLine x1={19} y1={34} x2={40} y2={34} dashed={true}/>
         <ChapterLine x1={25} y1={42} x2={40} y2={42} dashed={true}/>
@@ -187,11 +182,11 @@ const OurChapters = () => {
 
       <div className='bg-gradient-to-r from-[#ffffff] via-[#f4f1ff] to-[#ffffff] flex flex-col items-center justify-center h-auto min-h-[40vh] w-full px-4 py-6'>
       <div className='flex flex-col items-center justify-between w-full'>
-        <h2 className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center '>Find our event in your city!</h2>
+        <h2 className='text-xl font-[500] md:text-2xl lg:text-3xl xl:text-4xl text-center '>Find our event in your city!</h2>
         
-        <div className='flex flex-col sm:flex-row mt-6 relative w-full max-w-xl justify-center items-center gap-4'>
+        <div className='flex flex-col sm:flex-row mt-6 relative w-full max-w-xl justify-center items-center gap-2'>
           <button
-            className='mr-0 sm:mr-6 rounded-[6px] border-[1px] py-3 px-6 bg-gradient-to-r from-[#8b71fe] to-[#7b59ff] text-white w-full sm:w-auto'
+            className='mr-0 sm:mr-2 rounded-[6px] border-[1px] py-2 px-4 bg-gradient-to-r from-[#8b71fe] transition-colors duration-300 whitespace-nowrap shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all to-[#7b59ff] text-white w-full sm:w-auto'
             onClick={handleCheckEvents}
           >
             {showEvents ? 'Hide events' : 'Check out all events'}
@@ -265,97 +260,3 @@ const OurChapters = () => {
 };
 
 export default OurChapters;
-
-// import React from 'react';
-
-
-// const ChapterMarker = ({ top, left, label }) => {
-//   return (
-//     <div style={{
-//       position: 'absolute',
-//       top: `${top}%`, // Use percentages for responsiveness
-//       left: `${left}%`,
-//       transform: 'translate(-50%, -50%)', // Center marker
-//       zIndex: 10, // Ensure markers are on top
-//     }}>
-//       <div className="bg-white rounded-md shadow-md p-2 text-sm" style={{ whiteSpace: 'nowrap' }}>
-//         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Manipal_Academy_of_Higher_Education_Logo.svg/1200px-Manipal_Academy_of_Higher_Education_Logo.svg.png" alt="Manipal University Logo" className="w-6 h-6 inline-block mr-1"/>
-//         {label}
-//       </div>
-//       <div style={{
-//         position: 'absolute',
-//         top: '50%',
-//         left: '50%',
-//         transform: 'translate(-50%, -50%)',
-//         width: '8px',
-//         height: '8px',
-//         // backgroundColor: 'red', // Marker color
-//         borderRadius: '50%',
-//         zIndex: 20
-//       }}></div>
-//     </div>
-//   );
-// };
-
-
-// const ChapterLine = ({ x1, y1, x2, y2 }) => {
-//   return (
-//     <svg style={{
-//       position: 'absolute',
-//       top: 0,
-//       left: 0,
-//       width: '100%',
-//       height: '100%',
-//       pointerEvents: 'none', 
-//       zIndex: 5 
-//     }}>
-//       <line x1={`${x1}%`} y1={`${y1}%`} x2={`${x2}%`} y2={`${y2}%`} stroke="black" strokeWidth="1" strokeDasharray="4"/>
-//     </svg>
-//   );
-// };
-
-// const OurChapters = () => {
-//   return (
-//     <div>
-//       <div className='flex flex-col items-center justify-center w-full mb-10'>
-//         <h1 className='p-[9px] text-4xl'>Our Chapters</h1>
-//         <h3 className='text-base'>Unite, Inspire & grow with us.</h3>
-//       </div>
-
-//       <div className='flex flex-col relative items-center justify-center  w-full mb-20'>
-
-//         <img src='../../../public/Map of India.svg' className='pl-40 relative'/>
-
-//            {/* Chapter Markers (Absolute Positioning) */}
-//            <ChapterMarker top={25} left={25} label="Manipal University Jaipur, Rajasthan" />
-//           {/* <ChapterMarker top={30} left={25} label="Manipal University Jaipur, Rajasthan" />
-//           <ChapterMarker top={40} left={25} label="Manipal University Jaipur, Rajasthan" />
-//            <ChapterMarker top={50} left={25} label="Manipal University Jaipur, Rajasthan" />
-//           <ChapterMarker top={30} left={75} label="Manipal University Jaipur, Rajasthan" />
-//           <ChapterMarker top={65} left={75} label="Manipal University Jaipur, Rajasthan" /> */}
-
-//           {/* Connect with line */}
-//           <ChapterLine x1={26} y1={21} x2={44} y2={21} />
-//           {/* <ChapterLine x1={25} y1={30} x2={50} y2={20} />
-//           <ChapterLine x1={25} y1={40} x2={45} y2={35} />
-//           <ChapterLine x1={25} y1={50} x2={40} y2={50} />
-//            <ChapterLine x1={75} y1={30} x2={60} y2={20} />
-//            <ChapterLine x1={75} y1={65} x2={60} y2={60} /> */}
-//       </div>
-
-//       <div className='bg-gradient-to-r from-[#ffffff] via-[#f4f1ff] to-[#ffffff] flex flex-col items-center justify-center h-[40vh] w-full'>
-//         <div className='flex flex-col items-center justify-between'>
-//           <h2 className='text-5xl'>Find our event in your city !</h2>
-//           <div className='flex mt-6'>
-//             <button className='mr-[24px] rounded-[6px] border-[1px] py-[12px] px-[24px] bg-gradient-to-r from-[#8b71fe] to-[#7b59ff] text-white'>
-//               Check out all events
-//             </button>
-//             <input className='px-5 w-[360px]' type='search' placeholder='Search for your city or states' />
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default OurChapters;

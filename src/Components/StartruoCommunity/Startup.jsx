@@ -59,7 +59,7 @@ const Startup = () => {
           <div className='md:hidden flex items-center justify-between py-6 z-10 px-4'>
             <div>
               <Link to='/'>
-                <img src='/Logo 2.png' alt='Hackingly Logo' className='h-10' onClick={toggleMobileMenu}/>
+                <img src='/Logo 2.png' alt='Hackingly Logo' className='h-10'/>
               </Link>
             </div>
             <button onClick={toggleMobileMenu} className="text-gray-700 hover:text-gray-900 focus:outline-none">

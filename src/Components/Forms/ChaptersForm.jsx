@@ -52,13 +52,11 @@ const ChaptersForm = () => {
 
   return (
     <div className="min-h-screen w-full relative">
-      {/* Full-screen background image */}
       <div 
         className="absolute inset-0 w-full h-full bg-[#1d1441] bg-cover bg-center bg-no-repeat z-0" 
         style={{ backgroundImage: "url('/chapter.png')" }}
       />
       
-      {/* Back button (top left corner) */}
       <div className="absolute top-8 left-8 z-20">
         <Link to='/chapter' className="flex items-center text-white hover:text-gray-200 transition-colors">
           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +66,6 @@ const ChaptersForm = () => {
         </Link>
       </div>
       
-      {/* Form container (centered) */}
       <div className="relative z-10 flex items-center justify-center min-h-screen w-full px-4 py-16">
         <div className="w-full max-w-md bg-[#170b25]/90 p-6 sm:p-8 rounded-lg shadow-xl">
           <h2 className="text-white text-2xl font-bold mb-6 text-center">Apply to join now!</h2>

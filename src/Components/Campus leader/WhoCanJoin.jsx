@@ -41,13 +41,13 @@ const WhoCanJoin = () => {
   return (
     <>
       <div className="w-full max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-4xl font-bold text-center text-gray-700 mb-10 mt-10">
+        <h2 className="text-3xl font-[500] text-center text-gray-700 mb-10 mt-10">
           Who can Join Us?
         </h2>
       </div>
       <div className='w-full flex justify-center '>
       <div className="flex justify-center w-full">
-        <div className="grid grid-cols-1 w-full max-w-6xl sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+        <div className="grid grid-cols-1 w-full max-w-6xl sm:grid-cols-2 lg:grid-cols-4 gap-5 px-4">
           {categories.map((category) => (
             <div
               key={category.id}
@@ -64,14 +64,12 @@ const WhoCanJoin = () => {
               </div>
               
               <div className="absolute bottom-0 left-0 w-full p-6 flex flex-col items-center z-10">
-                <button className="px-6 py-2 bg-white/30 backdrop-blur-md rounded-full mb-2 hover:bg-white/40 transition-colors duration-300">
+                <button className="px-3 py-2 bg-white/30 backdrop-blur-md rounded-full mb-2 hover:bg-white/40 transition-colors duration-300">
                   <span className="text-white font-medium text-base whitespace-nowrap">
                     {category.title}
                   </span>
                 </button>
-                <p className="text-white/90 text-sm text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {category.description}
-                </p>
+                
               </div>
             </div>
           ))}

@@ -4,7 +4,7 @@ const AboutStartup = () => {
   return (
     <div className='bg-white py-10 px-4 max-w-screen-xl mx-auto '>
     <div className='flex flex-col items-center'>
-        <h2 className='font-semibold text-4xl'>Who Are We?</h2>
+        <h2 className='font-[500] text-2xl md:text-3xl'>Who Are We?</h2>
         <h3 className='text-gray-500 pt-2 font-medium text-center'>One startup can lead to a world of possibilities</h3>
     </div>
     <div className='flex flex-col pt-12 w-full items-center lg:flex-row lg:max-w-screen-xl mx-auto justify-between overflow-hidden'>

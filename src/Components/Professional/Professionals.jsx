@@ -142,9 +142,9 @@ const Professionals = () => {
 
       <div className='md:hidden flex items-center justify-between py-6  bg-white z-10 px-4 shadow-sm'>
         <div>
-          <a href='#home' onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>
+          <Link to='/' >
             <img src='/Logo 2.png' alt='Hackingly Logo' className='h-10' />
-          </a>
+          </Link>
         </div>
         <button onClick={toggleMobileMenu} className="text-gray-700 hover:text-gray-900 focus:outline-none">
           {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}

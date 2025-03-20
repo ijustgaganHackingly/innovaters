@@ -5,7 +5,7 @@ const FooterFaculty = () => {
     <footer className="w-full">
     <header className="w-full flex justify-center py-6">
       <div className="max-w-6xl w-full flex flex-col items-center">
-        {/* Logo */}
+    
         <div className="mb-6">
           <img
             src="/Logo 2.png"
@@ -14,7 +14,6 @@ const FooterFaculty = () => {
           />
         </div>
 
-        {/* Navigation */}
         <nav className="flex gap-8 text-gray-700">
           <a href="#" className="hover:text-gray-900">
             About Us
@@ -29,10 +28,9 @@ const FooterFaculty = () => {
       </div>
     </header>
     <div className="max-w-6xl mx-auto px-4">
-      {/* Divider line */}
+ 
       <div className="border-t border-gray-200 my-8"></div>
 
-      {/* Footer content */}
       <div className="flex flex-col items-center justify-center py-6 text-sm text-gray-600">
         <p className="mb-2">© 2024 Hackingly™. All Rights Reserved.</p>
         <p className="flex items-center">

@@ -20,7 +20,6 @@ import AdminDashboard from './Components/Dashboards/admin/AdminDashboard'
 import SuperAdmin from './Components/Dashboards/SuperAdmin'
 import CampusLeaderDash from './Components/Dashboards/campusleader/CampusLeaderDash'
 import HomeCampusLeader from './Components/Dashboards/campusleader/HomeCampusLeader'
-import ViewTask from './Components/Dashboards/campusleader/ViewTask'
 import Tasks from './Components/Dashboards/campusleader/Task'
 import TaskView from './Components/Dashboards/campusleader/TaskView'
 import UploadTask from './Components/Dashboards/campusleader/UploadTask'
@@ -46,7 +45,6 @@ const App = () => {
         <Route path='/professionalform' element={<ProfessionalForm/>}/>
         <Route path='/startupForm' element={<StartupForm/>}/>
         <Route path='/contactForm' element={<HomeForm/>}/>
-        {/* <Route path='/campushdash' element={<CampusLeaderDash/>}/> */}
         <Route path="/campusleader/dashboard" element={<CampusLeaderDash />}>
               <Route path='' element={<HomeCampusLeader/>}/>
               <Route path='tasks' element={<Tasks/>}/>
@@ -56,7 +54,6 @@ const App = () => {
 
         <Route path="/admin/dashboard" element={<ProtectedRoute requiredRole="admin"><AdminDashboard /></ProtectedRoute>} />
         <Route path="/superadmin/dashboard" element={<ProtectedRoute requiredRole="superadmin"><SuperAdmin /></ProtectedRoute>} />
-        <Route path="/campusleader/dashboard" element={<ProtectedRoute requiredRole="campusleader"><CampusLeaderDash /></ProtectedRoute>} />
       </Routes>
     </Router>
   )

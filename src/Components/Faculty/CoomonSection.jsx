@@ -17,7 +17,7 @@ const CommonSection = () => {
           
           <div className='mt-4 sm:mt-6'>
             <Link to='/facultyForm'>
-              <button className='rounded-[6px] border-[1px] py-2 sm:py-3 px-4 sm:px-6 md:px-[24px] bg-gradient-to-r from-[#8b71fe] to-[#7b59ff] text-white font-medium hover:shadow-lg transition-shadow duration-300'>
+              <button className='rounded-[6px] transition-colors duration-300 whitespace-nowrap shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all border-[1px] py-2 sm:py-3 px-4 sm:px-6 md:px-[24px] bg-gradient-to-r from-[#8b71fe] to-[#7b59ff] text-white font-medium hover:shadow-lg transition-shadow duration-300'>
                 Join Now
               </button>
             </Link>

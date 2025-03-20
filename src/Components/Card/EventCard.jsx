@@ -30,7 +30,7 @@ const EventCards = () => {
           },
         });
 
-        console.log('Events Page API Response:', response.data);
+        // console.log('Events Page API Response:', response.data);
 
         if (response.data && response.data.data && Array.isArray(response.data.data)) {
           setEvents(response.data.data);
@@ -39,7 +39,7 @@ const EventCards = () => {
         } else if (Array.isArray(response.data)) {
           setEvents(response.data);
         } else {
-          console.error('API response does not contain an array of events:', response.data);
+          // console.error('API response does not contain an array of events:', response.data);
           setEvents([]);
         }
       } catch (err) {

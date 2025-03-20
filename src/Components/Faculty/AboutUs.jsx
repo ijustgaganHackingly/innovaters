@@ -9,7 +9,6 @@ const AboutUs = () => {
       </div>
       
       <div className='flex flex-col pt-8 sm:pt-12 w-full items-center lg:flex-row lg:justify-between'>
-        {/* Image container - full width on mobile, half width on lg and up */}
         <div className='py-6 w-full lg:w-1/2 flex justify-center'>
           <div className='h-64 sm:h-80 md:h-96 w-full sm:w-[400px] md:w-[500px] relative bg-gray-400 max-w-full'>
             <div className='h-64 sm:h-80 md:h-96 w-full sm:w-[400px] md:w-[500px] absolute top-[-10px] sm:top-[-15px] right-[-10px] sm:right-[-15px] bg-gray-300 max-w-full'>

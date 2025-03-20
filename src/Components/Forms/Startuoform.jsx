@@ -34,20 +34,17 @@ const StartupForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#1d1441] bg-cover bg-center relative" style={{ backgroundImage: "url('/Stratups.jpg')" }}>
-
-         {/* Back Button */}
-      <div className="absolute top-8 left-8 text-white flex items-center cursor-pointer">
-        <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-        </svg>
-       <Link to='/startup'> <span className="text-sm">Back to website</span></Link>
-      </div>
-      <div className="flex absolute top-32 w-full min-h-[80%]">
-        {/* Form Section - Left Side */}
-        <div className="w-full md:w-1/2 p-2 flex items-center justify-center">
-          <div className="w-full max-w-md mx-auto bg-[#170b25]/90 p-8 rounded-lg">
-            <h2 className="text-white text-2xl font-bold mb-6 text-center">Apply to join now!</h2>
+   <div className="min-h-screen bg-[#1d1441] bg-cover bg-center flex flex-col items-center justify-center relative" 
+            style={{ backgroundImage: "url('/Stratups.jpg')" }}>
+   
+         <div className="absolute top-8 left-8 text-white flex items-center cursor-pointer z-10">
+           <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+           </svg>
+           <Link to='/startup'><span className="text-sm">Back to website</span></Link>
+         </div>
+         <div className="w-full max-w-md mx-auto bg-[#170b25]/90 p-8 rounded-lg">
+         <h2 className="text-white text-2xl font-bold mb-6 text-center">Apply to join now!</h2>
             
             <form className="space-y-4" onSubmit={handleSubmit}>
               {error && <div className="text-red-500">{error}</div>}
@@ -134,8 +131,7 @@ const StartupForm = () => {
                 </button>
               </div>
             </form>
-          </div>
-        </div>
+          
         
         <div className="w-1/2 hidden md:block"></div>
       </div>

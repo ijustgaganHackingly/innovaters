@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-t from-[#1d1441] via-[#2b1d5c] to-[#52447ec3] text-white p-4 sm:p-6 lg:p-8">
-      {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-8 lg:mb-16">
-          {/* Logo and Navigation */}
           <div className="w-full lg:w-auto">
             <div className=" text-black px-4 py-1 inline-block mb-6">
             <img 
@@ -29,7 +27,6 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Subscribe Form */}
           <div className="w-full lg:w-auto">
             <h3 className="text-lg mb-4">Subscribe</h3>
             <div className="flex flex-col sm:flex-row gap-4 max-w-xl lg:max-w-none">
@@ -49,16 +46,13 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Footer Bottom */}
         <div className="pt-8 border-t border-gray-700 flex flex-col gap-6 lg:flex-row lg:gap-0 justify-between items-center">
-          {/* Legal Links */}
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             <a href="#" className="hover:underline">Privacy Policy</a>
             <a href="#" className="hover:underline">Terms of Service</a>
             <a href="#" className="hover:underline">Cookies Settings</a>
           </div>
 
-          {/* Copyright and Credits */}
           <div className="flex flex-col sm:flex-row gap-2 items-center text-sm text-center lg:text-left">
             <span>© 2024 Hakingly. All rights reserved.</span>
             <div className="flex items-center flex-wrap justify-center">

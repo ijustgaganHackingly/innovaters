@@ -6,9 +6,7 @@ import CoomonSection from './CoomonSection'
 import Commitment from './Commitment'
 import Benefits from './Benefits'
 import { Link } from 'react-router-dom'
-// import { Link } from 'react-router-dom';
-import { FaBars, FaTimes } from 'react-icons/fa'; // Import icons
-
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 
 const FacultyAdvisors = () => {
@@ -71,7 +69,7 @@ const FacultyAdvisors = () => {
        <div className='md:hidden flex items-center justify-between py-6 z-10 px-4'>
          <div>
            <Link to='/'>
-             <img src='/Logo 2.png' alt='Hackingly Logo' className='h-10' onClick={toggleMobileMenu}/>
+             <img src='/Logo 2.png' alt='Hackingly Logo' className='h-10' />
            </Link>
          </div>
          <button onClick={toggleMobileMenu} className="text-gray-700 hover:text-gray-900 focus:outline-none">
